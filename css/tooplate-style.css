@@ -1,11 +1,3 @@
-/*
-
-Template 2106 Soft Landing
-
-http://www.tooplate.com/view/2106-soft-landing
-	
-*/
- 
   @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400');
 
   body {
@@ -64,7 +56,7 @@ http://www.tooplate.com/view/2106-soft-landing
   }
 
   a:hover, a:active, a:focus {
-    color: #29ca8e;
+    color: #ff4716;
     outline: none;
   }
 
@@ -97,7 +89,7 @@ http://www.tooplate.com/view/2106-soft-landing
     background: #536976;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #292E49, #536976);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #292E49, #536976); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    opacity: 0.9;
+    opacity: 0.6;
     position: absolute;
     top: 0;
     right: 0;
@@ -127,7 +119,7 @@ http://www.tooplate.com/view/2106-soft-landing
   }
 
   .online-form button {
-    background: #29ca8e;
+    background: #ff4716;
     border: 0;
     color: #ffffff;
     position: absolute;
@@ -147,7 +139,7 @@ http://www.tooplate.com/view/2106-soft-landing
   -----------------------------------------*/
 
   .section-btn {
-    background: #29ca8e;
+    background: #ff4716;
     border: 0;
     border-radius: 50px;
     color: #ffffff;
@@ -200,9 +192,9 @@ http://www.tooplate.com/view/2106-soft-landing
     margin-top: -10px;
     margin-left: -10px;
     border-radius: 50%;
-    border: 1px solid #575757;
+    border: 1px solid #14315d;
     border-top-color: #ffffff;
-    animation: spinner .9s linear infinite;
+    animation: spinner 1.9s linear infinite;
   }
 
   @-webkit-@keyframes spinner {
@@ -226,7 +218,7 @@ http://www.tooplate.com/view/2106-soft-landing
   }
 
   .custom-navbar .navbar-brand {
-    color: #ffffff;
+    color: #ff4716;
     font-size: 25px;
     font-weight: 500;
     letter-spacing: -1px;
@@ -250,7 +242,7 @@ http://www.tooplate.com/view/2106-soft-landing
 
   .custom-navbar .nav li a:hover {
     background: transparent;
-    color: #29ca8e;
+    color: #000000;
   }
 
   .custom-navbar .navbar-nav > li > a:hover,
@@ -260,7 +252,7 @@ http://www.tooplate.com/view/2106-soft-landing
 
   .custom-navbar .nav li.active > a {
     background-color: transparent;
-    color: #29ca8e;
+    color: #ff4716;
   }
 
   .custom-navbar .navbar-toggle {
@@ -273,7 +265,7 @@ http://www.tooplate.com/view/2106-soft-landing
   }
 
   .custom-navbar .navbar-toggle .icon-bar {
-    background: #29ca8e;
+    background: #ff4716;
     border-color: transparent;
   }
 
@@ -284,7 +276,7 @@ http://www.tooplate.com/view/2106-soft-landing
     }
 
     .custom-navbar.top-nav-collapse {
-      background: #ffffff;
+      background: #ff4716;
       -webkit-box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
       -moz-box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
       box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
@@ -292,11 +284,11 @@ http://www.tooplate.com/view/2106-soft-landing
     }
 
     .top-nav-collapse .navbar-brand {
-      color: #252525;
+      color: #ffffff;
     }
 
     .top-nav-collapse .nav li a {
-      color: #575757;
+      color: #14315d;
     }
 
     .top-nav-collapse .nav .section-btn a {
@@ -311,7 +303,7 @@ http://www.tooplate.com/view/2106-soft-landing
   -----------------------------------------*/
 
   #home {
-    background: url('../images/home-bg.jpg') no-repeat center center;
+    background: url('../images/bg-home.jpg') no-repeat center center;
     background-size: cover;
     vertical-align: middle;
     display: -webkit-box;
@@ -379,13 +371,13 @@ http://www.tooplate.com/view/2106-soft-landing
   #feature .nav-tabs>li.active>a:hover {
     background: transparent;
     color: #202020;
-    border-bottom: 3px solid #29ca8e;
+    border-bottom: 3px solid #ff4716;
   }
 
   #feature .nav>li>a:focus, 
   #feature .nav>li>a:hover {
     background: transparent;
-    border-bottom: 3px solid #29ca8e;
+    border-bottom: 3px solid #ff4716;
     color: #202020;
   }
 
@@ -411,7 +403,6 @@ http://www.tooplate.com/view/2106-soft-landing
   /*---------------------------------------
       ABOUT              
   -----------------------------------------*/
-
   #about .col-md-4 {
     margin: 0;
     padding: 0;
@@ -633,7 +624,7 @@ http://www.tooplate.com/view/2106-soft-landing
   }
 
   #contact-form input[type='submit']:hover {
-    background: #29ca8e;
+    background: #ff4716;
     color: #ffffff;
   }
   
