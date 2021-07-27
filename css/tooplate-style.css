@@ -443,11 +443,10 @@
     border-left: 15px solid transparent;
     border-top: 15px solid #ffffff;
   }
-  
+
   .team-info {
     position: relative;
     padding: 40px;
-    
   }
 
   .team-info h2 {margin: 0;}
@@ -636,11 +635,12 @@
   -----------------------------------------*/
 
   footer {
-    padding-bottom: 80px;
+    background-color: #ff4716;
   }
 
   .copyright-text p {
     margin: 5px;
+    color: white;
   }
 
 
