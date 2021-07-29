@@ -292,18 +292,25 @@
     }
     .custom-navbar .nav li.active > a {
       background-color: transparent;
-      color: #333c87;
+      color: #ff4716;
     }
     .custom-navbar .nav li a:hover {
       background: transparent;
-      color: #333c87;
+      color: #ff4716;
     }
   
     .top-nav-collapse .nav li a {
       color: white;
     }
 
-
+    .top-nav-collapse .nav li a:hover  {
+      
+      color: #14315d;
+    }
+    .top-nav-collapse .nav li.active>a {
+      
+      color: #14315d;
+    } 
     .top-nav-collapse .nav .section-btn a {
       color: #ffffff;
     }
