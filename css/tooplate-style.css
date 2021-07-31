@@ -339,7 +339,10 @@
     padding-top: 0;
     text-align: center;
   }
-
+  .cambio-feature{
+    width: 45em;
+    height: 35em;
+  }
   #home h1 {
     color: #ffffff;
     margin-top: 10px;
@@ -415,7 +418,8 @@
 
   .feature-image {
     position: absolute;
-    bottom: -27em;
+
+    margin-top: 7em;
   }
 
   /*---------------------------------------
