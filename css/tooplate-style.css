@@ -77,6 +77,7 @@
   section {
     position: relative;
     padding: 100px 0;
+    padding-bottom: 0;
   }
 
   #contact,
@@ -132,6 +133,9 @@
     color: #ffffff;
   }
 
+  .colorindex{
+    color: #ffffff;
+  }
 
 
   /*---------------------------------------
@@ -235,14 +239,14 @@
   .custom-navbar .nav li a {
     font-size: 16px;
     font-weight: normal;
-    color: #f0f0f0;
+    
     padding-right: 22px;
     padding-left: 22px;
   }
 
   .custom-navbar .nav li a:hover {
     background: transparent;
-    color: #000000;
+    color: #ff4716;
   }
 
   .custom-navbar .navbar-nav > li > a:hover,
@@ -286,11 +290,27 @@
     .top-nav-collapse .navbar-brand {
       color: #ffffff;
     }
-
+    .custom-navbar .nav li.active > a {
+      background-color: transparent;
+      color: #ff4716;
+    }
+    .custom-navbar .nav li a:hover {
+      background: transparent;
+      color: #ff4716;
+    }
+  
     .top-nav-collapse .nav li a {
-      color: #14315d;
+      color: white;
     }
 
+    .top-nav-collapse .nav li a:hover  {
+      
+      color: #14315d;
+    }
+    .top-nav-collapse .nav li.active>a {
+      
+      color: #14315d;
+    } 
     .top-nav-collapse .nav .section-btn a {
       color: #ffffff;
     }
@@ -316,10 +336,13 @@
     align-items: center;
     min-height: 100vh;
     position: relative;
-    padding-top: 12em;
+    padding-top: 0;
     text-align: center;
   }
-
+  .cambio-feature{
+    width: 45em;
+    height: 35em;
+  }
   #home h1 {
     color: #ffffff;
     margin-top: 10px;
@@ -395,10 +418,9 @@
 
   .feature-image {
     position: absolute;
-    bottom: -27em;
+
+    margin-top: 7em;
   }
-
-
 
   /*---------------------------------------
       ABOUT              
@@ -407,11 +429,19 @@
     margin: 0;
     padding: 0;
   }
-
+  .descripcion-pagina{
+    border-radius: 100px;
+    background-color: #ff4716;
+    color: #ffffff;
+  }
   .team-thumb {
     background: #ffffff;
     position: relative;
     overflow: hidden;
+  }
+  .size-team{
+    width: 390px;
+    height: 411px;
   }
 
   .team-thumb-up:after {
@@ -635,11 +665,12 @@
   -----------------------------------------*/
 
   footer {
-    padding-bottom: 80px;
+    background-color: #ff4716;
   }
 
   .copyright-text p {
     margin: 5px;
+    color: white;
   }
 
 
