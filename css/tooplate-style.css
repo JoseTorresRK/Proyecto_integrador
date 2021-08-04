@@ -6,6 +6,10 @@
     background: #f9f9f9;
   }
 
+.header .navbar{
+  background:linear-gradient(.25turn,#ff4716,#14315d);
+  height: 4em;
+}
 
 
   /*---------------------------------------
@@ -44,7 +48,7 @@
   }
 
   a {
-    color: #202020;
+    color: white;
     text-decoration: none !important;
   }
 
@@ -76,7 +80,7 @@
 
   section {
     position: relative;
-    padding: 100px 0;
+    /*padding: 100px 0;*/
     padding-bottom: 0;
   }
 
@@ -159,7 +163,10 @@
     color: #ffffff;
   }
 
-
+.btn-margen{
+  margin-top: 2em;
+  margin-bottom: 2.5em;
+}
 
   /*---------------------------------------
        PRE LOADER              
@@ -220,6 +227,7 @@
     margin-bottom: 0;
     padding: 25px 0;
   }
+
 
   .custom-navbar .navbar-brand {
     color: #ff4716;
@@ -334,15 +342,13 @@
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
+    text-align: center;
     min-height: 100vh;
     position: relative;
     padding-top: 0;
     text-align: center;
   }
-  .cambio-feature{
-    width: 45em;
-    height: 35em;
-  }
+ 
   #home h1 {
     color: #ffffff;
     margin-top: 10px;
@@ -380,6 +386,9 @@
     padding: 8px 0;
   }
 
+  .margen{
+    margin-top: 5em;
+  }
   #feature .nav-tabs>li>a {
     color: #999999;
     font-size: 18px;
@@ -548,17 +557,24 @@
     color: #d9d9d9;
     display: inline-block;
     vertical-align: top;
+ 
   }
 
-  .owl-carousel .owl-item img,
-  .testimonial-item img {
+
+  
+   .carusel-normal{
     border: 3px solid #ffffff;
     border-radius: 100px;
     width: 60px;
     height: 60px;
     margin-right: 10px;
   }
-
+  .carusel-cuadrado{
+   border-radius: 100px;
+    width: 45em;
+    height: 35em;
+    margin-right: 10px;
+  }
 
 
   /*---------------------------------------
@@ -718,8 +734,9 @@
 
     .custom-navbar .navbar-nav {
       margin-left: 3em;
+     
     }
-
+ 
     .home-info {
       margin-top: 0;
     }
@@ -728,10 +745,10 @@
 
   @media only screen and (max-width: 992px) {
 
-    section {
-      padding: 60px 0;
+    .btn-margen{
+      margin-top: 0em;
+      margin-bottom: 0em;
     }
-
     .custom-navbar .navbar-nav {
       margin-left: 0;
     }
@@ -761,21 +778,32 @@
   }
 
 
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 768px) {
 
     .section-title {
       padding-bottom: 20px;
     }
-
-    .custom-navbar {
-      background: #ffffff;
-      -webkit-box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
-      -moz-box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
-      box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
-      padding: 10px 0;
-      text-align: center;
+    .btn-margen{
+      margin-bottom: 1em;
     }
-
+    .descripcion-pagina{
+      border-radius: 100px;
+      background-color: #ff4716;
+      color: #ffffff;
+      margin-top: 11em;
+    }
+    h2{
+      font-size: 30px;
+    }
+    .custom-navbar {
+      background:transparent;
+      color: white;
+      
+      text-align: center;
+      
+    }
+    
+  
     .custom-navbar .nav li a {
       line-height: normal;
       padding: 5px;
@@ -783,13 +811,13 @@
 
     .custom-navbar .navbar-brand,
     .top-nav-collapse .navbar-brand {
-      color: #202020;
+      color: #ff4716;
       font-weight: normal;
     }
 
-    .custom-navbar .nav li a,
-    .top-nav-collapse .nav li a {
-      color: #656565;
+    
+    .colorindex{
+      color: white;
     }
 
     .feature-image {
@@ -814,20 +842,51 @@
 
     .testimonial-image,
     .testimonial-info {
-      height: 85vh;
+      height: 49vh;
     }
 
     .testimonial-info {
       padding: 30px;
+      height: 80%;
     }
+    
   }
 
 
   @media screen and (max-width: 480px) {
-
+    
+    .section-title {
+      padding-bottom: 20px;
+    }
+    section{
+      padding-top: 80px;
+    }
+    h2{
+      font-size: 30px;
+    }
+    .custom-navbar {
+      background:white;
+      color: black;
+      -webkit-box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
+      -moz-box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
+      padding: 10px 0;
+      text-align: center;
+      
+    }
     .online-form input[type="email"],
     .online-form .form-control {
       width: 85%;
+    }
+    .descripcion-pagina{
+      border-radius: 100px;
+      background-color: #ff4716;
+      color: #ffffff;
+      padding-top: 5px;
+      margin-top: 0px;
+    }
+    h1{
+      font-size: 20px;
     }
 
     .online-form .form-control {
@@ -842,6 +901,6 @@
 
     .testimonial-image,
     .testimonial-info {
-      height: 65vh;
+      height: 70vh;
     }
   }
