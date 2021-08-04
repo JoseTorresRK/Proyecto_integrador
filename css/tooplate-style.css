@@ -6,6 +6,10 @@
     background: #f9f9f9;
   }
 
+.header .navbar{
+  background:linear-gradient(.25turn,#ff4716,#14315d);
+  height: 4em;
+}
 
 
   /*---------------------------------------
@@ -44,7 +48,7 @@
   }
 
   a {
-    color: #202020;
+    color: white;
     text-decoration: none !important;
   }
 
@@ -76,7 +80,7 @@
 
   section {
     position: relative;
-    padding: 100px 0;
+    /*padding: 100px 0;*/
     padding-bottom: 0;
   }
 
@@ -159,7 +163,10 @@
     color: #ffffff;
   }
 
-
+.btn-margen{
+  margin-top: 2em;
+  margin-bottom: 2.5em;
+}
 
   /*---------------------------------------
        PRE LOADER              
@@ -335,6 +342,7 @@
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
+    text-align: center;
     min-height: 100vh;
     position: relative;
     padding-top: 0;
@@ -728,7 +736,7 @@
       margin-left: 3em;
      
     }
-
+ 
     .home-info {
       margin-top: 0;
     }
@@ -737,8 +745,10 @@
 
   @media only screen and (max-width: 992px) {
 
-    
-
+    .btn-margen{
+      margin-top: 0em;
+      margin-bottom: 0em;
+    }
     .custom-navbar .navbar-nav {
       margin-left: 0;
     }
@@ -772,6 +782,9 @@
 
     .section-title {
       padding-bottom: 20px;
+    }
+    .btn-margen{
+      margin-bottom: 1em;
     }
     .descripcion-pagina{
       border-radius: 100px;
