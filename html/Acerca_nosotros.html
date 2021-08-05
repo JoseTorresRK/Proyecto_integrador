@@ -36,7 +36,7 @@
     <header class="header">
       <nav class="navbar navbar-expand-lg me-auto fixed-top" >
         <div class="container-fluid">
-          <a class="navbar-brand" href="./index.html">TEKTÔN</a>
+          <a class="navbar-brand colorindex" href="./index.html">TEKTÔN</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -44,10 +44,10 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+                <a class="nav-link colorindex" aria-current="page" href="../index.html">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link colorindex" href="./Acerca_nosotros.html">Acerca de Nosotros</a>
+                <a class="nav-link active" href="./Acerca_nosotros.html">Acerca de Nosotros</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link colorindex" href="./contact.html">Contacto</a>
@@ -69,25 +69,25 @@
     </header>
     
     <!-- ABOUT US -->
-    <section id="about" data-stellar-background-ratio="0.5">
+    <section id="about" data-stellar-background-ratio="0.5" style="padding: 0px;">
         <div class="container">
           <div class="row">
             <div class=" col-md-12 col-sm-12 descripcion-pagina">
-              <div class="section-title col-12" style="margin-top: 3em; margin-bottom: 3em;">
+              <div class="section-title col-12" >
                 <h1>Buscas algún trabajador doméstico o buscas empleo, en Tekton te podemos ayudar.<br>Somos una página encargada de ofrecer un contacto con los trabajadores domésticos y llegar a un acuerdo en conjunto para poder realizar el trabajo especificado.</h1>
               </div>
             </div>
-            <div class="col-md-offset-3 col-md-6 col-sm-12" >
+            <div class="col-md-offset-3 col-md-12 col-sm-12 col-12" >
               <div class="section-title">
                 <a href="#nosotros" ><h1>Equipo de desarrollo</h1></a>
               </div>
             </div>
           </div>
-          <div class="row">
+          <div class="row" id="nosotros">
             
             <!-- Garcia -->
-            <div class="col-md-4 col-sm-4"id=nosotros>
-              <div class="team-thumb" style="margin-top: 100px;">
+            <div class="col-md-4 col-sm-4" style="margin-top: 4em;" >
+              <div class="team-thumb" >
 
                 <img 
                   src="../images/david.jpg"
@@ -105,8 +105,8 @@
               </div>
             </div>
             <!-- Oscar -->
-            <div class="col-md-4 col-sm-4">
-              <div class="team-thumb" style="margin-top: 100px;">
+            <div class="col-md-4 col-sm-4" style="margin-top: 4em;">
+              <div class="team-thumb" >
                 <div class="team-info team-thumb-down">
                   <h2>Victor Martinez de la O</h2>
                   <small>Senior Manager</small>
@@ -123,8 +123,8 @@
               </div>
             </div>
             <!-- Victor -->
-            <div class="col-md-4 col-sm-4">
-              <div class="team-thumb" style="margin-top: 100px;">
+            <div class="col-md-4 col-sm-4" style="margin-top: 4em;">
+              <div class="team-thumb" >
                 <img
                   src="../images/Oscar.JPG"
                   class="img-responsive size-team"
@@ -241,31 +241,33 @@
 
     <!-- PIEDE PAGINA -->
     <footer id="footer" data-stellar-background-ratio="0.5">
-        <div class="container">
-          <div class="row">
-            <div class="copyright-text col-md-12 col-sm-12">
-              <div class="col-md-6 col-sm-6">
-                <p>Copyright &copy; 2021 TEKTÔN S.A. de C.V.</p>
-              </div>
-  
-              <div class="col-md-6 col-sm-6">
-                <ul class="social-icon">
-                  <li>
-                    <a
-                      href="#"
-                      class="fa fa-facebook-square"
-                      attr="facebook icon"
-                    ></a>
-                  </li>
-                  <li><a href="#" class="fa fa-twitter"></a></li>
-                  <li><a href="#" class="fa fa-instagram"></a></li>
-                </ul>
-              </div>
+      <div class="container">
+        <div class="row">
+          <div class="copyright-text col-md-12 col-sm-6">
+            <div class="row">
+            <div class="col-md-6 col-sm-6">
+              <p>Copyright &copy; 2021 TEKTÔN S.A. de C.V.</p>
+            </div>
+
+            <div class="col-md-6 col-sm-6">
+              <ul class="social-icon">
+                <li>
+                  <a
+                    href="#"
+                    class="fa fa-facebook-square"
+                    attr="facebook icon"
+                  ></a>
+                </li>
+                <li><a href="#" class="fa fa-twitter"></a></li>
+                <li><a href="#" class="fa fa-instagram"></a></li>
+              </ul>
             </div>
           </div>
+          </div>
         </div>
-      </footer>
-  
+      </div>
+    </footer>
+
       <!-- SCRIPTS -->
       <script src="../js/jquery.js"></script>
       <script src="../js/bootstrap.min.js"></script>
