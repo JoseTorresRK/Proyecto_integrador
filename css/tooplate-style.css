@@ -48,7 +48,7 @@
   }
 
   a {
-    color: white;
+    color: black;
     text-decoration: none !important;
   }
 
@@ -76,11 +76,12 @@
 
   .section-title {
     padding-bottom: 40px;
+    text-align: center;
   }
 
   section {
     position: relative;
-    /*padding: 100px 0;*/
+    padding: 100px 0;
     padding-bottom: 0;
   }
 
@@ -343,7 +344,7 @@
     -ms-flex-align: center;
     align-items: center;
     text-align: center;
-    min-height: 100vh;
+    min-height: 93vh;
     position: relative;
     padding-top: 0;
     text-align: center;
@@ -353,15 +354,17 @@
     color: #ffffff;
     margin-top: 10px;
     margin-bottom: 40px;
+    
   }
+ 
 
   .home-info {
-    margin-top: 7em;
+    margin-top: 10em;
   }
 
-  .home-info h3 {
+  .home-info h2 {
     color: #f0f0f0;
-    font-size: 11px;
+   opacity: 1.0;
     font-weight: bold;
     letter-spacing: 4px;
     text-transform: uppercase;
@@ -440,7 +443,10 @@
   }
   .descripcion-pagina{
     border-radius: 100px;
-    background-color: #ff4716;
+    background:linear-gradient(.25turn,#ff4716,#14315d);
+    margin-top: 5em;
+    margin-bottom: 1em;
+    padding-top: 1em;
     color: #ffffff;
   }
   .team-thumb {
@@ -502,6 +508,10 @@
 
 
 
+ .texto-indice{
+   opacity: 0.0;
+   color: white;
+ }
   /*---------------------------------------
       TESTIMONIAL           
   -----------------------------------------*/
