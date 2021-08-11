@@ -19,7 +19,9 @@
         <link rel="stylesheet" href="../css/font-awesome.min.css" />
         <link rel="shortcut icon" type="image/x-icon" href="../images/Logo.svg" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
         <!-- MAIN CSS -->
         <link rel="stylesheet" href="../css/tooplate-style.css" />
     </head>
@@ -68,55 +70,71 @@
     </header>
 
     <!-- CONTACTANOS -->
-    <section id="contact" data-stellar-background-ratio="0.5">
+    <section  data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row">
             <div class="col-md-12 col-sm-12">
-              <form id="contact-form" role="form" action="" method="post">
+              <form id="contact-form" class="needs-validation" role="form" action="" method="post" novalidate >
                 <div class="section-title">
                   <h1>Contáctanos</h1>
                   <p>Nosotros nos pondremos en contacto contigo a la brevedad</p>
                 </div>
                 <div class="row">
-                <div class="col-md-4 col-sm-4">
+                <div class="col-md-4 col-sm-4 position-relative">
+                  
                   <input
                     id="full_name"
                     type="text"
-                    class="form-control"
+                    class="form-control formato"
                     placeholder="Nombre completo"
                     name="name"
                     required
+
                   />
+                  <div class="valid-tooltip">
+                    Campo valido.
+                  </div>
+                  
+                  
                 </div>
-                <div class="col-md-4 col-sm-4">
+                <div class="col-md-4 col-sm-4 position-relative">
                   <input
+                    id="email"
                     type="email"
-                    class="form-control"
+                    class="form-control formato"
                     placeholder="Dirección de correo / email"
                     name="email"
                     required
                   />
+                  <div class="valid-tooltip">
+                     Saigono
+                    </div>
                 </div>
-                <div class="col-md-4 col-sm-4">
-                  <input
+                <div class="col-md-4 col-sm-4 position-relative">
+                  <input 
+                    id="tel"
                     type="tel"
-                    class="form-control"
+                    class="form-control formato is-valid"
                     placeholder="Número de telefono"
                     name="phone"
-                    required
+                   required
                   />
+                  <div class="valid-tooltip">
+                   
+                  </div>
                 </div>
               </div>
-                <div class="col-md-12 col-sm-12">
+                <div class="col-md-12 col-sm-12" style="margin-top: 3em;">
                   <textarea
-                  class="form-control"
+                  class="form-control formato"
                   rows="8"
                   placeholder="Un mensaje para nosotros:"
                   name="message"
                   required
                   ></textarea>
                 </div>
-                <div class="offset-md-4 col-md-4 col-sm-4">
+                
+                <div class="offset-md-4 col-md-4 col-sm-4" style="margin-bottom: 1em;">
                   <input
                     id="send_msg"
                     type="submit"
@@ -124,8 +142,11 @@
                     name="send message"
                     value="Enviar Mensaje"
                   />
+                  <div class="valid-tooltip"></div>
                 </div>
+                
               </form>
+             
             </div>
           </div>
         </div>
@@ -167,7 +188,8 @@
     <script src="./../js/owl.carousel.min.js"></script>
     <script src="./../js/smoothscroll.js"></script>
     <script src="./../js/custom.js"></script>
-    <script src="./../js/contact.js"></script>
+    <script src="./../js/contact.js"></script> 
+    <script src="../js/validaciones.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 </body>

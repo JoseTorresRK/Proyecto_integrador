@@ -10,6 +10,26 @@
   background:linear-gradient(.25turn,#ff4716,#14315d);
   height: 4em;
 }
+header .navbar a{
+  font-family: 'Montserrat', sans-serif;
+}
+header .navbar ul li a:hover {
+  background-color: #0a65ff;
+  color:#fff;
+  border-radius: 100px;
+  
+
+}
+header .navbar a:hover{
+  color: white;
+  
+}
+header .active {
+  background-color: #0a65ff;
+  color:#fff;
+  border-radius: 100px;
+
+}
 
 
   /*---------------------------------------
@@ -222,6 +242,7 @@
   /*---------------------------------------
       MENU              
   -----------------------------------------*/
+  
 
   .custom-navbar {
     border: none;
@@ -236,7 +257,7 @@
     font-weight: 500;
     letter-spacing: -1px;
   }
-
+   
   .top-nav-collapse {
     background: #ffffff;
   }
@@ -650,19 +671,16 @@
       CONTACT             
   -----------------------------------------*/
 
-  #contact-form .col-md-12,
-  #contact-form .col-md-4 {
-    padding-left: 0;
-  }
+  
 
-  #contact-form .form-control {
+    .formato {
     background: transparent;
     border: 0;
     border-bottom: 3px solid #f0f0f0;
     border-radius: 0;
     box-shadow: none;
     margin: 10px 0;
-  }
+  }  
 
   #contact-form .form-control:focus {
     border-bottom-color: #202020;
