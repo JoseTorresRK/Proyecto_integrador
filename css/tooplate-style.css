@@ -4,6 +4,9 @@
     font-family: 'Open Sans', sans-serif;
     overflow-x: hidden;
     background: #f9f9f9;
+    --orange: #ff4716;
+    --lighter-gray: #f0f0f0;
+    --light-gray: #c9c9c9;
   }
 
 .header .navbar{
@@ -752,7 +755,34 @@ header .active {
     color: #ffffff;
   }
 
+  /*---------------------------------------
+     LISTA PERFILES TRABAJADORES             
+  -----------------------------------------*/
 
+  #inline_tekton {
+    color: var(--orange);
+  }
+  
+  #btn-filtro{
+    background-color: var(--lighter-gray);
+    margin: 5px 0;
+  }
+  .main{
+    margin: auto;
+  }
+  .card-profiles{
+    /* height: 80px; */
+    max-height: fit-content;
+    border: 1px solid var(--light-gray);
+    border-radius: 10px;
+    margin: 5px 0;
+    padding: 15px;
+  }
+  .profile-img{
+    /* width: 60px; */
+    height: 80px;
+    width: auto;
+  }
 
   /*---------------------------------------
      RESPONSIVE STYLES              
