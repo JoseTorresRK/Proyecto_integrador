@@ -10,16 +10,20 @@
   }
 
 .header .navbar{
-  background:linear-gradient(.25turn,#ff4716,#14315d);
+  background:linear-gradient(.25turn,#14315d,#0a65ff);
   height: 4em;
+}
+.imagen{
+  height: 130px;
+  width:100px;
 }
 header .navbar a{
   font-family: 'Montserrat', sans-serif;
 }
 header .navbar ul li a:hover {
-  background-color: #0a65ff;
+  background-color: #ff4716;
   color:#fff;
-  border-radius: 100px;
+  border-radius: 10px;
   
 
 }
@@ -28,9 +32,9 @@ header .navbar a:hover{
   
 }
 header .active {
-  background-color: #0a65ff;
+  background-color: #ff4716;
   color:#fff;
-  border-radius: 100px;
+  border-radius: 10px;
 
 }
 
@@ -311,6 +315,7 @@ header .active {
       border-bottom: 0;
       background: 0 0; 
     }
+    
 
     .custom-navbar.top-nav-collapse {
       background: #ff4716;
@@ -838,6 +843,10 @@ header .active {
     .margen{
       margin-top: 40%;
     }
+   .imagen{
+     width: 2em;
+     height: 2em;
+   }
   
     .section-title {
       padding-bottom: 20px;
@@ -866,7 +875,7 @@ header .active {
     }
     #navbarNav{
       background: linear-gradient(.25turn,#ff4716,#14315d);
-      margin-top: 1em;
+     
     }
     h2{
 
@@ -933,7 +942,10 @@ header .active {
 
 
   @media screen and (max-width: 480px) {
-    
+    .imagen{
+      width: 2em;
+      height: 2em;
+    }
     .navbar .container-fluid{
       padding: 0em;
     }
@@ -945,13 +957,14 @@ header .active {
     }
     .alinear{
       padding-left: 1em;
+      padding-top: 0em;
     }
     .alinearmenu{
       margin-right: 1em;
     }
     #navbarNav{
       background: linear-gradient(.25turn,#ff4716,#14315d);
-      margin-top: 1em;
+      padding-top: 0em;
     }
     .section-title {
       padding-bottom: 20px;

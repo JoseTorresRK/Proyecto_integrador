@@ -26,12 +26,13 @@ function validarFormulario(e){
     let aciertos=document.getElementsByClassName("valid-tooltip");
     let inputEmail=document.getElementById("email");
     console.log(inputNombre.value);
+    
     if(inputNombre.value.length>0){
         
-        mensajeValidacion(true,"Valido",inputNombre,0)
+        mensajeValidacion(true,"Valido",inputNombre,0);
     }
     else{
-        mensajeValidacion(false,"El nombre no debe estar vacio",inputNombre,0)
+        mensajeValidacion(false,"El nombre no debe estar vacio",inputNombre,0);
     }
     console.log(typeof(inputtel.value));
     if(inputtel.value.length===0){
