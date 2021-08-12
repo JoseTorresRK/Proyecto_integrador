@@ -10,8 +10,32 @@
   }
 
 .header .navbar{
-  background:linear-gradient(.25turn,#ff4716,#14315d);
+  background:linear-gradient(.25turn,#14315d,#0a65ff);
   height: 4em;
+}
+.imagen{
+  height: 130px;
+  width:100px;
+}
+header .navbar a{
+  font-family: 'Montserrat', sans-serif;
+}
+header .navbar ul li a:hover {
+  background-color: #ff4716;
+  color:#fff;
+  border-radius: 10px;
+  
+
+}
+header .navbar a:hover{
+  color: white;
+  
+}
+header .active {
+  background-color: #ff4716;
+  color:#fff;
+  border-radius: 10px;
+
 }
 
 
@@ -225,6 +249,7 @@
   /*---------------------------------------
       MENU              
   -----------------------------------------*/
+  
 
   .custom-navbar {
     border: none;
@@ -239,7 +264,7 @@
     font-weight: 500;
     letter-spacing: -1px;
   }
-
+   
   .top-nav-collapse {
     background: #ffffff;
   }
@@ -290,6 +315,7 @@
       border-bottom: 0;
       background: 0 0; 
     }
+    
 
     .custom-navbar.top-nav-collapse {
       background: #ff4716;
@@ -653,19 +679,16 @@
       CONTACT             
   -----------------------------------------*/
 
-  #contact-form .col-md-12,
-  #contact-form .col-md-4 {
-    padding-left: 0;
-  }
+  
 
-  #contact-form .form-control {
+    .formato {
     background: transparent;
     border: 0;
     border-bottom: 3px solid #f0f0f0;
     border-radius: 0;
     box-shadow: none;
     margin: 10px 0;
-  }
+  }  
 
   #contact-form .form-control:focus {
     border-bottom-color: #202020;
@@ -820,6 +843,10 @@
     .margen{
       margin-top: 40%;
     }
+   .imagen{
+     width: 2em;
+     height: 2em;
+   }
   
     .section-title {
       padding-bottom: 20px;
@@ -848,7 +875,7 @@
     }
     #navbarNav{
       background: linear-gradient(.25turn,#ff4716,#14315d);
-      margin-top: 1em;
+     
     }
     h2{
 
@@ -915,7 +942,10 @@
 
 
   @media screen and (max-width: 480px) {
-    
+    .imagen{
+      width: 2em;
+      height: 2em;
+    }
     .navbar .container-fluid{
       padding: 0em;
     }
@@ -927,13 +957,14 @@
     }
     .alinear{
       padding-left: 1em;
+      padding-top: 0em;
     }
     .alinearmenu{
       margin-right: 1em;
     }
     #navbarNav{
       background: linear-gradient(.25turn,#ff4716,#14315d);
-      margin-top: 1em;
+      padding-top: 0em;
     }
     .section-title {
       padding-bottom: 20px;
