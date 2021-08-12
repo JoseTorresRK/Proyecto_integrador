@@ -24,7 +24,7 @@ function addStars(estrellas){
 
 addItem({'name':'José ',
     'last_name':'López Tellez',
-    'img':'https://www.gs1india.org/media/Juice_pack.jpg',
+    'img':'../images/carpintero.jpg',
     'description':'Trabajador con gran experiencia en trabajos de carpinteria',
     'works':["Carpinteria","Herreria"],
     'age':"39",
@@ -32,7 +32,37 @@ addItem({'name':'José ',
     'salary':'500',
     'ubicacion':'Estado de México'
     });
-addItem({'name':'José ',
+addItem({'name':'Armando ',
+    'last_name':'Sanchez Perez',
+    'img':'../images/1herreros.jpg',
+    'description':'Trabajador con gran experiencia en trabajos de carpinteria',
+    'works':["Herreria"],
+    'age':"21",
+    'qualification':'3',
+    'salary':'1500',
+    'ubicacion':'DF'
+    });
+    addItem({'name':'Pedro ',
+    'last_name':'Navajas Cardozo',
+    'img':'../images/carpintero.jpg',
+    'description':'Trabajador con gran experiencia en trabajos de carpinteria',
+    'works':["Plomeria","Herreria"],
+    'age':"39",
+    'qualification':'4',
+    'salary':'500',
+    'ubicacion':'Estado de México'
+    });
+    addItem({'name':'José ',
+    'last_name':'López Tellez',
+    'img':'../images/cocinera.jpg',
+    'description':'Trabajador con gran experiencia en trabajos de carpinteria',
+    'works':["Carpinteria","Herreria"],
+    'age':"39",
+    'qualification':'5',
+    'salary':'500',
+    'ubicacion':'Estado de México'
+    });
+    addItem({'name':'Santiago ',
     'last_name':'López Tellez',
     'img':'https://www.gs1india.org/media/Juice_pack.jpg',
     'description':'Trabajador con gran experiencia en trabajos de carpinteria',
@@ -82,38 +112,8 @@ addItem({'name':'José ',
     'salary':'500',
     'ubicacion':'Estado de México'
     });
-    addItem({'name':'José ',
-    'last_name':'López Tellez',
-    'img':'https://www.gs1india.org/media/Juice_pack.jpg',
-    'description':'Trabajador con gran experiencia en trabajos de carpinteria',
-    'works':["Carpinteria","Herreria"],
-    'age':"39",
-    'qualification':'5',
-    'salary':'500',
-    'ubicacion':'Estado de México'
-    });
-    addItem({'name':'José ',
-    'last_name':'López Tellez',
-    'img':'https://www.gs1india.org/media/Juice_pack.jpg',
-    'description':'Trabajador con gran experiencia en trabajos de carpinteria',
-    'works':["Carpinteria","Herreria"],
-    'age':"39",
-    'qualification':'5',
-    'salary':'500',
-    'ubicacion':'Estado de México'
-    });
-    addItem({'name':'José ',
-    'last_name':'López Tellez',
-    'img':'https://www.gs1india.org/media/Juice_pack.jpg',
-    'description':'Trabajador con gran experiencia en trabajos de carpinteria',
-    'works':["Carpinteria","Herreria"],
-    'age':"39",
-    'qualification':'5',
-    'salary':'500',
-    'ubicacion':'Estado de México'
-    });
-    addItem({'name':'José ',
-    'last_name':'López Tellez',
+    addItem({'name':'Andres ',
+    'last_name':'Garcia López',
     'img':'https://www.gs1india.org/media/Juice_pack.jpg',
     'description':'Trabajador con gran experiencia en trabajos de carpinteria',
     'works':["Carpinteria","Herreria"],
