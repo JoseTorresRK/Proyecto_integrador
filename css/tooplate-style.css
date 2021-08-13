@@ -100,6 +100,9 @@ header .active {
     cursor: pointer;
     background: #202020;
   }
+  .margen-formulario{
+    margin-bottom: 3em;
+  }
 
   .section-title {
     padding-bottom: 40px;
