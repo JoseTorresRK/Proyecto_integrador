@@ -846,10 +846,10 @@ header .active {
     .margen{
       margin-top: 40%;
     }
-   .imagen{
+   /* .imagen{
      width: 2em;
      height: 2em;
-   }
+   } */
   
     .section-title {
       padding-bottom: 20px;
