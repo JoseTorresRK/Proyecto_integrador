@@ -13,12 +13,15 @@
       content="width=device-width, initial-scale=1, maximum-scale=1"
     />
 
-    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="../css/bootstrap.min.css" /> -->
     <link rel="stylesheet" href="../css/owl.carousel.css" />
     <link rel="stylesheet" href="../css/owl.theme.default.min.css" />
     <link rel="stylesheet" href="../css/font-awesome.min.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../images/Logo.svg" />
-
+    <link rel="shortcut icon" type="image/x-icon" href="../images/Tekton_icono.png" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="../css/tooplate-style.css" />
@@ -32,66 +35,62 @@
     </section>
 
     <!-- MENU -->
-    <section class="navbar custom-navbar navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button
-            class="navbar-toggle"
-            data-toggle="collapse"
-            data-target=".navbar-collapse"
-          >
-            <span class="icon icon-bar"></span>
-            <span class="icon icon-bar"></span>
-            <span class="icon icon-bar"></span>
+    <header class="header">
+      <nav class="navbar navbar-expand-lg me-auto fixed-top" >
+        <div class="container-fluid">
+          <a class="navbar-brand colorindex alinear" href="../index.html"><img src="../images/Tekton_logo.png" alt="" style="width: 100px; height: 130px;"></a>
+
+          <button class="navbar-toggler alinearmenu navbar-dark bg-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
           </button>
-
-          <!-- lOGO TEXT HERE -->
-          <a href="../index.html" class="navbar-brand">TEKTÔN</a>
-        </div>
-
-        <!-- MENU LINKS -->
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li ><a href="../index.html" class="smoothScroll" id="Main">Home</a></li>
-            <li class="active">
-              <a href="../html/Acerca_nosotros.html" class="smoothScroll">Acerca de Nosotros</a>
-            </li>
-            <li><a href="./contact.html" class="smoothScroll">Contáctanos</a></li>
-            <li><a href="#contact" class="smoothScroll">Ingresar</a></li>
-            <li><a href="#contact" class="smoothScroll">Registrarse</a></li>
-     
-              <li>
-                <a href="./lista_pub_trabajo.html" >Servicios</a>
+          
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link colorindex" aria-current="page" href="../index.html">Home</a>
               </li>
-                
-          </ul>
-         
-            
-      
+              <li class="nav-item">
+                <a class="nav-link active" href="./Acerca_nosotros.html">Acerca de Nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link colorindex" href="./contact.html">Contacto</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link colorindex" href="#">Ingresar</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link colorindex" href="#">Registrarse</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link colorindex" href="./lista_pub_trabajo.html">Servicios</a>
+              </li>
+
+            </ul>
+          </div>
         </div>
-      </div>
-    </section>
+      </nav>
+    </header>
     
     <!-- ABOUT US -->
-    <section id="about" data-stellar-background-ratio="0.5">
+    <section id="about" data-stellar-background-ratio="0.5" style="padding: 0px;">
         <div class="container">
           <div class="row">
             <div class=" col-md-12 col-sm-12 descripcion-pagina">
-              <div class="section-title col-md-12" style="margin-top: 3em; margin-bottom: 3em;">
+              <div class="section-title col-12" >
                 <h1>Buscas algún trabajador doméstico o buscas empleo, en Tekton te podemos ayudar.<br>Somos una página encargada de ofrecer un contacto con los trabajadores domésticos y llegar a un acuerdo en conjunto para poder realizar el trabajo especificado.</h1>
               </div>
             </div>
-            <div class="col-md-offset-3 col-md-6 col-sm-12" >
+            <div class="col-md-offset-3 col-md-12 col-sm-12 col-12" >
               <div class="section-title">
                 <a href="#nosotros" ><h1>Equipo de desarrollo</h1></a>
               </div>
             </div>
           </div>
-          <div class="row">
+          <div class="row" id="nosotros">
             
             <!-- Garcia -->
-            <div class="col-md-4 col-sm-4"id=nosotros>
-              <div class="team-thumb" style="margin-top: 100px;">
+            <div class="col-md-4 col-sm-4" style="margin-top: 4em;" >
+              <div class="team-thumb" >
 
                 <img 
                   src="../images/david.jpg"
@@ -109,8 +108,8 @@
               </div>
             </div>
             <!-- Oscar -->
-            <div class="col-md-4 col-sm-4">
-              <div class="team-thumb" style="margin-top: 100px;">
+            <div class="col-md-4 col-sm-4" style="margin-top: 4em;">
+              <div class="team-thumb" >
                 <div class="team-info team-thumb-down">
                   <h2>Victor Martinez de la O</h2>
                   <small>Senior Manager</small>
@@ -120,15 +119,15 @@
                   </p>
                 </div>
                 <img
-                  src="../images/team-image2.jpg"
-                  class="img-responsive"
+                  src="../images/Victor.jpeg"
+                  class="img-responsive size-team"
                   alt="Catherine Soft"
                 />
               </div>
             </div>
             <!-- Victor -->
-            <div class="col-md-4 col-sm-4">
-              <div class="team-thumb" style="margin-top: 100px;">
+            <div class="col-md-4 col-sm-4" style="margin-top: 4em;">
+              <div class="team-thumb" >
                 <img
                   src="../images/Oscar.JPG"
                   class="img-responsive size-team"
@@ -154,7 +153,7 @@
               <div class="team-thumb">
                 <img
                   src="../images/mifoto.jpg"
-                  class="img-responsive"
+                  class="img-responsive size-team"
                   alt="Andrew Orange"
                 />
                 <div class="team-info team-thumb-up">
@@ -183,7 +182,7 @@
                 </div>
                 <img
                   src="../images/team-RamosOsmar.jpeg"
-                  class="img-responsive"
+                  class="img-responsive size-team"
                   alt="Osmar Ramos"
                 />
               </div>
@@ -213,7 +212,7 @@
                                <div class="item">
                                     <h3>Gracias a Tekton pude encontrar a Carlos mi nuevo carpintero de confianza y siempre lo vuelvo a pedir en Tekton</h3>
                                     <div class="testimonial-item">
-                                         <img src="../images/tst-image1.jpg" class="img-responsive" alt="Michael">
+                                         <img src="../images/tst-image1.jpg" class="img-responsive carusel-normal" alt="Michael" style="width: 60px;">
                                          <h4>Michael</h4>
                                     </div>
                                </div>
@@ -221,7 +220,7 @@
                                <div class="item">
                                     <h3>Por la pandemia, era muy difícil encontrar clientes, pero gracias a Tekton no me deja de caer trabajo</h3>
                                     <div class="testimonial-item">
-                                         <img src="../images/tst-image2.jpg" class="img-responsive" alt="Sofia">
+                                         <img src="../images/tst-image2.jpg" class="img-responsive carusel-normal" alt="Sofia" style="width:60px">
                                          <h4>Sofia</h4>
                                     </div>
                                </div>
@@ -229,7 +228,7 @@
                                <div class="item">
                                     <h3>Gracias a las calificaciones, puedo escoger a gente que trabaja con calidad y eficiencia</h3>
                                     <div class="testimonial-item">
-                                         <img src="../images/tst-image3.jpg" class="img-responsive" alt="Monica">
+                                         <img src="../images/tst-image3.jpg" class="img-responsive carusel-normal" alt="Monica" style="width: 60px;">
                                          <h4>Monica</h4>
                                     </div>
                                </div>
@@ -245,31 +244,33 @@
 
     <!-- PIEDE PAGINA -->
     <footer id="footer" data-stellar-background-ratio="0.5">
-        <div class="container">
-          <div class="row">
-            <div class="copyright-text col-md-12 col-sm-12">
-              <div class="col-md-6 col-sm-6">
-                <p>Copyright &copy; 2021 TEKTÔN S.A. de C.V.</p>
-              </div>
-  
-              <div class="col-md-6 col-sm-6">
-                <ul class="social-icon">
-                  <li>
-                    <a
-                      href="#"
-                      class="fa fa-facebook-square"
-                      attr="facebook icon"
-                    ></a>
-                  </li>
-                  <li><a href="#" class="fa fa-twitter"></a></li>
-                  <li><a href="#" class="fa fa-instagram"></a></li>
-                </ul>
-              </div>
+      <div class="container">
+        <div class="row">
+          <div class="copyright-text col-md-12 col-sm-6">
+            <div class="row">
+            <div class="col-md-6 col-sm-6">
+              <p>Copyright &copy; 2021 TEKTÔN S.A. de C.V.</p>
+            </div>
+
+            <div class="col-md-6 col-sm-6">
+              <ul class="social-icon">
+                <li>
+                  <a
+                    href="#"
+                    class="fa fa-facebook-square"
+                    attr="facebook icon"
+                  ></a>
+                </li>
+                <li><a href="#" class="fa fa-twitter"></a></li>
+                <li><a href="#" class="fa fa-instagram"></a></li>
+              </ul>
             </div>
           </div>
+          </div>
         </div>
-      </footer>
-  
+      </div>
+    </footer>
+
       <!-- SCRIPTS -->
       <script src="../js/jquery.js"></script>
       <script src="../js/bootstrap.min.js"></script>
@@ -277,5 +278,7 @@
       <script src="../js/owl.carousel.min.js"></script>
       <script src="../js/smoothscroll.js"></script>
       <script src="../js/custom.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
     </body>
   </html>
