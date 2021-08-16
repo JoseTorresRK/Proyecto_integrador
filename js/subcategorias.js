@@ -1,5 +1,6 @@
 const selectElement=document.querySelector("#Category");
 selectElement.addEventListener('change',(event)=>{
+    console.log("No me puedes ber");
     const subcategoria=document.querySelector("#Subcategory");
     subcategoria.innerHTML=opcionesSubcategory(selectElement.value);
 });
