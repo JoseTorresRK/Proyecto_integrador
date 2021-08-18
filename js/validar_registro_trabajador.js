@@ -1,7 +1,7 @@
+
 let validacion=document.getElementById("contact-form");
-let validacion2=document.getElementById("contact-form2");
+
 const myStorage=window.localStorage;
-myStorage.setItem("Trabajadores",JSON.stringify([]));
 console.log("activae");
 function mensajeValidacion(tipoMensaje,input,campo){
     let validar=document.querySelectorAll("#contact-form div .position-relative");
@@ -189,7 +189,13 @@ function validarFormulario(e){
      aciertos.push( mensajeValidacion(validarImagen(file.value),file,13));
      console.log(aciertos);
      if(aciertos.includes(false)){
-         alert("Te equivocaste en un campo, revisa los campos de nuevo");
+         //alert("Te equivocaste en un campo, revisa los campos de nuevo");
+         new Swal({
+            icon: 'error',
+            title: 'Ingresaste mal un campo, regresa para checar.',
+            text: 'Something went wrong!',
+            footer: '<a href="">Why do I have this issue?</a>'
+          })
          return;
      }
     console.log(inputSub.options);
@@ -218,6 +224,7 @@ function validarFormulario(e){
      camposValidados.push(arreglo);
      
      saveToMyStorage(crearTrabajador(camposValidados));
+     window.location="lista_perfiles.html"; 
 
     }
  function recolectarMyStorage(){
@@ -253,14 +260,10 @@ function saveToMyStorage(trabajador){
     console.log(array_trabajador,"1234");
     array_trabajador.push(trabajador);
     myStorage.setItem("Trabajadores",JSON.stringify(array_trabajador));
+    
 }
     // imagen.innerHTML+=`<img src=${file.value}>`;
 
+validacion.addEventListener("submit",validarFormulario);
 
-
-validacion.addEventListener('submit',validarFormulario);
-validacion2.addEventListener('submit',(event)=>{
-    event.preventDefault();
-    window.location="lista_perfiles.html";
-})
 

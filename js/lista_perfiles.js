@@ -280,10 +280,3 @@ window.addEventListener("load", (event)=>{
     renderCard();
 
 });
-validacion.addEventListener("submit",(event)=>{
-  event.preventDefault();
-  console.log("No est pa")
-  myStorage.setItem("Trabajadores",JSON.stringify(obtenerLocal()));
-  window.location="formulario.html";
-  
-});
