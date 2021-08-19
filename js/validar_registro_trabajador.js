@@ -2,6 +2,7 @@
 let validacion=document.getElementById("contact-form");
 
 const myStorage=window.localStorage;
+//myStorage.removeItem("Trabajadores")
 function mensajeValidacion(tipoMensaje,input,campo){
     let validar=document.querySelectorAll("#contact-form div .position-relative");
     let validacionDinamica;
@@ -231,10 +232,18 @@ function validarFormulario(e){
     }
  function recolectarMyStorage(){
      let arregloTrabajadores=[];
+<<<<<<< HEAD
+     
+     if(myStorage.Trabajadores===undefined){
+         myStorage.setItem("Trabajadores",[]);
+         return [];
+     }
+=======
      if(myStorage.Trabajadores===undefined){
         myStorage.setItem("Trabajadores",[]);
         return [];
     }
+>>>>>>> develop
      arregloTrabajadores=JSON.parse(myStorage.Trabajadores);
      return arregloTrabajadores;    
  }
