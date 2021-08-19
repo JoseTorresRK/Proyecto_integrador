@@ -1,8 +1,7 @@
+
 let validacion=document.getElementById("contact-form");
-let validacion2=document.getElementById("contact-form2");
+
 const myStorage=window.localStorage;
-myStorage.setItem("Trabajadores",JSON.stringify([]));
-console.log("activae");
 function mensajeValidacion(tipoMensaje,input,campo){
     let validar=document.querySelectorAll("#contact-form div .position-relative");
     let validacionDinamica;
@@ -12,8 +11,7 @@ function mensajeValidacion(tipoMensaje,input,campo){
         input.classList.remove("is-invalid");
         input.classList.add("is-valid");
         pb=validar[campo].removeChild(validar[campo].lastElementChild);
-        console.log("pORqie lo borras",pb);
-        console.log("Po",validar[campo]);
+        
         validacionDinamica=document.createElement("div");
         validacionDinamica.classList.add("valid-tooltip")
         mensaje=document.createTextNode("Campo valido");
@@ -156,6 +154,8 @@ function validarFormulario(e){
      let inputNumExt=document.getElementById("Num-ext");
      let inputNumInt=document.getElementById("Num-int");
      let inputCategory=document.getElementById("Category");
+     console.log("Categoria");
+     console.log(inputCategory.value);
      let contrasena=document.getElementById("inputPassword");
      let file=document.getElementById("formFile");
      let confirmacionContrasena=document.getElementById("inputPasswordConfirm");
@@ -189,7 +189,13 @@ function validarFormulario(e){
      aciertos.push( mensajeValidacion(validarImagen(file.value),file,13));
      console.log(aciertos);
      if(aciertos.includes(false)){
-         alert("Te equivocaste en un campo, revisa los campos de nuevo");
+         //alert("Te equivocaste en un campo, revisa los campos de nuevo");
+         new Swal({
+            icon: 'error',
+            title: 'Ingresaste mal un campo, regresa para checar.',
+            text: 'Something went wrong!',
+            footer: '<a href="">Why do I have this issue?</a>'
+          })
          return;
      }
     console.log(inputSub.options);
@@ -214,10 +220,13 @@ function validarFormulario(e){
      camposValidados.push(inputCity.value);
      camposValidados.push(inputSeleccion.value);
      camposValidados.push(inputDescripcion.value);
+     console.log("Nueva");
+     console.log(inputCategory.value);
      camposValidados.push(inputCategory.value);
      camposValidados.push(arreglo);
      
      saveToMyStorage(crearTrabajador(camposValidados));
+     window.location="lista_perfiles.html"; 
 
     }
  function recolectarMyStorage(){
@@ -241,7 +250,7 @@ function crearTrabajador(camposValidados){
         "municipio":camposValidados[11],
         "estado":camposValidados[12],
         "description":camposValidados[13],
-        "Category":camposValidados[14],
+        "category":camposValidados[14],
         "subCategories":camposValidados[15]
     };
     return trabajador;
@@ -253,14 +262,10 @@ function saveToMyStorage(trabajador){
     console.log(array_trabajador,"1234");
     array_trabajador.push(trabajador);
     myStorage.setItem("Trabajadores",JSON.stringify(array_trabajador));
+    
 }
     // imagen.innerHTML+=`<img src=${file.value}>`;
 
+validacion.addEventListener("submit",validarFormulario);
 
-
-validacion.addEventListener('submit',validarFormulario);
-validacion2.addEventListener('submit',(event)=>{
-    event.preventDefault();
-    window.location="lista_perfiles.html";
-})
 

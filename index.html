@@ -39,17 +39,33 @@
 
      
         <header class="header">
+          <!--En esta parte se definira nuestra barra de navegación
+      y se pondra fija con fixed-top -->
         <nav class="navbar navbar-expand-lg me-auto fixed-top " >
+          <!-- Se define en un container-fluid, para que la barra ocupe toda la pantalla -->
           <div class="container-fluid">
-            
+           <!-- Link que hace referencia al archivo index, con la clase alinear se pone un espacio adecuado.
+          Este link es una imagen de nuestro logo Tekton o la imagen de nuestro icono, dependiendo el tamaño de la pantalla. Esto gracias a la etiqueta picture. -->
             <a class="navbar-brand colorindex" href="./index.html"> <picture> <source srcset="./images/Tekton_icono.png" media="(max-width:768px)"><img src="./images/TEKTON  orange .svg"  alt=""></picture> </a>
+            <!-- Esta parte es para cambiar el boton del menu de hamburgesa, para poder tener un icono en negro y sea distingible
+          con los colores establecidos. -->
             <button class="navbar-toggler alinearmenu navbar-dark bg-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <!-- El menú de hamburgesa define una imagen svg, el cual es la imagen del cuadro con las rayas
+            para desplegar el menú y este lo toma de la siguiente clase -->
               <span class="navbar-toggler-icon" ></span>
             </button>
-            
+            <!-- Aqui definimos los enlaces de nuestro menú obtenido de bootstrap 5.0 -->
             <div class="collapse navbar-collapse" id="navbarNav">
+              <!-- La estructura es la siguiente una etiqueta ul(unorder list) con la
+            clase ms-auto, que esta versión permite alinear a la derecha los items de la barra de navegación
+            esta unorder list tendrá list-items que a la vez contendra los links hacia cada una de nuestra páginas
+            se agrega una clase colorindex, para cambiar el color de los items a blanco o
+            si se requiere a otro color. -->
               <ul class="navbar-nav ms-auto">
+                <!-- Cada vez que se pase el cursor sobre un link, con los estilos se remarcara cada link -->
                 <li class="nav-item">
+                   <!-- Como estamos en acerca de nosotros, la clase active, nos permitira remarcar
+                este link siempre que estemos en esta página -->
                   <a class="nav-link active" aria-current="page" href="./index.html" >Home</a>
                 </li>
                 <li class="nav-item">
@@ -108,6 +124,7 @@
 
     <!-- FEATURE -->
     <section id="feature" data-stellar-background-ratio="0.5" style="padding-top: 50px;">
+      <!-- Usamos una clase cointainer para dejar espacios a los costados -->
       <div class="container">
            <div class="row">
 
@@ -118,6 +135,7 @@
                 </div>
 
                 <div class="col-md-6 col-sm-6">
+                  <!-- Aqui usamos la clase nav-tabs, para poder elegir entre dos opciones, para desplegar la información -->
                      <ul class="nav nav-tabs" role="tablist">
                           <li class="active"><a href="#tab01" aria-controls="tab01" role="tab" data-toggle="tab"id="Trabajador">Trabajador</a></li>
 
@@ -125,6 +143,7 @@
                      </ul>
 
                      <div class="tab-content">
+                       <!-- Este es el contenido del primet tab, lo podemos identificar por su id para poder hacer referencia a este -->
                           <div class="tab-pane active" id="tab01" role="tabpanel">
                                <div class="tab-pane-item">
                                     <h2>Encuentra trabajo de manera rápida </h2>
@@ -148,6 +167,8 @@
 
 
                           <div class="tab-pane" id="tab02" role="tabpanel">
+                                                   <!-- Este es el contenido del primet tab, lo podemos identificar por su id para poder hacer referencia a este -->
+
                                <div class="tab-pane-item">
                                     <h2>Encuentra a los mejores trabajadores</h2>
                                     <p>Con las calificaciones que manejamos podrás encontrar al empleado más completo.</p>
@@ -173,9 +194,9 @@
                      </div>
 
                 </div>
-
+                <!-- En esta parte se define un carusel para mostrar las imagenes de los trabajadores -->
                 <div class="col-md-6 col-sm-6">
-                     
+                     <!-- Se definen las clases que usa bootstrap para darle estilo, ademas de añadir una clase margen para acomodar el carusel -->
                      <div class="owl-carousel owl-theme margen" >
                       <div class="item ">
                            
@@ -262,7 +283,7 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/smoothscroll.js"></script>
     <script src="js/custom.js"></script>
-    <script src="js/CambioImagenes.js"></script>
+  
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     
   </body>

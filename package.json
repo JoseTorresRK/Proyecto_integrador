@@ -1,0 +1,22 @@
+{
+  "name": "sweetalert",
+  "version": "1.0.0",
+  "description": "E-comerce",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoseTorresRK/Proyecto_integrador.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoseTorresRK/Proyecto_integrador/issues"
+  },
+  "homepage": "https://github.com/JoseTorresRK/Proyecto_integrador#readme",
+  "dependencies": {
+    "sweetalert2": "^11.1.2"
+  }
+}

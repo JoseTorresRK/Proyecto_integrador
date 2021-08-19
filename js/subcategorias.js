@@ -1,6 +1,13 @@
+/** 
+ * Script para generar las subcategorias
+ * 
+*/
+/** @constant {}*/
 const selectElement=document.querySelector("#Category");
+//Agregar al elemento selectElement el evento, para cuando cambie su valor
+//se puedan obtener las subcategorias de cada categoria.
+
 selectElement.addEventListener('change',(event)=>{
-    console.log("No me puedes ber");
     const subcategoria=document.querySelector("#Subcategory");
     subcategoria.innerHTML=opcionesSubcategory(selectElement.value);
 });
