@@ -2,6 +2,7 @@
 let validacion=document.getElementById("contact-form");
 
 const myStorage=window.localStorage;
+//myStorage.removeItem("Trabajadores")
 function mensajeValidacion(tipoMensaje,input,campo){
     let validar=document.querySelectorAll("#contact-form div .position-relative");
     let validacionDinamica;
