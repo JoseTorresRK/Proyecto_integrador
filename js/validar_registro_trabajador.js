@@ -231,6 +231,10 @@ function validarFormulario(e){
     }
  function recolectarMyStorage(){
      let arregloTrabajadores=[];
+     if(myStorage.Trabajadores===undefined){
+        myStorage.setItem("Trabajadores",[]);
+        return [];
+    }
      arregloTrabajadores=JSON.parse(myStorage.Trabajadores);
      return arregloTrabajadores;    
  }
