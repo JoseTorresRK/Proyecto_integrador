@@ -35,18 +35,32 @@
     </section>
 
     <header class="header">
-      <nav class="navbar navbar-expand-lg me-auto fixed-top" >
+      <nav class="navbar navbar-expand-lg me-auto fixed-top " >
+        <!-- Se define en un container-fluid, para que la barra ocupe toda la pantalla -->
         <div class="container-fluid">
-          <a class="navbar-brand colorindex alinear" href="../index.html"><img src="../images/TEKTON  orange .svg" alt="" style="width: 100px; height: 130px;"></a>
-
+         <!-- Link que hace referencia al archivo index, con la clase alinear se pone un espacio adecuado.
+        Este link es una imagen de nuestro logo Tekton o la imagen de nuestro icono, dependiendo el tamaño de la pantalla. Esto gracias a la etiqueta picture. -->
+          <a class="navbar-brand colorindex" href="../index.html"> <picture> <source srcset="../images/Tekton_icono.png" media="(max-width:768px)"><img src="../images/TEKTON  orange .svg"  alt=""></picture> </a>
+          <!-- Esta parte es para cambiar el boton del menu de hamburgesa, para poder tener un icono en negro y sea distingible
+        con los colores establecidos. -->
           <button class="navbar-toggler alinearmenu navbar-dark bg-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <!-- El menú de hamburgesa define una imagen svg, el cual es la imagen del cuadro con las rayas
+          para desplegar el menú y este lo toma de la siguiente clase -->
+            <span class="navbar-toggler-icon" ></span>
           </button>
-          
+          <!-- Aqui definimos los enlaces de nuestro menú obtenido de bootstrap 5.0 -->
           <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- La estructura es la siguiente una etiqueta ul(unorder list) con la
+          clase ms-auto, que esta versión permite alinear a la derecha los items de la barra de navegación
+          esta unorder list tendrá list-items que a la vez contendra los links hacia cada una de nuestra páginas
+          se agrega una clase colorindex, para cambiar el color de los items a blanco o
+          si se requiere a otro color. -->
             <ul class="navbar-nav ms-auto">
+              <!-- Cada vez que se pase el cursor sobre un link, con los estilos se remarcara cada link -->
               <li class="nav-item">
-                <a class="nav-link colorindex" aria-current="page" href="../index.html">Home</a>
+                 <!-- Como estamos en acerca de nosotros, la clase active, nos permitira remarcar
+              este link siempre que estemos en esta página -->
+                <a class="nav-link active" aria-current="page" href="../index.html" >Inicio</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link colorindex" href="./Acerca_nosotros.html">Acerca de Nosotros</a>
@@ -61,7 +75,7 @@
                 <a class="nav-link colorindex" href="#">Registrarse</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link  active" href="./lista_pub_trabajo.html">Servicios</a>
+                <a class="nav-link colorindex" href="./lista_pub_trabajo.html">Servicios</a>
               </li>
 
             </ul>
@@ -95,12 +109,12 @@
                              <p>Cortadora de plasma</p>
                        </div>
                        <div class="pricing-bottom">
-                             <span class="pricing-dollar">$200/h</span>
-                             <a href="#" class="section-btn pricing-btn">Contrátalo!</a>
+                             <span class="pricing-dollar">Desde $200/h</span>
+                             <a href="./formulario.html" class="section-btn pricing-btn">Contrátalo!</a>
                        </div>
                    </div>
               </div>
-
+<!-- Algo raro paso -->
               <div class="col-md-4 col-sm-6">
                    <div class="pricing-thumb">
                        <div class="pricing-title">
@@ -109,14 +123,14 @@
                        </div>
                        <div class="pricing-info">
                              <p>Plantas exóticas</p>
-                             <p>Arboles frutales</p>
+                             <p>Árboles frutales</p>
                              <p>Invernaderos</p>
                              <p>Bonsáis</p>
                              <p>Jardineras</p>
                        </div>
                        <div class="pricing-bottom">
-                             <span class="pricing-dollar">$350/h</span>
-                             <a href="#" class="section-btn pricing-btn">Contrátalo!</a>
+                             <span class="pricing-dollar">Desde $350/h</span>
+                             <a href="./formulario.html" class="section-btn pricing-btn">Contrátalo!</a>
                        </div>
                    </div>
               </div>
@@ -135,8 +149,8 @@
                              <p>Bardas</p>
                        </div>
                        <div class="pricing-bottom">
-                             <span class="pricing-dollar">$550/h</span>
-                             <a href="#" class="section-btn pricing-btn">Contrátalo!</a>
+                             <span class="pricing-dollar">Desde $550/h</span>
+                             <a href="./formulario.html" class="section-btn pricing-btn">Contrátalo!</a>
                        </div>
                    </div>
               </div>
@@ -162,8 +176,8 @@
                                  <p>Instalaciones sanitarias</p>
                            </div>
                            <div class="pricing-bottom">
-                                 <span class="pricing-dollar">$1000/h</span>
-                                 <a href="#" class="section-btn pricing-btn">Contrátalo!</a>
+                                 <span class="pricing-dollar">Desde $1000/h</span>
+                                 <a href="./formulario.html" class="section-btn pricing-btn">Contrátalo!</a>
                            </div>
                        </div>
                   </div>
@@ -182,8 +196,8 @@
                                  <p>Juguetes en madera</p>
                            </div>
                            <div class="pricing-bottom">
-                                 <span class="pricing-dollar">$900/h</span>
-                                 <a href="#" class="section-btn pricing-btn">Contrátalo!</a>
+                                 <span class="pricing-dollar">Desde $900/h</span>
+                                 <a href="./formulario.html" class="section-btn pricing-btn">Contrátalo!</a>
                            </div>
                        </div>
                   </div>
@@ -202,8 +216,8 @@
                                  <p>Platillos exóticos</p>
                            </div>
                            <div class="pricing-bottom">
-                                 <span class="pricing-dollar">$1200/h</span>
-                                 <a href="#" class="section-btn pricing-btn">Contrátalo!</a>
+                                 <span class="pricing-dollar">Desde $1200/h</span>
+                                 <a href="./formulario.html" class="section-btn pricing-btn">Contrátalo!</a>
                            </div>
                        </div>
                   </div>
