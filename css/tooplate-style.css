@@ -13,7 +13,7 @@
   background:linear-gradient(.25turn,#14315d,#0a65ff);
   height: 4em;
 }
-.imagen{
+header .navbar img{
   height: 130px;
   width:100px;
 }
@@ -99,6 +99,9 @@ header .active {
   ::-webkit-scrollbar-thumb {
     cursor: pointer;
     background: #202020;
+  }
+  .margen-formulario{
+    margin-bottom: 3em;
   }
 
   .section-title {
@@ -843,10 +846,32 @@ header .active {
     .margen{
       margin-top: 40%;
     }
-   .imagen{
+    header .navbar img{
+      height: 2em;
+      width:2em;
+    }
+    #navbarNav{
+      margin-top: 1em;
+    }
+   
+    .navbar .container-fluid{
+      padding: 0em;
+    }
+    
+    .nav-item{
+      text-align: center;
+    }
+    .navbar .navbar-brand{
+      padding-left: 1em;
+      padding-bottom: 0em;
+      padding-top: 0em;
+    }
+    
+   
+   /* .imagen{
      width: 2em;
      height: 2em;
-   }
+   } */
   
     .section-title {
       padding-bottom: 20px;
@@ -942,26 +967,27 @@ header .active {
 
 
   @media screen and (max-width: 480px) {
-    .imagen{
-      width: 2em;
+    header .navbar img{
       height: 2em;
+      width:2em;
     }
+    #navbarNav{
+      margin-top: 1em;
+    }
+   
     .navbar .container-fluid{
       padding: 0em;
     }
-    .margen{
-      margin-top: 0em;
-    }
+    
     .nav-item{
       text-align: center;
     }
-    .alinear{
+    .navbar .navbar-brand{
       padding-left: 1em;
+      padding-bottom: 0em;
       padding-top: 0em;
     }
-    .alinearmenu{
-      margin-right: 1em;
-    }
+    
     #navbarNav{
       background: linear-gradient(.25turn,#ff4716,#14315d);
       padding-top: 0em;

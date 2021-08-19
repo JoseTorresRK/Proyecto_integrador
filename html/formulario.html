@@ -28,7 +28,7 @@
           <nav class="navbar navbar-expand-lg me-auto fixed-top " >
             <div class="container-fluid">
               
-              <a class="navbar-brand colorindex alinear" href="../index.html"><img src="../images/Tekton_logo.png" alt="" style="width: 100px; height: 130px;"></a>
+              <a class="navbar-brand colorindex alinear" href="../index.html"> <picture> <source srcset="../images/Tekton_icono.png" media="(max-width:768px)"><img src="../images/TEKTON  orange .svg"  alt=""></picture></a>
 
               <button class="navbar-toggler alinearmenu navbar-dark bg-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon" ></span>
@@ -61,16 +61,16 @@
           </nav>
         </header>
         <section  data-stellar-background-ratio="0.5">
-            <div class="container-fluid">
-                <form id="contact-form" class="needs-validation" role="form" action="" method="post" novalidate >
-                    <div class="row">
+            <div class="container">
+                <form id="contact-form" class="needs-validation row g-3"   novalidate>
+                    <div class="row ">
                         <div class="section-title">
                             <h1>Crea tu perfil. </h1>
                            <p>Para ser visto por miles de personas</p>
                           </div>
                     </div>
-                        <div class="row">
-                            <div class="col-md-4 col-sm-4 position-relative">
+                        <div class="row margen-formulario">
+                            <div class="col-md-4 col-sm-4  position-relative">
                               
                               <input
                                 id="full_name"
@@ -87,7 +87,7 @@
                               
                               
                             </div>
-                            <div class="col-md-4 col-sm-4 position-relative">
+                            <div class="col-md-4 col-sm-4 offset-md-1 position-relative">
                               <input
                                 id="email"
                                 type="email"
@@ -97,14 +97,14 @@
                                 required
                               />
                               <div class="valid-tooltip">
-                                 Saigono
+                                 
                                 </div>
                             </div>
-                            <div class="col-md-4 col-sm-4 position-relative">
+                            <div class="col-md-3 col-sm-3  position-relative">
                               <input 
                                 id="tel"
                                 type="tel"
-                                class="form-control formato is-valid"
+                                class="form-control formato"
                                 placeholder="Número de telefono"
                                 name="phone"
                                required
@@ -114,10 +114,10 @@
                               </div>
                             </div>
                           </div>
-                          <div class="row">
-                            <div class="col-md-4 col-sm-4">
+                          <div class="row margen-formulario">
+                            <div class="col-md-3 col-sm-3 position-relative">
                               <label for="inputState">Estado</label>
-                              <select id="inputState" class="form-select">
+                              <select id="inputState" class="form-select ">
                                 <option value="">Seleccione uno...</option>
                                 <option value="AGS">Aguascalientes</option>
                                 <option value="BC">Baja California</option>
@@ -152,8 +152,12 @@
                                 <option value="YUC">Yucatán</option>
                                 <option value="ZAC">Zacatecas</option>
                               </select>
+                              <div class="valid-tooltip">
+                                Campo valido.
+                              </div>
+                              
                             </div>
-                            <div class="col-md-4 col-sm-4">
+                            <div class="offset-md-2 col-md-3 col-sm-3 position-relative">
                               <input  id="city"
                               type="text"
                               class="form-control formato"
@@ -161,31 +165,52 @@
                               name="city"
                               required
                              >
+                             <div class="valid-tooltip">
+                              
                             </div>
                             
-                            <div class="col-md-4 col-sm-4">
+                            </div>
+                            
+                            <div class="offset-1 col-md-3 col-sm-3 position-relative">
                              
                               <input
                                 type="text"
                                 class="form-control formato"
                                 id="inputAddress"
                                 placeholder="Ej. Calle Hidalgo"
+                                name="inputAddress"
                               />
+                              <div class="valid-tooltip">
+                                Campo valido.
+                              </div>
+                              
                          
                           
                         </div>
                           </div>
-                          <div class="row">
-                            <div class="col-md-2 col-sm-2 ">
-                              <input type="number" class="form-control formato" id="inputZip" placeholder="Zip" />
+                          <div class="row margen-formulario">
+                            <div class="col-md-2 col-sm-2 position-relative">
+                              <input type="text" class="form-control formato" id="inputZip" name="inputZip" placeholder="Zip" />
+                              <div class="valid-tooltip">
+                                Campo valido.
+                              </div>
+                              
                            </div>
-                           <div class="col-md-2 col-sm-2 offset-md-1 offset-md-1">
-                            <input type="number" class="form-control formato" id="Num-ext" placeholder="Numero Exterior" />
+                           <div class="col-md-2 col-sm-2 offset-md-1 offset-md-1 position-relative">
+                            <input type="text" class="form-control formato" id="Num-ext" name="Num-ext" placeholder="Numero Exterior" />
+                            <div class="valid-tooltip">
+                              Campo valido.
+                            </div>
+                            
                            </div>
-                           <div class="col-md-2 col-sm-2 offset-md-1 offset-md-1">
-                            <input type="number" class="form-control formato" id="Num-int" placeholder="Numero Interior" />
+                           <div class="col-md-2 col-sm-2 offset-md-1 offset-md-1 position-relative">
+                            <input type="text" class="form-control formato" id="Num-int" placeholder="Numero Interior" />
+                            <div class="valid-tooltip">
+                              Campo valido.
+                            </div>
+                            
                            </div>
-                            <div class="col-md-4 col-sm-4">
+                            <div class="col-md-4 col-sm-4 position-relative">
                               <label for="Category">Categoria</label>
                               <select id="Category" class="form-select">
                                 <option value="">Seleccione una categoria</option>
@@ -196,60 +221,93 @@
                                 <option value="Jardineria">Jardineria</option>
                                 <option value="Plomeria">Plomeria</option>                               
                               </select>
+                              <div class="valid-tooltip">
+                                Campo valido.
+                              </div>
+                              
                             </div>
                             
                             
                             
                           </div>
+                          
                           <div class="row">
-                            <div class="col-md-4 col-sm-4">
+                            <div class="col-md-4 col-sm-4 position-relative">
                               
                               <label for="Subcategory">Subcategorias</label>
                               <select id="Subcategory" class="form-select" multiple="multiple" size="4">
-                                <option value="">Seleccione una categoria</option>
-                                <option value="Albañileria">Albañileria</option>
-                                <option value="Carpinteria">Carpinteria</option>
-                                <option value="Cocina">Cocina</option>
-                                <option value="Herreria">Herreria</option>
-                                <option value="Jardineria">Jardineria</option>
-                                <option value="Plomeria">Plomeria</option>                               
+                                <option value="">Seleccione subcategorias</option>
+                                                              
                               </select>
+                              <div class="valid-tooltip">
+                                Campo valido.
+                              </div>
+                              
                             </div>
-                            <div class="form-group col-md-4 col-lg-4">
+                            <div class="form-group col-md-4 col-lg-4 position-relative">
                               
                               <input type="password" placeholder="Contraseña" class="form-control formato" id="inputPassword" />
+                              <div class="valid-tooltip">
+                                Campo valido.
+                              </div>
                             </div>
-                            <div class="form-group col-md-4 col-lg-4">
+                            <div class="form-group col-md-4 col-lg-4 position-relative">
                              
                               <input
                                 type="password"
                                 class="form-control formato"
                                 id="inputPasswordConfirm"
                                 placeholder="Confirma tu contraseña"
+                                name="inputPasswordConfirm"
                               />
+                              <div class="valid-tooltip">
+                                Campo valido.
+                              </div>
+                              
                             </div>
                           </div>
                     <div class="row">
-                      <div class="input-group col-md-4" style="margin-top: 2em;">
-                        <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
-                        <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Button</button>
+                      <div class="input-group  position-relative" style="margin-top: 2em;">
+                        <div class="mb-3">
+                          <label for="formFile" class="form-label">Default file input example</label>
+                          <input class="form-control" type="file" id="formFile">
+                        </div>
+                        <div class="valid-tooltip">
+                          Campo valido.
+                        </div>
                       </div>
+                      
+                      
                     </div>
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12" style="margin-top: 3em;">
+                    <div class="row" >
+                      <div class="col-md-12 col-sm-12 position-relative" style="margin-top: 3em;">
                         <textarea
                         class="form-control formato"
                         rows="8"
                         placeholder="Un mensaje para nosotros:"
                         name="message"
+                        id="Descripcion"
                         required
                         ></textarea>
+                        <div class="valid-tooltip">
+                          Campo valido.
+                        </div>
+                        
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="offset-md-5 col-12">
+                        <button type="submit" class="btn btn-primary btn-margen">
+                          Registarse!!
+                        </button>
                       </div>
                     </div>
                 </form>
                 
+                
             </div>
         </section>
+  
         <footer id="footer" data-stellar-background-ratio="0.5">
           <div class="container">
             <div class="row">
@@ -279,11 +337,14 @@
         </footer>
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
      <script src="./../js/jquery.js"></script>
-     <script src="./../js/bootstrap.min.js"></script>
+   
      <script src="./../js/jquery.stellar.min.js"></script>
      <script src="./../js/owl.carousel.min.js"></script>
      <script src="./../js/smoothscroll.js"></script>
      <script src="./../js/custom.js"></script>
-     <script src="./../js/contact.js"></script>
+     <script src="../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+
+     <script src="./../js/subcategorias.js"></script>
+     <script src="./../js/validar_registro_trabajador.js">  </script>
 </body>
 </html>

@@ -5,19 +5,50 @@
  * @todo crear funcion para filtrar datos
  * @todo Añadir atributo lazyloading a la plantilla de cards para que no crague imagenes de golpe cuando cargue la pagina
  */
+const myStorage=window.localStorage;
+function obtenerLocal(){
+  
+  const variables=JSON.parse(myStorage.Trabajadores);
+  console.log(variables);
+  
+  
+  return variables;
+}
+ function calculateTotalStars( clientReviews) {
+  let sumStars = 0;
+  
+  clientReviews.forEach(function(element){
+        sumStars += element.starsForJob;
+ });
+ return ( sumStars / clientReviews.length) ;
+}
 
 
 /**
  * @function funcion que contien/obtiene un objeto y lo convierte a JSON String
  * @returns un JSON String de los perfiles
  */
+
+
 function strJson(){
     let perfiles =[
         {
             img: "./../images/profile_mute.png",
             name: "Lucas Rogelio Martinez",
-            stars: 3.5,
-            reviews: 35,
+            email: "Shawn@gmail.com",
+            stret: "Roma",
+            Zip:34567,
+            numExt:19,
+            numInt:12,
+            contrasena:"Ban234JH",
+            
+
+            clientReviews: [
+              { clientName: "Angel", starsForJob: 4, comment: "Lorem ipsum"},
+              { clientName: "Ana Flores", starsForJob: 5, comment: "Lorem ipsum"}],
+            
+            reviews: 4,
+            stars: 0,
             municipio: "Alvaro Obregon",
             estado: "Ciudad de México",
             description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque illum architecto veritatis repellat facere qui dolorum harum odit, nesciunt in consequatur debitis veniam, exercitationem tempora, accusamus et sed! Nesciunt, voluptate?",
@@ -27,8 +58,18 @@ function strJson(){
         {
             img: "./../images/profile_mute.png",
             name: "Ana Pamela Rubio",
-            stars: 4,
-            reviews: 42,
+            stars: 9,
+            email: "Shawn@gmail.com",
+            stret: "Roma",
+            Zip:34567,
+            numExt:19,
+            numInt:12,
+            contrasena:"Ban234JH",
+            
+            clientReviews: [
+              { clientName: "Angel", starsForJob: 4, comment: "Lorem ipsum"},
+              { clientName: "Ana Flores", starsForJob: 5, comment: "Lorem ipsum"}],
+            reviews: 5,
             municipio: "Cuahautemoc ",
             estado: "Ciudad de México",
             description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque illum architecto veritatis repellat facere qui dolorum harum odit, nesciunt in consequatur debitis veniam, exercitationem tempora, accusamus et sed! Nesciunt, voluptate?",
@@ -38,8 +79,18 @@ function strJson(){
         {
             img: "./../images/profile_mute.png",
             name: "Lanna Garay ",
-            stars: 2,
-            reviews: 10,
+            stars: 0,
+            email: "Shawn@gmail.com",
+            stret: "Roma",
+            Zip:34567,
+            numExt:19,
+            numInt:12,
+            contrasena:"Ban234JH",
+            
+            clientReviews: [
+              { clientName: "Angel", starsForJob: 4, comment: "Lorem ipsum"},
+              { clientName: "Ana Flores", starsForJob: 5, comment: "Lorem ipsum"}],
+            reviews: 0,
             municipio: "Azcapotzalco",
             estado: "Ciudad de México",
             description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque illum architecto veritatis repellat facere qui dolorum harum odit, nesciunt in consequatur debitis veniam, exercitationem tempora, accusamus et sed! Nesciunt, voluptate?",
@@ -49,8 +100,18 @@ function strJson(){
         {
             img: "./../images/profile_mute.png",
             name: "Jorge Antonio de la Rosa ",
-            stars: 1,
-            reviews: 5,
+            stars: 0,
+            email: "Shawn@gmail.com",
+            stret: "Roma",
+            Zip:34567,
+            numExt:19,
+            numInt:12,
+            contrasena:"Ban234JH",
+            
+            clientReviews: [
+              { clientName: "Angel", starsForJob: 4, comment: "Lorem ipsum"},
+              { clientName: "Ana Flores", starsForJob: 5, comment: "Lorem ipsum"}],
+            reviews: 0,
             municipio: "Benito Juarez",
             estado: "Ciudad de México",
             description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque illum architecto veritatis repellat facere qui dolorum harum odit, nesciunt in consequatur debitis veniam, exercitationem tempora, accusamus et sed! Nesciunt, voluptate?",
@@ -60,8 +121,18 @@ function strJson(){
         {
             img: "./../images/profile_mute.png",
             name: "Marco Polo Agustin",
-            stars: 4,
-            reviews: 35,
+            stars: 0,
+            email: "Shawn@gmail.com",
+            stret: "Roma",
+            Zip:34567,
+            numExt:19,
+            numInt:12,
+            contrasena:"Ban234JH",
+            
+            clientReviews: [
+              { clientName: "Angel", starsForJob: 4, comment: "Lorem ipsum"},
+              { clientName: "Ana Flores", starsForJob: 5, comment: "Lorem ipsum"}],
+            reviews:0,
             municipio: "Tecamac",
             estado: "Estado de México",
             description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque illum architecto veritatis repellat facere qui dolorum harum odit, nesciunt in consequatur debitis veniam, exercitationem tempora, accusamus et sed! Nesciunt, voluptate?",
@@ -71,8 +142,19 @@ function strJson(){
         {
             img: "./../images/profile_mute.png",
             name: "Marco Polo Agustin",
-            stars: 4,
-            reviews: 35,
+            stars: 0,
+            email: "Shawn@gmail.com",
+            stret: "Roma",
+            Zip:34567,
+            numExt:19,
+            numInt:12,
+            contrasena:"Ban234JH",
+            
+            clientReviews: [
+              { clientName: "Angel", starsForJob: 4, comment: "Lorem ipsum"},
+              { clientName: "Ana Flores", starsForJob: 5, comment: "Lorem ipsum"}],
+
+            reviews: 0,
             municipio: "Tecamac",
             estado: "Estado de México",
             description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque illum architecto veritatis repellat facere qui dolorum harum odit, nesciunt in consequatur debitis veniam, exercitationem tempora, accusamus et sed! Nesciunt, voluptate?",
@@ -81,6 +163,7 @@ function strJson(){
         }
         
     ];
+
     return JSON.stringify(perfiles);
 }
 
@@ -136,6 +219,15 @@ function plantilla (worker){
   <br>
     `
 }
+let validacion=document.getElementById("contact-form");
+
+function calcularEstrellasResenas(){
+  JSON.parse(strJson()).forEach(element =>{
+    element.stars=calculateTotalStars(element.clientReviews);
+    element.reviews=element.clientReviews.length;
+  });
+}
+
 
 /**
  * @function convierte los JSON a 
@@ -143,10 +235,29 @@ function plantilla (worker){
  */
 function paqueteCards(){
     let cards ="";
-    JSON.parse(strJson()).forEach(element => {
+    calcularEstrellasResenas();
+    console.log("banto");
+    console.log(JSON.parse( agregaLocal()));
+    JSON.parse(agregaLocal()).forEach(element => {
         cards += plantilla(element);
     });
     return cards;
+}
+
+function agregaLocal(){
+  console.log("bain"); 
+  let arregloTrabajadores=JSON.parse( strJson());
+   let localTrabajadores=obtenerLocal();
+   //myStorage.setItem("Trabajadores",JSON.stringify(localTrabajadores));
+   console.log(obtenerLocal());
+
+   for(let i=0;i<localTrabajadores.length;i++){
+    arregloTrabajadores.push(localTrabajadores[i]);
+   }
+   
+   console.log("Pasado");
+   console.log(arregloTrabajadores)
+   return JSON.stringify(arregloTrabajadores);
 }
 
 /**
@@ -155,12 +266,15 @@ function paqueteCards(){
 function renderCard(){
     let contenedor_cards = document.getElementById("contenedor_cards"); 
     //console.log(strJson());
+   console.log(validacion) 
     contenedor_cards.innerHTML += paqueteCards();
 }
+
 
 /**
  * @function espera la carga completa de los elementos HTML y CSS para ejecutar la funcion de renderizado de cards o perfiles de trabajadores
  */
+
 window.addEventListener("load", (event)=>{
     
     renderCard();
