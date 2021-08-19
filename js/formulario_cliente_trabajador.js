@@ -16,11 +16,14 @@ function crearTipoFormulario(bandera){
         console.log(padreRenglon[3].childNodes);
         console.log(padreRenglon[3].lastChild);
         console.log(padreRenglon[4].firstChild);
+   
+        hijos[3].classList.remove("offset-md-1");
+        hijos[3].classList.add("offset-md-3");
+        hijos[5].classList.remove("offset-md-1");
+        hijos[5].classList.add("offset-md-3");
+        hijosub[3].classList.add("offset-md-2");
         
-        hijos[2].classList.remove("offset-md-2");
-        padreRenglon[2].classList.add("offset-md-3");
-        padreRenglon[3].classList.remove("offset-md-2");
-        padreRenglon[3]
+        console.log(hijosub);
         padreRenglon[3].removeChild(hijos[7]);
         padreRenglon[4].removeChild(hijosub[1]);
         console.log(padreRenglon[3].childNodes);
