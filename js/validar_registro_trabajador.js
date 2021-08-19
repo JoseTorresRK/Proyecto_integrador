@@ -2,7 +2,6 @@
 let validacion=document.getElementById("contact-form");
 
 const myStorage=window.localStorage;
-console.log("activae");
 function mensajeValidacion(tipoMensaje,input,campo){
     let validar=document.querySelectorAll("#contact-form div .position-relative");
     let validacionDinamica;
@@ -12,8 +11,7 @@ function mensajeValidacion(tipoMensaje,input,campo){
         input.classList.remove("is-invalid");
         input.classList.add("is-valid");
         pb=validar[campo].removeChild(validar[campo].lastElementChild);
-        console.log("pORqie lo borras",pb);
-        console.log("Po",validar[campo]);
+        
         validacionDinamica=document.createElement("div");
         validacionDinamica.classList.add("valid-tooltip")
         mensaje=document.createTextNode("Campo valido");
@@ -156,6 +154,8 @@ function validarFormulario(e){
      let inputNumExt=document.getElementById("Num-ext");
      let inputNumInt=document.getElementById("Num-int");
      let inputCategory=document.getElementById("Category");
+     console.log("Categoria");
+     console.log(inputCategory.value);
      let contrasena=document.getElementById("inputPassword");
      let file=document.getElementById("formFile");
      let confirmacionContrasena=document.getElementById("inputPasswordConfirm");
@@ -220,6 +220,8 @@ function validarFormulario(e){
      camposValidados.push(inputCity.value);
      camposValidados.push(inputSeleccion.value);
      camposValidados.push(inputDescripcion.value);
+     console.log("Nueva");
+     console.log(inputCategory.value);
      camposValidados.push(inputCategory.value);
      camposValidados.push(arreglo);
      
@@ -248,7 +250,7 @@ function crearTrabajador(camposValidados){
         "municipio":camposValidados[11],
         "estado":camposValidados[12],
         "description":camposValidados[13],
-        "Category":camposValidados[14],
+        "category":camposValidados[14],
         "subCategories":camposValidados[15]
     };
     return trabajador;
