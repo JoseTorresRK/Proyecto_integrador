@@ -24,8 +24,17 @@ header .navbar ul li a:hover {
   background-color: #ff4716;
   color:#fff;
   border-radius: 10px;
+}
+header .navbar .dropdown-item{
+  background-color: #ff4716;
+  border: black solid;
+}
+header .navbar .dropdown-menu{
+  background-color: #ff4716;
   
-
+}
+header .navbar .dropdown-menu .click{
+  background-color: #ff4716;
 }
 header .navbar a:hover{
   color: white;

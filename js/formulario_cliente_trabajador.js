@@ -1,17 +1,19 @@
+const myStorageClienteTrabajador=window.localStorage;
 function crearTipoFormulario(bandera){
     console.log("no estoy ejecuando el script");
+    console.log(bandera);
    
     const mensajeParrafo=document.querySelector(".section-title p"); 
     const inputCategoria=document.querySelectorAll(".dinamico");
     const padreRenglon=document.querySelectorAll(".row .row");
     const hijos=padreRenglon[3].childNodes;  
     const hijosub=padreRenglon[4].childNodes;
-    
-    console.log(padreRenglon);
-    if(bandera){
+    if(bandera==='true'){
+        console.log("Verdadero");
         mensajeParrafo.innerText="Para ser visto por miles de personas";
     }   
     else{
+        console.log("falso");
         mensajeParrafo.innerText="Para buscar a los trabajadores mejor capacitados de México";
         console.log(padreRenglon[3].childNodes);
         console.log(padreRenglon[3].lastChild);
@@ -30,4 +32,6 @@ function crearTipoFormulario(bandera){
         
     }     
 }
-crearTipoFormulario(false);
+//console.log("jjsjjjj");
+console.log(myStorageClienteTrabajador.Bandera);
+crearTipoFormulario(myStorageClienteTrabajador.Bandera);
