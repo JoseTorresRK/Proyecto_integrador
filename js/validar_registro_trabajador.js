@@ -11,7 +11,7 @@ function mensajeValidacion(tipoMensaje,input,campo){
     if(tipoMensaje==true){
         input.classList.remove("is-invalid");
         input.classList.add("is-valid");
-        pb=validar[campo].removeChild(validar[campo].lastElementChild);
+        validar[campo].removeChild(validar[campo].lastElementChild);
         
         validacionDinamica=document.createElement("div");
         validacionDinamica.classList.add("valid-tooltip")
@@ -142,7 +142,9 @@ function validarTelefono(telefono){
 function validarFormulario(e){
     console.log("entre");
     e.preventDefault();
+    
     let arreglo=[];
+    let modificador=2;
     let camposValidados=[];
      let inputNombre=document.getElementById("full_name");
     let inputtel=document.getElementById("tel");
@@ -156,7 +158,7 @@ function validarFormulario(e){
      let inputNumInt=document.getElementById("Num-int");
      let inputCategory=document.getElementById("Category");
      console.log("Categoria");
-     console.log(inputCategory.value);
+     
      let contrasena=document.getElementById("inputPassword");
      let file=document.getElementById("formFile");
      let confirmacionContrasena=document.getElementById("inputPasswordConfirm");
@@ -175,19 +177,31 @@ function validarFormulario(e){
      aciertos.push( mensajeValidacion(validarEmail(inputEmail.value),inputEmail,1));
      aciertos.push(mensajeValidacion(validarTelefono(inputtel.value),inputtel,2));
      console.log(inputSeleccion.value);
-     aciertos.push(mensajeValidacion(validarSeleccion(inputSeleccion.value),inputSeleccion,3));
+    
+        aciertos.push(mensajeValidacion(validarSeleccion(inputSeleccion.value),inputSeleccion,3));
+     
      aciertos.push(mensajeValidacion(validarLetras(inputCity.value),inputCity,4));
      aciertos.push( mensajeValidacion(validarLetras(inputCalle.value),inputCalle,5));
      aciertos.push(mensajeValidacion(validarZip(inputZip.value),inputZip,6));
      aciertos.push(mensajeValidacion(validarNum(inputNumExt.value),inputNumExt,7));
      aciertos.push(mensajeValidacion(validarNum(inputNumInt.value),inputNumInt,8));
-     aciertos.push(mensajeValidacion(validarSeleccion(inputCategory.value),inputCategory,9));
-     aciertos.push(mensajeValidacion(validaContrasena(contrasena.value),contrasena,11));
-     aciertos.push(mensajeValidacion(confirmaContrasena(confirmacionContrasena.value,contrasena.value,validaContrasena(confirmacionContrasena.value)),confirmacionContrasena,12));
+     if(myStorage.Bandera==='true'){
+        aciertos.push(mensajeValidacion(validarSeleccion(inputCategory.value),inputCategory,9));
+        modificador=0;
+        for(let i=0;i<inputSub.options.length;i++){
+            if(inputSub.options[i].selected===true){
+                console.log(inputSub.options[i]);
+                arreglo.push(inputSub.options[i].value);
+            }
+        }
+     }
+         aciertos.push(mensajeValidacion(validaContrasena(contrasena.value),contrasena,11-modificador));
+     
+    aciertos.push(mensajeValidacion(confirmaContrasena(confirmacionContrasena.value,contrasena.value,validaContrasena(confirmacionContrasena.value)),confirmacionContrasena,12-modificador));
      let imagen=document.querySelector("form");
-     aciertos.push(mensajeValidacion(validarDescripcion(inputDescripcion.value),inputDescripcion,14));
+     aciertos.push(mensajeValidacion(validarDescripcion(inputDescripcion.value),inputDescripcion,14-modificador));
      console.log("VAB",file.value);
-     aciertos.push( mensajeValidacion(validarImagen(file.value),file,13));
+     aciertos.push( mensajeValidacion(validarImagen(file.value),file,13-modificador));
      console.log(aciertos);
      if(aciertos.includes(false)){
          //alert("Te equivocaste en un campo, revisa los campos de nuevo");
@@ -199,13 +213,9 @@ function validarFormulario(e){
           })
          return;
      }
-    console.log(inputSub.options);
-    for(let i=0;i<inputSub.options.length;i++){
-        if(inputSub.options[i].selected===true){
-            console.log(inputSub.options[i]);
-            arreglo.push(inputSub.options[i].value);
-        }
-    }
+    //console.log(inputSub.options);
+    
+    
      const objetoUrl=URL.createObjectURL(file.files[0]);
      camposValidados.push(objetoUrl);
      camposValidados.push(inputNombre.value);
@@ -222,22 +232,60 @@ function validarFormulario(e){
      camposValidados.push(inputSeleccion.value);
      camposValidados.push(inputDescripcion.value);
      console.log("Nueva");
-     console.log(inputCategory.value);
-     camposValidados.push(inputCategory.value);
-     camposValidados.push(arreglo);
+     //console.log(inputCategory.value);
      
-     saveToMyStorage(crearTrabajador(camposValidados));
+     if(myStorage.Bandera==='true'){
+        camposValidados.push(inputCategory.value);
+        camposValidados.push(arreglo);
+        saveToMyStorage(crearTrabajador(camposValidados),myStorage.Bandera);
+     }
+     else{
+        saveToMyStorage(crearCliente(camposValidados),myStorage.Bandera);
+
+     }
      window.location="lista_perfiles.html"; 
 
     }
- function recolectarMyStorage(){
+ function recolectarMyStorage(perfil){
      let arregloTrabajadores=[];
-     if(myStorage.Trabajadores===undefined){
-        myStorage.setItem("Trabajadores",[]);
-        return [];
+     if(perfil==='Trabajador'){
+        console.log(myStorage.getItem(perfil));
+        if(myStorage.Trabajador===undefined){
+            myStorage.setItem(perfil,[]);
+            return [];
+        }
+        arregloTrabajadores=JSON.parse(myStorage.Trabajador);
+        return arregloTrabajadores;
     }
-     arregloTrabajadores=JSON.parse(myStorage.Trabajadores);
-     return arregloTrabajadores;    
+    else{
+        console.log(myStorage.getItem(perfil));
+        if(myStorage.Cliente===undefined){
+            myStorage.setItem(perfil,[]);
+            return [];
+        }
+        arregloTrabajadores=JSON.parse(myStorage.Cliente);
+        return arregloTrabajadores;
+    }    
+ }
+ function crearCliente(camposValidados){
+    let cliente={
+        "img": camposValidados[0],
+        "name":camposValidados[1],
+        "stars":camposValidados[2],
+        "email":camposValidados[3],
+        "stret":camposValidados[4],
+        "Zip":camposValidados[5],
+        "numExt":camposValidados[6],
+        "numInt":camposValidados[7],
+        "contrasena":camposValidados[8],
+        "workedReviews":camposValidados[9],
+        "reviews":camposValidados[10],
+        "municipio":camposValidados[11],
+        "estado":camposValidados[12],
+        "description":camposValidados[13]
+        
+    };
+    return cliente; 
  }
 function crearTrabajador(camposValidados){
     let trabajador={
@@ -261,13 +309,19 @@ function crearTrabajador(camposValidados){
     return trabajador;
 
 }
-function saveToMyStorage(trabajador){
-
-    let array_trabajador=recolectarMyStorage();
-    console.log(array_trabajador,"1234");
-    array_trabajador.push(trabajador);
-    myStorage.setItem("Trabajadores",JSON.stringify(array_trabajador));
-    
+function saveToMyStorage(perfil,bandera){
+    if(bandera==='true'){
+        let array_trabajador=recolectarMyStorage(perfil);
+        console.log(array_trabajador,"1234");
+        array_trabajador.push(perfil);
+        myStorage.setItem("Trabajadores",JSON.stringify(array_trabajador));
+    }
+    else{
+        let array_trabajador=recolectarMyStorage(perfil);
+        console.log(array_trabajador,"1234");
+        array_trabajador.push(perfil);
+        myStorage.setItem("Cliente",JSON.stringify(array_trabajador));
+    }
 }
     // imagen.innerHTML+=`<img src=${file.value}>`;
 
