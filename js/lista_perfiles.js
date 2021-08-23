@@ -7,8 +7,11 @@
  */
 const myStorage=window.localStorage;
 function obtenerLocal(){
-  
+  if(myStorage.Trabajadores===undefined||myStorage.Trabajadores===[]){
+    return [];
+  }
   const variables=JSON.parse(myStorage.Trabajadores);
+  
   console.log(variables);
   
   
@@ -186,12 +189,13 @@ function subCategoryGenerator(subCategories){
  * @returns {string} es un div 
  */
 function plantilla (worker){
+  const imag=URL.createObjectURL(worker.img);
     return `
     <div class="row">
     <div class="card">
       <div class="card-body">
         <div class="row">
-          <img src="./../images/profile_mute.png" alt="profile_mute" class="col-2">
+          <img src=${imag} alt="profile_mute" class="col-2">
           <div class="nombre col-9">
             <h4 class="card-title">${worker.name}</h4>
             <i class="bi bi-star-fill"></i> <!-- ESTRELLA COMPLETA -->
