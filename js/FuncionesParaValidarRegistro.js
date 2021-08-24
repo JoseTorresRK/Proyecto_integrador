@@ -1,5 +1,5 @@
+//Funciones para validar el registro del cliente o trabajador.
 
-let validacion=document.getElementById("contact-form");
 
 const myStorage=window.localStorage;
 //myStorage.removeItem("Trabajadores")
@@ -139,6 +139,14 @@ function validarTelefono(telefono){
     }
     return true;
 }
+function construirSweetAlert(imagen,titulo,mensaje,piePagina){
+    new Swal({
+        icon: imagen,
+        title: titulo,
+        text: mensaje,
+        footer: piePagina
+    })
+}
 function validarFormulario(e){
     console.log("entre");
     e.preventDefault();
@@ -200,24 +208,25 @@ function validarFormulario(e){
     aciertos.push(mensajeValidacion(confirmaContrasena(confirmacionContrasena.value,contrasena.value,validaContrasena(confirmacionContrasena.value)),confirmacionContrasena,12-modificador));
      let imagen=document.querySelector("form");
      aciertos.push(mensajeValidacion(validarDescripcion(inputDescripcion.value),inputDescripcion,14-modificador));
-     console.log("VAB",file.value);
+     console.log("VAB",file.files[0]);
      aciertos.push( mensajeValidacion(validarImagen(file.value),file,13-modificador));
      console.log(aciertos);
+     let imagenesa=document.getElementById("Imagenesa");
+     const objetoUrl=URL.createObjectURL(file.files[0]);
+     imagenesa.innerHTML+=`<img src=${objetoUrl} alt="">`;
      if(aciertos.includes(false)){
          //alert("Te equivocaste en un campo, revisa los campos de nuevo");
-         new Swal({
-            icon: 'error',
-            title: 'Ingresaste mal un campo, regresa para checar.',
-            text: 'Something went wrong!',
-            footer: '<a href="">Why do I have this issue?</a>'
-          })
+         construirSweetAlert("error",'Ingresaste mal un campo, regresa para checar.',"",'<a href="">Why do I have this issue?</a>');
          return;
      }
     //console.log(inputSub.options);
+ 
     
-    
-     const objetoUrl=URL.createObjectURL(file.files[0]);
-     camposValidados.push(objetoUrl);
+   
+     console.log("objeto")
+     console.log(objetoUrl);
+
+     camposValidados.push(file.files[0]);
      camposValidados.push(inputNombre.value);
      camposValidados.push(0);
      camposValidados.push(inputEmail.value);
@@ -250,7 +259,7 @@ function validarFormulario(e){
      let arregloTrabajadores=[];
      if(perfil==='Trabajador'){
         console.log(myStorage.getItem(perfil));
-        if(myStorage.Trabajador===undefined){
+        if(myStorage.Trabajador===undefined||myStorage.Trabajador.length===0){
             myStorage.setItem(perfil,[]);
             return [];
         }
@@ -259,8 +268,9 @@ function validarFormulario(e){
     }
     else{
         console.log(myStorage.getItem(perfil));
-        if(myStorage.Cliente===undefined){
+        if(myStorage.Cliente===undefined ||myStorage.Cliente.length===0){
             myStorage.setItem(perfil,[]);
+            console.log("vacios");
             return [];
         }
         arregloTrabajadores=JSON.parse(myStorage.Cliente);
@@ -314,7 +324,7 @@ function saveToMyStorage(perfil,bandera){
         let array_trabajador=recolectarMyStorage(perfil);
         console.log(array_trabajador,"1234");
         array_trabajador.push(perfil);
-        myStorage.setItem("Trabajadores",JSON.stringify(array_trabajador));
+        myStorage.setItem("Trabajador",JSON.stringify(array_trabajador));
     }
     else{
         let array_trabajador=recolectarMyStorage(perfil);
@@ -325,6 +335,5 @@ function saveToMyStorage(perfil,bandera){
 }
     // imagen.innerHTML+=`<img src=${file.value}>`;
 
-validacion.addEventListener("submit",validarFormulario);
 
 
