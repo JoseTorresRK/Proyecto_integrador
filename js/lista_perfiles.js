@@ -34,140 +34,141 @@ function obtenerLocal(){
 
 
 function strJson(){
-    let perfiles =[
-        {
-            img: "./../images/profile_mute.png",
-            name: "Lucas Rogelio Martinez",
-            email: "Shawn@gmail.com",
-            stret: "Roma",
-            Zip:34567,
-            numExt:19,
-            numInt:12,
-            contrasena:"Ban234JH",
-            
+  let perfiles =[
 
-            clientReviews: [
-              { clientName: "Angel", starsForJob: 4, comment: "Lorem ipsum"},
-              { clientName: "Ana Flores", starsForJob: 5, comment: "Lorem ipsum"}],
-            
-            reviews: 4,
-            stars: 0,
-            municipio: "Alvaro Obregon",
-            estado: "Ciudad de México",
-            description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque illum architecto veritatis repellat facere qui dolorum harum odit, nesciunt in consequatur debitis veniam, exercitationem tempora, accusamus et sed! Nesciunt, voluptate?",
-            category: "Jardinería",
-            subCategories: ["Plantas exóticas", "Arboles frutales", "Invernaderos", "Bonsáis", "Jardineras"]
-        },
-        {
-            img: "./../images/profile_mute.png",
-            name: "Ana Pamela Rubio",
-            stars: 9,
-            email: "Shawn@gmail.com",
-            stret: "Roma",
-            Zip:34567,
-            numExt:19,
-            numInt:12,
-            contrasena:"Ban234JH",
-            
-            clientReviews: [
-              { clientName: "Angel", starsForJob: 4, comment: "Lorem ipsum"},
-              { clientName: "Ana Flores", starsForJob: 5, comment: "Lorem ipsum"}],
-            reviews: 5,
-            municipio: "Cuahautemoc ",
-            estado: "Ciudad de México",
-            description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque illum architecto veritatis repellat facere qui dolorum harum odit, nesciunt in consequatur debitis veniam, exercitationem tempora, accusamus et sed! Nesciunt, voluptate?",
-            category: "Albañilería",
-            subCategories: ["Castillos y trabes", "Colados", "Muros", "Estructuras pequeñas", "Bardas"]
-        },
-        {
-            img: "./../images/profile_mute.png",
-            name: "Lanna Garay ",
-            stars: 0,
-            email: "Shawn@gmail.com",
-            stret: "Roma",
-            Zip:34567,
-            numExt:19,
-            numInt:12,
-            contrasena:"Ban234JH",
-            
-            clientReviews: [
-              { clientName: "Angel", starsForJob: 4, comment: "Lorem ipsum"},
-              { clientName: "Ana Flores", starsForJob: 5, comment: "Lorem ipsum"}],
-            reviews: 0,
-            municipio: "Azcapotzalco",
-            estado: "Ciudad de México",
-            description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque illum architecto veritatis repellat facere qui dolorum harum odit, nesciunt in consequatur debitis veniam, exercitationem tempora, accusamus et sed! Nesciunt, voluptate?",
-            category: "Carpintería",
-            subCategories: ["Muebles domésticos" , "Estructuras exteriores", "Cobertizos", "Barnices y pulidos", "Juguetes en madera"]
-        },
-        {
-            img: "./../images/profile_mute.png",
-            name: "Jorge Antonio de la Rosa ",
-            stars: 0,
-            email: "Shawn@gmail.com",
-            stret: "Roma",
-            Zip:34567,
-            numExt:19,
-            numInt:12,
-            contrasena:"Ban234JH",
-            
-            clientReviews: [
-              { clientName: "Angel", starsForJob: 4, comment: "Lorem ipsum"},
-              { clientName: "Ana Flores", starsForJob: 5, comment: "Lorem ipsum"}],
-            reviews: 0,
-            municipio: "Benito Juarez",
-            estado: "Ciudad de México",
-            description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque illum architecto veritatis repellat facere qui dolorum harum odit, nesciunt in consequatur debitis veniam, exercitationem tempora, accusamus et sed! Nesciunt, voluptate?",
-            category: "Plomería",
-            subCategories: ["Fregaderos",  "Lavabos", "Tuberías tapadas", "Caños atascados", "Instalaciones sanitarias"]
-        },
-        {
-            img: "./../images/profile_mute.png",
-            name: "Marco Polo Agustin",
-            stars: 0,
-            email: "Shawn@gmail.com",
-            stret: "Roma",
-            Zip:34567,
-            numExt:19,
-            numInt:12,
-            contrasena:"Ban234JH",
-            
-            clientReviews: [
-              { clientName: "Angel", starsForJob: 4, comment: "Lorem ipsum"},
-              { clientName: "Ana Flores", starsForJob: 5, comment: "Lorem ipsum"}],
-            reviews:0,
-            municipio: "Tecamac",
-            estado: "Estado de México",
-            description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque illum architecto veritatis repellat facere qui dolorum harum odit, nesciunt in consequatur debitis veniam, exercitationem tempora, accusamus et sed! Nesciunt, voluptate?",
-            category: "Cocina",
-            subCategories: ["Comida internacional", "Comida casera", "Ingredientes de primera calidad", "Ingredientes orgánicos y frescos", "Platillos exóticos"]
-        },
-        {
-            img: "./../images/profile_mute.png",
-            name: "Marco Polo Agustin",
-            stars: 0,
-            email: "Shawn@gmail.com",
-            stret: "Roma",
-            Zip:34567,
-            numExt:19,
-            numInt:12,
-            contrasena:"Ban234JH",
-            
-            clientReviews: [
-              { clientName: "Angel", starsForJob: 4, comment: "Lorem ipsum"},
-              { clientName: "Ana Flores", starsForJob: 5, comment: "Lorem ipsum"}],
+    {
+      img: "./../images/profile_mute.png",
+      name: "Lucas Rogelio Martinez",
+      email: "Shawn@gmail.com",
+      stret: "Roma",
+      Zip:34567,
+      numExt:19,
+      numInt:12,
+      contrasena:"Ban234JH",
+      
 
-            reviews: 0,
-            municipio: "Tecamac",
-            estado: "Estado de México",
-            description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque illum architecto veritatis repellat facere qui dolorum harum odit, nesciunt in consequatur debitis veniam, exercitationem tempora, accusamus et sed! Nesciunt, voluptate?",
-            category: "Cocina",
-            subCategories: ["Comida internacional", "Comida casera", "Ingredientes de primera calidad", "Ingredientes orgánicos y frescos", "Platillos exóticos"]
-        }
-        
-    ];
+      clientReviews: [
+        { clientName: "Angel", starsForJob: 4, comment: "Lorem ipsum"},
+        { clientName: "Ana Flores", starsForJob: 5, comment: "Lorem ipsum"}],
+      
+      reviews: 4,
+      stars: 0,
+      municipio: "Alvaro Obregon",
+      estado: "Ciudad de México",
+      description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque illum architecto veritatis repellat facere qui dolorum harum odit, nesciunt in consequatur debitis veniam, exercitationem tempora, accusamus et sed! Nesciunt, voluptate?",
+      category: "Jardinería",
+      subCategories: ["Plantas exóticas", "Arboles frutales", "Invernaderos", "Bonsáis", "Jardineras"]
+    },
+    {
+      img: "./../images/profile_mute.png",
+      name: "Ana Pamela Rubio",
+      stars: 9,
+      email: "Shawn@gmail.com",
+      stret: "Roma",
+      Zip:34567,
+      numExt:19,
+      numInt:12,
+      contrasena:"Ban234JH",
+      
+      clientReviews: [
+        { clientName: "Angel", starsForJob: 4, comment: "Lorem ipsum"},
+        { clientName: "Ana Flores", starsForJob: 5, comment: "Lorem ipsum"}],
+      reviews: 5,
+      municipio: "Cuahautemoc ",
+      estado: "Ciudad de México",
+      description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque illum architecto veritatis repellat facere qui dolorum harum odit, nesciunt in consequatur debitis veniam, exercitationem tempora, accusamus et sed! Nesciunt, voluptate?",
+      category: "Albañilería",
+      subCategories: ["Castillos y trabes", "Colados", "Muros", "Estructuras pequeñas", "Bardas"]
+    },
+    {
+      img: "./../images/profile_mute.png",
+      name: "Lanna Garay ",
+      stars: 0,
+      email: "Shawn@gmail.com",
+      stret: "Roma",
+      Zip:34567,
+      numExt:19,
+      numInt:12,
+      contrasena:"Ban234JH",
+      
+      clientReviews: [
+        { clientName: "Angel", starsForJob: 4, comment: "Lorem ipsum"},
+        { clientName: "Ana Flores", starsForJob: 5, comment: "Lorem ipsum"}],
+      reviews: 0,
+      municipio: "Azcapotzalco",
+      estado: "Ciudad de México",
+      description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque illum architecto veritatis repellat facere qui dolorum harum odit, nesciunt in consequatur debitis veniam, exercitationem tempora, accusamus et sed! Nesciunt, voluptate?",
+      category: "Carpintería",
+      subCategories: ["Muebles domésticos" , "Estructuras exteriores", "Cobertizos", "Barnices y pulidos", "Juguetes en madera"]
+    },
+    {
+      img: "./../images/profile_mute.png",
+      name: "Jorge Antonio de la Rosa ",
+      stars: 0,
+      email: "Shawn@gmail.com",
+      stret: "Roma",
+      Zip:34567,
+      numExt:19,
+      numInt:12,
+      contrasena:"Ban234JH",
+      
+      clientReviews: [
+        { clientName: "Angel", starsForJob: 4, comment: "Lorem ipsum"},
+        { clientName: "Ana Flores", starsForJob: 5, comment: "Lorem ipsum"}],
+      reviews: 0,
+      municipio: "Benito Juarez",
+      estado: "Ciudad de México",
+      description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque illum architecto veritatis repellat facere qui dolorum harum odit, nesciunt in consequatur debitis veniam, exercitationem tempora, accusamus et sed! Nesciunt, voluptate?",
+      category: "Plomería",
+      subCategories: ["Fregaderos",  "Lavabos", "Tuberías tapadas", "Caños atascados", "Instalaciones sanitarias"]
+    },
+    {
+      img: "./../images/profile_mute.png",
+      name: "Marco Polo Agustin",
+      stars: 0,
+      email: "Shawn@gmail.com",
+      stret: "Roma",
+      Zip:34567,
+      numExt:19,
+      numInt:12,
+      contrasena:"Ban234JH",
+      
+      clientReviews: [
+        { clientName: "Angel", starsForJob: 4, comment: "Lorem ipsum"},
+        { clientName: "Ana Flores", starsForJob: 5, comment: "Lorem ipsum"}],
+      reviews:0,
+      municipio: "Tecamac",
+      estado: "Estado de México",
+      description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque illum architecto veritatis repellat facere qui dolorum harum odit, nesciunt in consequatur debitis veniam, exercitationem tempora, accusamus et sed! Nesciunt, voluptate?",
+      category: "Cocina",
+      subCategories: ["Comida internacional", "Comida casera", "Ingredientes de primera calidad", "Ingredientes orgánicos y frescos", "Platillos exóticos"]
+    },
+    {
+      img: "./../images/profile_mute.png",
+      name: "Marco Polo Agustin",
+      stars: 0,
+      email: "Shawn@gmail.com",
+      stret: "Roma",
+      Zip:34567,
+      numExt:19,
+      numInt:12,
+      contrasena:"Ban234JH",
+      
+      clientReviews: [
+        { clientName: "Angel", starsForJob: 4, comment: "Lorem ipsum"},
+        { clientName: "Ana Flores", starsForJob: 5, comment: "Lorem ipsum"}],
 
-    return JSON.stringify(perfiles);
+      reviews: 0,
+      municipio: "Tecamac",
+      estado: "Estado de México",
+      description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque illum architecto veritatis repellat facere qui dolorum harum odit, nesciunt in consequatur debitis veniam, exercitationem tempora, accusamus et sed! Nesciunt, voluptate?",
+      category: "Cocina",
+      subCategories: ["Comida internacional", "Comida casera", "Ingredientes de primera calidad", "Ingredientes orgánicos y frescos", "Platillos exóticos"]
+    }
+      
+  ];
+
+  return JSON.stringify(perfiles);
 }
 
 /**
