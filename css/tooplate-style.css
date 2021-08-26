@@ -9,6 +9,7 @@
     --light-gray: #c9c9c9;
   }
 
+
 .header .navbar{
   background:linear-gradient(.25turn,#14315d,#0a65ff);
   height: 4em;
@@ -24,8 +25,16 @@ header .navbar ul li a:hover {
   background-color: #ff4716;
   color:#fff;
   border-radius: 10px;
+}
+header .navbar .dropdown-item{
+  background:linear-gradient(.25turn,#14315d,#0a65ff);
+}
+header .navbar .dropdown-menu{
+  background:linear-gradient(.25turn,#14315d,#0a65ff);
   
-
+}
+header .navbar .dropdown-menu .click{
+  background:linear-gradient(.25turn,#14315d,#0a65ff);
 }
 header .navbar a:hover{
   color: white;
@@ -573,7 +582,7 @@ header .active {
   }
 
   .testimonial-info {
-    background: #202020;
+    background:linear-gradient(.25turn,#ff4716,#14315d);
     padding: 60px;
     height: 65vh;
   }
@@ -685,11 +694,11 @@ header .active {
   
 
     .formato {
-    background: transparent;
+    background: white;
     border: 0;
     border-bottom: 3px solid #f0f0f0;
     border-radius: 0;
-    box-shadow: none;
+    /*box-shadow: none;*/
     margin: 10px 0;
   }  
 
@@ -899,7 +908,7 @@ header .active {
       margin-right: 1em;
     }
     #navbarNav{
-      background: linear-gradient(.25turn,#ff4716,#14315d);
+      background:linear-gradient(.25turn,#14315d,#0a65ff);
      
     }
     h2{
@@ -989,7 +998,7 @@ header .active {
     }
     
     #navbarNav{
-      background: linear-gradient(.25turn,#ff4716,#14315d);
+      background:linear-gradient(.25turn,#14315d,#0a65ff);
       padding-top: 0em;
     }
     .section-title {
