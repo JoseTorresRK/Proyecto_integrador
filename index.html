@@ -16,13 +16,25 @@
     <!-- <link rel="stylesheet" href="../css/bootstrap.min.css" />  -->
 
     <link rel="stylesheet" href="css/owl.carousel.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/owl.theme.default.min.css" />
     <link rel="stylesheet" href="css/font-awesome.min.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="./images/Tekton_icono.png" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="./images/Tekton_icono.png"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
 
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/tooplate-style.css" />
@@ -37,221 +49,336 @@
 
     <!-- MENU -->
 
-     
-        <header class="header">
-          <!--En esta parte se definira nuestra barra de navegación
+    <header class="header">
+      <!--En esta parte se definira nuestra barra de navegación
       y se pondra fija con fixed-top -->
-        <nav class="navbar navbar-expand-lg me-auto fixed-top " >
-          <!-- Se define en un container-fluid, para que la barra ocupe toda la pantalla -->
-          <div class="container-fluid">
-           <!-- Link que hace referencia al archivo index, con la clase alinear se pone un espacio adecuado.
+      <nav class="navbar navbar-expand-lg me-auto fixed-top">
+        <!-- Se define en un container-fluid, para que la barra ocupe toda la pantalla -->
+        <div class="container-fluid">
+          <!-- Link que hace referencia al archivo index, con la clase alinear se pone un espacio adecuado.
           Este link es una imagen de nuestro logo Tekton o la imagen de nuestro icono, dependiendo el tamaño de la pantalla. Esto gracias a la etiqueta picture. -->
-            <a class="navbar-brand colorindex" href="./index.html"> <picture> <source srcset="./images/Tekton_icono.png" media="(max-width:768px)"><img src="./images/TEKTON  orange .svg"  alt=""></picture> </a>
-            <!-- Esta parte es para cambiar el boton del menu de hamburgesa, para poder tener un icono en negro y sea distingible
+          <a class="navbar-brand colorindex" href="./index.html">
+            <picture>
+              <source
+                srcset="./images/Tekton_icono.png"
+                media="(max-width:768px)" />
+              <img src="./images/TEKTON  orange .svg" alt=""
+            /></picture>
+          </a>
+          <!-- Esta parte es para cambiar el boton del menu de hamburgesa, para poder tener un icono en negro y sea distingible
           con los colores establecidos. -->
-            <button class="navbar-toggler alinearmenu navbar-dark shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <!-- El menú de hamburgesa define una imagen svg, el cual es la imagen del cuadro con las rayas
+          <button
+            class="navbar-toggler alinearmenu navbar-dark shadow-none"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <!-- El menú de hamburgesa define una imagen svg, el cual es la imagen del cuadro con las rayas
             para desplegar el menú y este lo toma de la siguiente clase -->
-              <span class="navbar-toggler-icon" ></span>
-            </button>
-            <!-- Aqui definimos los enlaces de nuestro menú obtenido de bootstrap 5.0 -->
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <!-- La estructura es la siguiente una etiqueta ul(unorder list) con la
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- Aqui definimos los enlaces de nuestro menú obtenido de bootstrap 5.0 -->
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- La estructura es la siguiente una etiqueta ul(unorder list) con la
             clase ms-auto, que esta versión permite alinear a la derecha los items de la barra de navegación
             esta unorder list tendrá list-items que a la vez contendra los links hacia cada una de nuestra páginas
             se agrega una clase colorindex, para cambiar el color de los items a blanco o
             si se requiere a otro color. -->
-              <ul class="navbar-nav ms-auto">
-                <!-- Cada vez que se pase el cursor sobre un link, con los estilos se remarcara cada link -->
-                <li class="nav-item">
-                   <!-- Como estamos en acerca de nosotros, la clase active, nos permitira remarcar
+            <ul class="navbar-nav ms-auto">
+              <!-- Cada vez que se pase el cursor sobre un link, con los estilos se remarcara cada link -->
+              <li class="nav-item">
+                <!-- Como estamos en acerca de nosotros, la clase active, nos permitira remarcar
                 este link siempre que estemos en esta página -->
-                  <a class="nav-link active fw-bolder" aria-current="page" href="./index.html" >Inicio</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link colorindex fw-bolder" href="./html/Acerca_nosotros.html">Acerca de Nosotros</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link colorindex fw-bolder" href="./html/contact.html">Contacto</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link colorindex fw-bolder" href="#">Ingresar</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle colorindex fw-bolder" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Registrarse
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <li><button class="dropdown-item colorindex fw-bolder">Trabajadores</button></li>
-                    <li><button class="dropdown-item colorindex fw-bolder">Clientes</button></li>
-                  </ul>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link colorindex fw-bolder" href="./html/lista_pub_trabajo.html">Servicios</a>
-                </li>
-
-              </ul>
-            </div>
+                <a
+                  class="nav-link active fw-bolder"
+                  aria-current="page"
+                  href="./index.html"
+                  >Inicio</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link colorindex fw-bolder"
+                  href="./html/Acerca_nosotros.html"
+                  >Acerca de Nosotros</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link colorindex fw-bolder"
+                  href="./html/contact.html"
+                  >Contacto</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link colorindex fw-bolder" href="#">Ingresar</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle colorindex fw-bolder"
+                  href="#"
+                  id="navbarDropdownMenuLink"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Registrarse
+                </a>
+                <ul
+                  class="dropdown-menu"
+                  aria-labelledby="navbarDropdownMenuLink"
+                >
+                  <li>
+                    <button class="dropdown-item colorindex fw-bolder">
+                      Trabajadores
+                    </button>
+                  </li>
+                  <li>
+                    <button class="dropdown-item colorindex fw-bolder">
+                      Clientes
+                    </button>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link colorindex fw-bolder"
+                  href="./html/lista_pub_trabajo.html"
+                  >Servicios</a
+                >
+              </li>
+            </ul>
           </div>
-        </nav>
-      </header>
-   
+        </div>
+      </nav>
+    </header>
 
     <!-- HOME -->
-    <section id="home" style="margin-top: 4em;" data-stellar-background-ratio="0.5">
-      <div class="overlay" >
-      <div class="container">
-        <div class="row">
-          <div class="offset-md-3 col-md-6 col-sm-12 offset-md-3">
-            <div class="home-info">
-             <div class="row">
-              <h2 class="col-md-12">Tekton te ayudara</h2>
-            </div>
-              <div class="row">
-                <div class="col-md-12"> <h1>Nunca había sido mas fácil y confiable contratar servicios del hogar.</h1></div>
-              
-            </div>
-              <form action="" method="get" class="online-form">
-                <input
-                  type="search"
-                  name="email"
-                  class="form-control"
-                  placeholder="Ingresa un oficio"
-                  required
-                />
-                <button type="submit" class="form-control">Buscar</button>
-              </form>
+    <section
+      id="home"
+      style="margin-top: 4em"
+      data-stellar-background-ratio="0.5"
+    >
+      <div class="overlay">
+        <div class="container">
+          <div class="row">
+            <div class="offset-md-3 col-md-6 col-sm-12 offset-md-3">
+              <div class="home-info">
+                <div class="row">
+                  <h2 class="col-md-12">Tekton te ayudara</h2>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <h1>
+                      Nunca había sido mas fácil y confiable contratar servicios
+                      del hogar.
+                    </h1>
+                  </div>
+                </div>
+                <form action="" method="get" class="online-form">
+                  <input
+                    type="search"
+                    name="search"
+                    id="search-bar"
+                    class="form-control"
+                    placeholder="Ingresa un oficio"
+                    required
+                    style="width: 67%;"
+                  />
+                  <button type="button" id="btn-search" class="form-control">
+                    Buscar
+                  </button>
+                </form>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
     </section>
 
     <!-- FEATURE -->
-    <section id="feature" data-stellar-background-ratio="0.5" style="padding-top: 50px;">
+    <section
+      id="feature"
+      data-stellar-background-ratio="0.5"
+      style="padding-top: 50px"
+    >
       <!-- Usamos una clase cointainer para dejar espacios a los costados -->
       <div class="container">
-           <div class="row">
+        <div class="row">
+          <div class="col-md-12 col-sm-12">
+            <div class="section-title">
+              <h1>¿Qué podemos ofrecerte?</h1>
+            </div>
+          </div>
 
-                <div class="col-md-12 col-sm-12">
-                     <div class="section-title">
-                          <h1>¿Qué podemos ofrecerte?</h1>
-                     </div>
+          <div class="col-md-6 col-sm-6">
+            <!-- Aqui usamos la clase nav-tabs, para poder elegir entre dos opciones, para desplegar la información -->
+            <ul class="nav nav-tabs" role="tablist">
+              <li class="active">
+                <a
+                  href="#tab01"
+                  aria-controls="tab01"
+                  role="tab"
+                  data-toggle="tab"
+                  id="Trabajador"
+                  >Trabajador</a
+                >
+              </li>
+
+              <li>
+                <a
+                  href="#tab02"
+                  aria-controls="tab02"
+                  role="tab"
+                  data-toggle="tab"
+                  id="Empresas"
+                  >Clientes/Empresas</a
+                >
+              </li>
+            </ul>
+
+            <div class="tab-content">
+              <!-- Este es el contenido del primet tab, lo podemos identificar por su id para poder hacer referencia a este -->
+              <div class="tab-pane active" id="tab01" role="tabpanel">
+                <div class="tab-pane-item">
+                  <h2>Encuentra trabajo de manera rápida</h2>
+                  <p>Pública tu perfil y miles de personas podrán ver.</p>
                 </div>
-
-                <div class="col-md-6 col-sm-6">
-                  <!-- Aqui usamos la clase nav-tabs, para poder elegir entre dos opciones, para desplegar la información -->
-                     <ul class="nav nav-tabs" role="tablist">
-                          <li class="active"><a href="#tab01" aria-controls="tab01" role="tab" data-toggle="tab"id="Trabajador">Trabajador</a></li>
-
-                          <li><a href="#tab02" aria-controls="tab02" role="tab" data-toggle="tab"id="Empresas">Clientes/Empresas</a></li>
-                     </ul>
-
-                     <div class="tab-content">
-                       <!-- Este es el contenido del primet tab, lo podemos identificar por su id para poder hacer referencia a este -->
-                          <div class="tab-pane active" id="tab01" role="tabpanel">
-                               <div class="tab-pane-item">
-                                    <h2>Encuentra trabajo de manera rápida </h2>
-                                    <p>Pública tu perfil y miles de personas podrán ver.</p>
-                               </div>
-                               <div class="tab-pane-item">
-                                    <h2>Obtén más trabajo por tu buen desempeño</h2>
-                                    <p>Con las calificaciones que obtengas de tus clientes serás priorizado en la lista de selección.</p>
-                               </div>
-                               <div class="tab-pane-item">
-                                <h2>Nosotros cuidamos tu trabajo</h2>
-                                <p>Nosotros actuaremos de intermediarios entre el cliente y tú. Si por algún motivo el cliente no quiere pagarte, mientras hayas actuado
-                                  bajo nuestras normas de trabajo. Nosotros nos aseguraremos que tu trabajo sea recompensado.
-                                </p>
-                                <h2>Califica a los usuarios</h2>
-                                <p>Queremos también escuchar tu experiencia con el cliente, tendrás la posibilidad de calificar de la misma manera al cliente.</p>
-                                <h2>No te contratan, búscalo por ti mismo</h2>
-                                <p>También tenemos un apartado donde te puedes postular a una oferta de trabajo publicada por las empresas.</p>
-                           </div>
-                          </div>
-
-
-                          <div class="tab-pane" id="tab02" role="tabpanel">
-                                                   <!-- Este es el contenido del primet tab, lo podemos identificar por su id para poder hacer referencia a este -->
-
-                               <div class="tab-pane-item">
-                                    <h2>Encuentra a los mejores trabajadores</h2>
-                                    <p>Con las calificaciones que manejamos podrás encontrar al empleado más completo.</p>
-                               </div>
-                               <div class="tab-pane-item">
-                                    <h2>Anuncia tu oferta laboral con nosotros</h2>
-                                    <p>Anúnciate con nosotros. Si buscas un gran número de empleados, publica tu oferta y los trabajadores interesados podrán postularse para el empleo.</p>
-                               </div>
-                               <div class="tab-pane-item">
-                                    <h2>Nosotros también te cuidamos</h2>
-                                    <p>Actuaremos como intermediarios entre el cliente y empleado, si por alguna razón notas algún comportamiento que rompa con nuestros términos y condiciones, repórtalo de inmediato con pruebas
-                                      y nosotros lo solucionaremos. Ya sea con otro trabajador o rembolso de tu dinero
-                                    </p>
-                                    
-                               </div>
-                               <div class="tab-pane-item">
-                                <h2>Ayúdanos a mejorar</h2>
-                                <p>Califica a nuestros trabajadores para poder tener a la mejor calidad de trabajadores en nuestra página.
-                                </p>
-                                
-                           </div>
-                          </div>
-                     </div>
-
+                <div class="tab-pane-item">
+                  <h2>Obtén más trabajo por tu buen desempeño</h2>
+                  <p>
+                    Con las calificaciones que obtengas de tus clientes serás
+                    priorizado en la lista de selección.
+                  </p>
                 </div>
-                <!-- En esta parte se define un carusel para mostrar las imagenes de los trabajadores -->
-                <div class="col-md-6 col-sm-6">
-                     <!-- Se definen las clases que usa bootstrap para darle estilo, ademas de añadir una clase margen para acomodar el carusel -->
-                     <div class="owl-carousel owl-theme margen" >
-                      <div class="item ">
-                           
-                           <div class="testimonial-item ">
-                                <img src="./images/1herreros.jpg" class="img-responsive carusel-cuadrado" alt="Michael">
-                                
-                           </div>
-                      </div>
-                    
-                      <div class="item">
-                           
-                           <div class="testimonial-item carousel-cuadrado">
-                                <img src="./images/albañil.jpg" class="img-responsive  carusel-cuadrado" alt="Sofia">
-                               
-                           </div>
-                      </div>
-                    
-                      <div class="item">
-                           <div class="testimonial-item carousel-cuadrado">
-                                <img src="./images/carpintero.jpg" class="img-responsive  carusel-cuadrado" alt="Monica">
-                           
-                           </div>
-                      </div>
-                      <div class="item">
-                        <div class="testimonial-item carousel-cuadrado">
-                             <img src="./images/cocinera.jpg" class="img-responsive  carusel-cuadrado" alt="Monica">
-                        
-                        </div>
-                      </div>
-                      <div class="item">
-                       <div class="testimonial-item">
-                         <img src="./images/jardinera.jpg" class="img-responsive  carusel-cuadrado" alt="Monica">
-                    
-                       </div>
-                      </div>
-                      <div class="item">
-                        <div class="testimonial-item">
-                             <img src="./images/plomera.jpg" class="img-responsive  carusel-cuadrado" alt="Monica">
-                        
-                        </div>
-                      </div>
-                      
-                    </div>
+                <div class="tab-pane-item">
+                  <h2>Nosotros cuidamos tu trabajo</h2>
+                  <p>
+                    Nosotros actuaremos de intermediarios entre el cliente y tú.
+                    Si por algún motivo el cliente no quiere pagarte, mientras
+                    hayas actuado bajo nuestras normas de trabajo. Nosotros nos
+                    aseguraremos que tu trabajo sea recompensado.
+                  </p>
+                  <h2>Califica a los usuarios</h2>
+                  <p>
+                    Queremos también escuchar tu experiencia con el cliente,
+                    tendrás la posibilidad de calificar de la misma manera al
+                    cliente.
+                  </p>
+                  <h2>No te contratan, búscalo por ti mismo</h2>
+                  <p>
+                    También tenemos un apartado donde te puedes postular a una
+                    oferta de trabajo publicada por las empresas.
+                  </p>
                 </div>
+              </div>
 
-           </div>
+              <div class="tab-pane" id="tab02" role="tabpanel">
+                <!-- Este es el contenido del primet tab, lo podemos identificar por su id para poder hacer referencia a este -->
+
+                <div class="tab-pane-item">
+                  <h2>Encuentra a los mejores trabajadores</h2>
+                  <p>
+                    Con las calificaciones que manejamos podrás encontrar al
+                    empleado más completo.
+                  </p>
+                </div>
+                <div class="tab-pane-item">
+                  <h2>Anuncia tu oferta laboral con nosotros</h2>
+                  <p>
+                    Anúnciate con nosotros. Si buscas un gran número de
+                    empleados, publica tu oferta y los trabajadores interesados
+                    podrán postularse para el empleo.
+                  </p>
+                </div>
+                <div class="tab-pane-item">
+                  <h2>Nosotros también te cuidamos</h2>
+                  <p>
+                    Actuaremos como intermediarios entre el cliente y empleado,
+                    si por alguna razón notas algún comportamiento que rompa con
+                    nuestros términos y condiciones, repórtalo de inmediato con
+                    pruebas y nosotros lo solucionaremos. Ya sea con otro
+                    trabajador o rembolso de tu dinero
+                  </p>
+                </div>
+                <div class="tab-pane-item">
+                  <h2>Ayúdanos a mejorar</h2>
+                  <p>
+                    Califica a nuestros trabajadores para poder tener a la mejor
+                    calidad de trabajadores en nuestra página.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- En esta parte se define un carusel para mostrar las imagenes de los trabajadores -->
+          <div class="col-md-6 col-sm-6">
+            <!-- Se definen las clases que usa bootstrap para darle estilo, ademas de añadir una clase margen para acomodar el carusel -->
+            <div class="owl-carousel owl-theme margen">
+              <div class="item">
+                <div class="testimonial-item">
+                  <img
+                    src="./images/1herreros.jpg"
+                    class="img-responsive carusel-cuadrado"
+                    alt="Michael"
+                  />
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="testimonial-item carousel-cuadrado">
+                  <img
+                    src="./images/albañil.jpg"
+                    class="img-responsive carusel-cuadrado"
+                    alt="Sofia"
+                  />
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="testimonial-item carousel-cuadrado">
+                  <img
+                    src="./images/carpintero.jpg"
+                    class="img-responsive carusel-cuadrado"
+                    alt="Monica"
+                  />
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimonial-item carousel-cuadrado">
+                  <img
+                    src="./images/cocinera.jpg"
+                    class="img-responsive carusel-cuadrado"
+                    alt="Monica"
+                  />
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimonial-item">
+                  <img
+                    src="./images/jardinera.jpg"
+                    class="img-responsive carusel-cuadrado"
+                    alt="Monica"
+                  />
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimonial-item">
+                  <img
+                    src="./images/plomera.jpg"
+                    class="img-responsive carusel-cuadrado"
+                    alt="Monica"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
- </section>
- 
+    </section>
 
     <!-- PIEDE PAGINA -->
     <footer id="footer" data-stellar-background-ratio="0.5">
@@ -259,24 +386,24 @@
         <div class="row">
           <div class="copyright-text col-md-12 col-sm-6">
             <div class="row">
-            <div class="col-md-6 col-sm-6">
-              <p>Copyright &copy; 2021 TEKTÔN S.A. de C.V.</p>
-            </div>
+              <div class="col-md-6 col-sm-6">
+                <p>Copyright &copy; 2021 TEKTÔN S.A. de C.V.</p>
+              </div>
 
-            <div class="col-md-6 col-sm-6">
-              <ul class="social-icon">
-                <li>
-                  <a
-                    href="#"
-                    class="fa fa-facebook-square"
-                    attr="facebook icon"
-                  ></a>
-                </li>
-                <li><a href="#" class="fa fa-twitter"></a></li>
-                <li><a href="#" class="fa fa-instagram"></a></li>
-              </ul>
+              <div class="col-md-6 col-sm-6">
+                <ul class="social-icon">
+                  <li>
+                    <a
+                      href="#"
+                      class="fa fa-facebook-square"
+                      attr="facebook icon"
+                    ></a>
+                  </li>
+                  <li><a href="#" class="fa fa-twitter"></a></li>
+                  <li><a href="#" class="fa fa-instagram"></a></li>
+                </ul>
+              </div>
             </div>
-          </div>
           </div>
         </div>
       </div>
@@ -290,7 +417,20 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/smoothscroll.js"></script>
     <script src="js/custom.js"></script>
-  
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript">
+      let btn_search = document.getElementById("btn-search");
+      btn_search.addEventListener("click", function (e) {
+        let txt_search = document.getElementById("search-bar");
+        location.href =
+          "http://127.0.0.1:5500/html/lista_pub_trabajo.html#" +
+          txt_search.value;
+      });
+    </script>
   </body>
+</html>
