@@ -10,16 +10,22 @@ export class User {
      * @param {string} municipal_delegation user associated to a town
      * @param {string} state  user associated to a city
      */
-    constructor(idUser, isEmployee , name, email, profileImg,
-     municipal_delegation, state){
+    constructor(idUser, isEmployee , name, email,
+     municipal_delegation, state,zip,stret,numExt,numInt,password,description, profileImg="./../images/profile_mute.png"){
         this.idUser = idUser;
-        this.isEmployee = isEmployee || false;
+        this.isEmployee = isEmployee;
         this.name = name.toUpperCase();
         this.email = email.toLowerCase();
-        this.profileImg = profileImg || "./../images/profile_mute.png"; //if 
+        this.profileImg = profileImg; //if 
         this.municipal_delegation = municipal_delegation;
         this.state = state;
-        
+        this.zip=zip;
+        this.stret=stret;
+        this.numExt=numExt;
+        this.numInt=numInt;
+        this.password=password;
+        this.description=description;
+
         /**
          * properties not requested by instance of class
          */

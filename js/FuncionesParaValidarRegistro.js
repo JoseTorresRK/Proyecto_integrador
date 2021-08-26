@@ -1,5 +1,7 @@
 //Funciones para validar el registro del cliente o trabajador.
 
+import { User } from "./userClass";
+
 
 const myStorage=window.localStorage;
 //myStorage.removeItem("Trabajadores")
@@ -277,7 +279,8 @@ function validarFormulario(e){
         return arregloTrabajadores;
     }    
  }
- function crearCliente(camposValidados){
+ function crearUsuario(camposValidados){
+     let usuario=new User(1008,myStorage.Bandera,camposValidados[1],camposValidados[3],camposValidados[11])
     let cliente={
         "img": camposValidados[0],
         "name":camposValidados[1],
@@ -297,28 +300,7 @@ function validarFormulario(e){
     };
     return cliente; 
  }
-function crearTrabajador(camposValidados){
-    let trabajador={
-        "img": camposValidados[0],
-        "name":camposValidados[1],
-        "stars":camposValidados[2],
-        "email":camposValidados[3],
-        "stret":camposValidados[4],
-        "Zip":camposValidados[5],
-        "numExt":camposValidados[6],
-        "numInt":camposValidados[7],
-        "contrasena":camposValidados[8],
-        "clientReviews":camposValidados[9],
-        "reviews":camposValidados[10],
-        "municipio":camposValidados[11],
-        "estado":camposValidados[12],
-        "description":camposValidados[13],
-        "category":camposValidados[14],
-        "subCategories":camposValidados[15]
-    };
-    return trabajador;
 
-}
 function saveToMyStorage(perfil,bandera){
     if(bandera==='true'){
         let array_trabajador=recolectarMyStorage(perfil);
