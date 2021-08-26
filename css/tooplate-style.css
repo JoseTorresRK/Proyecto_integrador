@@ -588,7 +588,7 @@ header .active {
   }
 
   .testimonial-info h3 {
-    color: #d9d9d9;
+    color: white;
     font-style: italic;
     margin-top: 5px;
   }
@@ -605,7 +605,7 @@ header .active {
   .owl-carousel .owl-item img,
   .testimonial-item img,
   .testimonial-item h4 {
-    color: #d9d9d9;
+    color: #ffffff;
     display: inline-block;
     vertical-align: top;
  
@@ -756,7 +756,7 @@ header .active {
 
   .social-icon li a {
     border-radius: 50px;
-    color: #202020;
+    color: white;
     font-size: 15px;
     width: 35px;
     height: 35px;
@@ -768,7 +768,7 @@ header .active {
   }
 
   .social-icon li a:hover {
-    background: #536976;
+    background: #0a65ff;
     color: #ffffff;
   }
 
