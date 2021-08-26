@@ -45,6 +45,6 @@ function crearMinimo(){
       
       Toast.fire({
         icon: 'success',
-        title: 'Signed in successfully'
+        title: 'Registro válido, bienvenido'
       })
 }
