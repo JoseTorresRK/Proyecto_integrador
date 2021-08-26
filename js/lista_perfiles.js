@@ -28,7 +28,7 @@ function obtenerLocal(){
 
 
 /**
- * @function funcion que contien/obtiene un objeto y lo convierte a JSON String
+ * @function strJson que contien/obtiene un objeto y lo convierte a JSON String
  * @returns un JSON String de los perfiles
  */
 
@@ -57,9 +57,9 @@ function strJson(){
       stars: 0,
       municipal_delegation: "Alvaro Obregon",
       state: "Ciudad de México",
-      description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque illum architecto veritatis repellat facere qui dolorum harum odit, nesciunt in consequatur debitis veniam, exercitationem tempora, accusamus et sed! Nesciunt, voluptate?",
-      categories: ["Jardinería"],
-      subcategories: ["Plantas exóticas", "Arboles frutales", "Invernaderos", "Bonsáis", "Jardineras"]
+      description: "Asistí a la escuela de oficios y el modelado de la madera siempre fue como un lienzo para en donde plasmar mi creativdad, disfruto realizar proyectos sencillos así como aquellos que requieren mayor atención al detalle, mis habilidades me permiten desde hacer puertas hasta modelar juguetes artisticos, no dudes en contactarme",
+      categories: "Carpintería",
+      subcategories: ["Muebles domésticos" , "Estructuras exteriores", "Cobertizos", "Barnices y pulidos", "Juguetes en madera"]
     },
     {
       idUser:1002,
@@ -76,11 +76,11 @@ function strJson(){
       
       clientReviews: [
         { clientName: "Angel", starsForJob: 4, comment: "Lorem ipsum"},
-        { clientName: "Ana Flores", starsForJob: 5, comment: "Lorem ipsum"}],
+        { clientName: "Lana Garay", starsForJob: 5, comment: "Lorem ipsum"}],
       reviews: 5,
       municipal_delegation: "Cuahautemoc ",
       state: "Ciudad de México",
-      description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque illum architecto veritatis repellat facere qui dolorum harum odit, nesciunt in consequatur debitis veniam, exercitationem tempora, accusamus et sed! Nesciunt, voluptate?",
+      description: "Con gran creatividad y acabados impecables, podemos construir algo juntos, me especializó en muros y estructuras pequeñas, aunque puedo trabajar cualquier proyecto que usted tenga en mente.",
       categories: "Albañilería",
       subcategories: ["Castillos y trabes", "Colados", "Muros", "Estructuras pequeñas", "Bardas"]
     },
@@ -88,7 +88,7 @@ function strJson(){
       idUser:1003,
       isEmployee: true,
       profileImg: "./../images/profile_mute.png",
-      name: "Lanna Garay ",
+      name: "Benito Acosta",
       stars: 0,
       email: "Shawn@gmail.com",
       stret: "Roma",
@@ -103,7 +103,7 @@ function strJson(){
       reviews: 0,
       municipal_delegation: "Azcapotzalco",
       state: "Ciudad de México",
-      description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque illum architecto veritatis repellat facere qui dolorum harum odit, nesciunt in consequatur debitis veniam, exercitationem tempora, accusamus et sed! Nesciunt, voluptate?",
+      description: "Mis 20 años de experiencia junto a mi padre me han enseñado muchas experiencias en este oficio, ofrezco a su disposicion muebles domésticos, barnices y pulido de cualquier acabado, tambien puedo realizar cobertizos a su medida, he trabajado realizando estructuras para exterior como cabañas o establos para caballos.",
       categories: "Carpintería",
       subcategories: ["Muebles domésticos" , "Estructuras exteriores", "Cobertizos", "Barnices y pulidos", "Juguetes en madera"]
     },
@@ -123,10 +123,10 @@ function strJson(){
       clientReviews: [
         { clientName: "Angel", starsForJob: 4, comment: "Lorem ipsum"},
         { clientName: "Ana Flores", starsForJob: 5, comment: "Lorem ipsum"}],
-      reviews: 0,
+      reviews: 20,
       municipal_delegation: "Benito Juarez",
       state: "Ciudad de México",
-      description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque illum architecto veritatis repellat facere qui dolorum harum odit, nesciunt in consequatur debitis veniam, exercitationem tempora, accusamus et sed! Nesciunt, voluptate?",
+      description: "¿Necesita un plomero confiable, que arregle sus fugas entre semana o fines de semana? <br>Pongase en contacto conmigo para agendar una cita para la reparación e instalación del hogar u oficina",
       categories: "Plomería",
       subcategories: ["Fregaderos",  "Lavabos", "Tuberías tapadas", "Caños atascados", "Instalaciones sanitarias"]
     },
@@ -146,10 +146,10 @@ function strJson(){
       clientReviews: [
         { clientName: "Angel", starsForJob: 4, comment: "Lorem ipsum"},
         { clientName: "Ana Flores", starsForJob: 5, comment: "Lorem ipsum"}],
-      reviews:0,
+      reviews: 4,
       municipal_delegation: "Tecamac",
       state: "Estado de México",
-      description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque illum architecto veritatis repellat facere qui dolorum harum odit, nesciunt in consequatur debitis veniam, exercitationem tempora, accusamus et sed! Nesciunt, voluptate?",
+      description: "La profesión de cocinero es un trabajo duro, pero increíblemente gratificante. Es muy difícil ejercerla sin una pasión que la alimente diariamente. En mi caso, fue mi pasión la que moldeó mi profesión y no a la inversa. Siempre quise ser cocinero y eso me encaminó hacia una formación profesional acorde con ese deseo y, consecuentemente, hacia mi carrera profesional.",
       categories: "Cocina",
       subcategories: ["Comida internacional", "Comida casera", "Ingredientes de primera calidad", "Ingredientes orgánicos y frescos", "Platillos exóticos"]
     },
@@ -157,7 +157,7 @@ function strJson(){
       idUser:1006,
       isEmployee:true,
       profileImg: "./../images/profile_mute.png",
-      name: "Marco Polo Agustin",
+      name: "Citlali Amanda Sanchez",
       stars: 0,
       email: "Shawn@gmail.com",
       stret: "Roma",
@@ -170,12 +170,12 @@ function strJson(){
         { clientName: "Angel", starsForJob: 4, comment: "Lorem ipsum"},
         { clientName: "Ana Flores", starsForJob: 5, comment: "Lorem ipsum"}],
 
-      reviews: 0,
+      reviews: 8,
       municipal_delegation: "Tecamac",
       state: "Estado de México",
-      description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque illum architecto veritatis repellat facere qui dolorum harum odit, nesciunt in consequatur debitis veniam, exercitationem tempora, accusamus et sed! Nesciunt, voluptate?",
-      categories: "Cocina",
-      subcategories: ["Comida internacional", "Comida casera", "Ingredientes de primera calidad", "Ingredientes orgánicos y frescos", "Platillos exóticos"]
+      description: "Tengo 7 años de experiencia realizando muebles y estructuras metálicas para hoteles y restaurantes, me distinguen la capacidad de trabajar de manera eficaz, soy atento con los clientes y buena persona, cotice conmigo los muebles o estructuras que usted requiera",
+      categories: "Herreria",
+      subcategories: ["Muebles de Jardín", "Estructuras metálicas", "Soldadura smaw", "Soldadura con microalambre", "Cortadora de plasma"]
     }
       
   ];
@@ -222,6 +222,7 @@ function plantilla (worker){
             </i>
           </div>
         </div>
+        <br>
         <p class="card-text">
           ${worker.description}
         </p>
@@ -229,7 +230,7 @@ function plantilla (worker){
           <li class="list-inline-item p-2"><strong>${worker.categories}</strong></li>
           ${subCategoryGenerator(worker.subcategories)}
         </ul>
-        <a href="#" class="btn btn-primary">Conoceme</a>
+        <a href="#" class="btn btn-primary">Conóceme</a>
       </div>
     </div>
   </div>
