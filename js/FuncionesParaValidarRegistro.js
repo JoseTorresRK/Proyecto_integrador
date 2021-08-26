@@ -1,6 +1,6 @@
 //Funciones para validar el registro del cliente o trabajador.
 
-import { User } from "./userClass";
+
 
 
 const myStorage=window.localStorage;
@@ -244,21 +244,24 @@ function validarFormulario(e){
      camposValidados.push(inputDescripcion.value);
      console.log("Nueva");
      //console.log(inputCategory.value);
-     
+     console.log(myStorage.Bandera);
      if(myStorage.Bandera==='true'){
+         console.log("No entraaaaaaaaaaa");
         camposValidados.push(inputCategory.value);
         camposValidados.push(arreglo);
         saveToMyStorage(crearTrabajador(camposValidados),myStorage.Bandera);
      }
      else{
         saveToMyStorage(crearCliente(camposValidados),myStorage.Bandera);
-
      }
+     
      window.location="lista_perfiles.html"; 
 
     }
  function recolectarMyStorage(perfil){
      let arregloTrabajadores=[];
+     console.log("Final")
+     console.log(perfil);
      if(perfil==='Trabajador'){
         console.log(myStorage.getItem(perfil));
         if(myStorage.Trabajador===undefined||myStorage.Trabajador.length===0){
@@ -279,37 +282,64 @@ function validarFormulario(e){
         return arregloTrabajadores;
     }    
  }
- function crearUsuario(camposValidados){
-     let usuario=new User(1008,myStorage.Bandera,camposValidados[1],camposValidados[3],camposValidados[11])
+ function crearCliente(camposValidados){
+     //let usuario=new User(1008,myStorage.Bandera,camposValidados[1],camposValidados[3],camposValidados[11])
     let cliente={
-        "img": camposValidados[0],
+        "idUser":1008,
+        "isEmployee":false,
+        "profileImg": camposValidados[0],
         "name":camposValidados[1],
         "stars":camposValidados[2],
         "email":camposValidados[3],
         "stret":camposValidados[4],
-        "Zip":camposValidados[5],
+        "zip":camposValidados[5],
         "numExt":camposValidados[6],
         "numInt":camposValidados[7],
-        "contrasena":camposValidados[8],
-        "workedReviews":camposValidados[9],
+        "password":camposValidados[8],
+        "clientReviews":camposValidados[9],
         "reviews":camposValidados[10],
-        "municipio":camposValidados[11],
-        "estado":camposValidados[12],
+        "municipal_delegation":camposValidados[11],
+        "state":camposValidados[12],
         "description":camposValidados[13]
-        
     };
     return cliente; 
  }
 
+ function crearTrabajador(camposValidados){
+    //let usuario=new User(1008,myStorage.Bandera,camposValidados[1],camposValidados[3],camposValidados[11])
+   let Trabajador={
+    "idUser":1008,
+    "isEmployee":false,
+    "profileImg": camposValidados[0],
+    "name":camposValidados[1],
+    "stars":camposValidados[2],
+    "email":camposValidados[3],
+    "stret":camposValidados[4],
+    "zip":camposValidados[5],
+    "numExt":camposValidados[6],
+    "numInt":camposValidados[7],
+    "password":camposValidados[8],
+    "clientReviews":camposValidados[9],
+    "reviews":camposValidados[10],
+    "municipal_delegation":camposValidados[11],
+    "state":camposValidados[12],
+    "description":camposValidados[13],
+       "categories":camposValidados[14],
+       "subcategories":camposValidados[15]
+   };
+   
+   return Trabajador; 
+}
+
 function saveToMyStorage(perfil,bandera){
     if(bandera==='true'){
-        let array_trabajador=recolectarMyStorage(perfil);
+        let array_trabajador=recolectarMyStorage("Trabajador");
         console.log(array_trabajador,"1234");
         array_trabajador.push(perfil);
         myStorage.setItem("Trabajador",JSON.stringify(array_trabajador));
     }
     else{
-        let array_trabajador=recolectarMyStorage(perfil);
+        let array_trabajador=recolectarMyStorage("Cliente");
         console.log(array_trabajador,"1234");
         array_trabajador.push(perfil);
         myStorage.setItem("Cliente",JSON.stringify(array_trabajador));

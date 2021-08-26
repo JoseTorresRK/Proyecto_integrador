@@ -7,10 +7,10 @@
  */
 const myStorage=window.localStorage;
 function obtenerLocal(){
-  if(myStorage.Trabajadores===undefined||myStorage.Trabajadores===[]){
+  if(myStorage.Trabajador===undefined||myStorage.Trabajador===[]){
     return [];
   }
-  const variables=JSON.parse(myStorage.Trabajadores);
+  const variables=JSON.parse(myStorage.Trabajador);
   
   console.log(variables);
   
@@ -59,7 +59,7 @@ function strJson(){
       state: "Ciudad de México",
       description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque illum architecto veritatis repellat facere qui dolorum harum odit, nesciunt in consequatur debitis veniam, exercitationem tempora, accusamus et sed! Nesciunt, voluptate?",
       categories: ["Jardinería"],
-      subCategories: ["Plantas exóticas", "Arboles frutales", "Invernaderos", "Bonsáis", "Jardineras"]
+      subcategories: ["Plantas exóticas", "Arboles frutales", "Invernaderos", "Bonsáis", "Jardineras"]
     },
     {
       idUser:1002,
@@ -203,6 +203,7 @@ function subCategoryGenerator(subCategories){
  */
 function plantilla (worker){
   //const imag=URL.createObjectURL(worker.img);
+  console.log(worker);
     return `
     <div class="row">
     <div class="card">
