@@ -17,7 +17,7 @@ function mensajeValidacion(tipoMensaje,input,campo){
         
         validacionDinamica=document.createElement("div");
         validacionDinamica.classList.add("valid-tooltip")
-        mensaje=document.createTextNode("Campo valido");
+        mensaje=document.createTextNode("Campo válido");
         validacionDinamica.appendChild(mensaje);
         validar[campo].appendChild(validacionDinamica);
         //validar[campo].+=`<div class="valid-tooltip">Campo valido</div>`;
@@ -48,7 +48,7 @@ function validarImagen(imagen){
 }
 function validarNum(numero){
     if(numero.length<=0){
-        return "El campo no puede estar vacio";
+        return "El campo no puede estar vacío";
     }
     
     if(!(/^[A-Z][0-9]{1,4}$|^[0-9]{1,4}$/.test(numero.toUpperCase()))){
@@ -59,26 +59,26 @@ function validarNum(numero){
 }
 function validarDescripcion(descripcion){
     if(descripcion.length<=0){
-        return "El campo no puede estar vacio";
+        return "El campo no puede estar vacío";
     }
     return true;
 }
 function validarZip(zip){
     if(zip.length<=0){
-        return "El campo no puede estar vacio";
+        return "El campo no puede estar vacío";
     }
     if(!(/^[0-9]+$/).test(zip)){
         return "El campo solo puede contener números";
     }
     if(zip.length!==5){
-        return "El código postal, debe tener cinco digitos";
+        return "El código postal, debe tener cinco dígitos";
     }
     return true;
 }
 function validarLetras(nombre){
     if(nombre.length<=0){
        console.log(nombre.length);
-        return "El campo no puede estar vacio";
+        return "El campo no puede estar vacío";
     }
     if(!(/^[A-Za-z\sÁÉÍÓÚáéíóúñÑüÜ]+$/.test(nombre))){
         return "El campo solo puede tener letras, espacios, acentos y ¨";
@@ -96,7 +96,7 @@ function validarSeleccion(estado){
 function validaContrasena(contrasena){
     console.log(contrasena)
     if(contrasena.length<=0){
-        return "El campo no puede estar vacio";
+        return "El campo no puede estar vacío";
     }
     if(!(/^[!-~\s]{6,}$/.test(contrasena))){
         return "El campo debe contener seis o más carácteres";
@@ -116,10 +116,10 @@ function confirmaContrasena(confirmacion,contrasena,primeraValidacion){
 }
 function validarEmail(email){
     if(email.length<=0){
-        return "El campo no puede estar vacio";
+        return "El campo no puede estar vacío";
     }
     if(!(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,6}$/.test(email.toUpperCase()))){
-        return "El email no es valido";
+        return "El email no es válido";
     }
     return true;
 }
@@ -129,7 +129,7 @@ function validarTelefono(telefono){
     let soloNumeros="Este campo solo acepta números y debe tener diez digitos";
     if(telefono.length<=0){
         console.log("Estoy vacio")
-        return "El campo no puede estar vacio";
+        return "El campo no puede estar vacío";
     }
     if(!(/^[0-9]+$/.test(telefono))){
         console.log("Pero si soy un numero")
@@ -142,10 +142,11 @@ function validarTelefono(telefono){
     return true;
 }
 function construirSweetAlert(imagen,titulo,mensaje,piePagina){
-    new Swal({
+     Swal.fire({
         icon: imagen,
         title: titulo,
         text: mensaje,
+        confirmButtonColor:"#ff4716",
         footer: piePagina
     })
 }
@@ -170,7 +171,7 @@ function validarFormulario(e){
      console.log("Categoria");
      
      let contrasena=document.getElementById("inputPassword");
-     let file=document.getElementById("formFile");
+     //let file=document.getElementById("formFile");
      let confirmacionContrasena=document.getElementById("inputPasswordConfirm");
      let inputDescripcion=document.getElementById("Descripcion");
      let inputSub=document.getElementById("Subcategory");
@@ -208,17 +209,17 @@ function validarFormulario(e){
          aciertos.push(mensajeValidacion(validaContrasena(contrasena.value),contrasena,11-modificador));
      
     aciertos.push(mensajeValidacion(confirmaContrasena(confirmacionContrasena.value,contrasena.value,validaContrasena(confirmacionContrasena.value)),confirmacionContrasena,12-modificador));
-     let imagen=document.querySelector("form");
-     aciertos.push(mensajeValidacion(validarDescripcion(inputDescripcion.value),inputDescripcion,14-modificador));
-     console.log("VAB",file.files[0]);
-     aciertos.push( mensajeValidacion(validarImagen(file.value),file,13-modificador));
+     //let imagen=document.querySelector("form");
+     aciertos.push(mensajeValidacion(validarDescripcion(inputDescripcion.value),inputDescripcion,13-modificador));
+     //console.log("VAB",file.files[0]);
+     //aciertos.push( mensajeValidacion(validarImagen(file.value),file,13-modificador));
      console.log(aciertos);
-     let imagenesa=document.getElementById("Imagenesa");
-     const objetoUrl=URL.createObjectURL(file.files[0]);
-     imagenesa.innerHTML+=`<img src=${objetoUrl} alt="">`;
+     //let imagenesa=document.getElementById("Imagenesa");
+     //const objetoUrl=URL.createObjectURL(file.files[0]);
+     //imagenesa.innerHTML+=`<img src=${objetoUrl} alt="">`;
      if(aciertos.includes(false)){
          //alert("Te equivocaste en un campo, revisa los campos de nuevo");
-         construirSweetAlert("error",'Ingresaste mal un campo, regresa para checar.',"",'<a href="">Why do I have this issue?</a>');
+         construirSweetAlert("error",'Ingresaste mal un campo, regresa para checar.',"",'');
          return;
      }
     //console.log(inputSub.options);
@@ -226,9 +227,9 @@ function validarFormulario(e){
     
    
      console.log("objeto")
-     console.log(objetoUrl);
+     //console.log(objetoUrl);
 
-     camposValidados.push(file.files[0]);
+     //camposValidados.push(file.files[0]);
      camposValidados.push(inputNombre.value);
      camposValidados.push(0);
      camposValidados.push(inputEmail.value);
@@ -287,20 +288,20 @@ function validarFormulario(e){
     let cliente={
         "idUser":1008,
         "isEmployee":false,
-        "profileImg": camposValidados[0],
-        "name":camposValidados[1],
-        "stars":camposValidados[2],
-        "email":camposValidados[3],
-        "stret":camposValidados[4],
-        "zip":camposValidados[5],
-        "numExt":camposValidados[6],
-        "numInt":camposValidados[7],
-        "password":camposValidados[8],
-        "clientReviews":camposValidados[9],
-        "reviews":camposValidados[10],
-        "municipal_delegation":camposValidados[11],
-        "state":camposValidados[12],
-        "description":camposValidados[13]
+        //"profileImg": camposValidados[0],
+        "name":camposValidados[0],
+        "stars":camposValidados[1],
+        "email":camposValidados[2],
+        "stret":camposValidados[3],
+        "zip":camposValidados[4],
+        "numExt":camposValidados[5],
+        "numInt":camposValidados[6],
+        "password":camposValidados[7],
+        "clientReviews":camposValidados[8],
+        "reviews":camposValidados[9],
+        "municipal_delegation":camposValidados[10],
+        "state":camposValidados[11],
+        "description":camposValidados[12]
     };
     return cliente; 
  }
@@ -310,22 +311,22 @@ function validarFormulario(e){
    let Trabajador={
     "idUser":1008,
     "isEmployee":false,
-    "profileImg": camposValidados[0],
-    "name":camposValidados[1],
-    "stars":camposValidados[2],
-    "email":camposValidados[3],
-    "stret":camposValidados[4],
-    "zip":camposValidados[5],
-    "numExt":camposValidados[6],
-    "numInt":camposValidados[7],
-    "password":camposValidados[8],
-    "clientReviews":camposValidados[9],
-    "reviews":camposValidados[10],
-    "municipal_delegation":camposValidados[11],
-    "state":camposValidados[12],
-    "description":camposValidados[13],
-       "categories":camposValidados[14],
-       "subcategories":camposValidados[15]
+    //"profileImg": camposValidados[0],
+    "name":camposValidados[0],
+    "stars":camposValidados[1],
+    "email":camposValidados[2],
+    "stret":camposValidados[3],
+    "zip":camposValidados[4],
+    "numExt":camposValidados[5],
+    "numInt":camposValidados[6],
+    "password":camposValidados[7],
+    "clientReviews":camposValidados[8],
+    "reviews":camposValidados[9],
+    "municipal_delegation":camposValidados[10],
+    "state":camposValidados[11],
+    "description":camposValidados[12],
+       "categories":camposValidados[13],
+       "subcategories":camposValidados[14]
    };
    
    return Trabajador; 
