@@ -268,7 +268,7 @@ function validarFormulario(e){
     }    
  }
  function crearCliente(camposValidados){
-    let cliente={
+    let Cliente={
         "img": camposValidados[0],
         "name":camposValidados[1],
         "stars":camposValidados[2],
@@ -285,10 +285,10 @@ function validarFormulario(e){
         "description":camposValidados[13]
         
     };
-    return cliente; 
+    return Cliente; 
  }
 function crearTrabajador(camposValidados){
-    let trabajador={
+    let Trabajador={
         "img": camposValidados[0],
         "name":camposValidados[1],
         "stars":camposValidados[2],
@@ -306,7 +306,7 @@ function crearTrabajador(camposValidados){
         "category":camposValidados[14],
         "subCategories":camposValidados[15]
     };
-    return trabajador;
+    return Trabajador;
 
 }
 function saveToMyStorage(perfil,bandera){
@@ -314,7 +314,7 @@ function saveToMyStorage(perfil,bandera){
         let array_trabajador=recolectarMyStorage(perfil);
         console.log(array_trabajador,"1234");
         array_trabajador.push(perfil);
-        myStorage.setItem("Trabajadores",JSON.stringify(array_trabajador));
+        myStorage.setItem("Trabajador",JSON.stringify(array_trabajador));
     }
     else{
         let array_trabajador=recolectarMyStorage(perfil);

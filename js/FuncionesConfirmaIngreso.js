@@ -19,7 +19,7 @@ function compararPerfil(correo,contrasena){
     }
     encontrarPerfil().forEach(element => {
         console.log(correo);
-        if(element.email===correo&&contrasena===element.contrasena){
+        if(element.email===correo&&contrasena===element.password){
             crearMinimo();
             window.location="./lista_perfiles.html";
 
@@ -45,6 +45,6 @@ function crearMinimo(){
       
       Toast.fire({
         icon: 'success',
-        title: 'Signed in successfully'
+        title: 'Registro válido, bienvenido'
       })
 }
