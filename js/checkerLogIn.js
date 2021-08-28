@@ -21,12 +21,7 @@ function mostrarNavBar(booleano, typeOfLog){
 
     if(booleano ===true){
         for( botonOut of btns_logOut ){
-            if(botonOut === btns_logOut[1]){
-                botonOut.setAttribute("class", `nav-item ${typeOfLog} d-flex justify-content-center align-content-column flex-column align-items-center`)    
-            }else{
-                botonOut.setAttribute('class', `nav-item ${typeOfLog}`)
-            }
-            
+            botonOut.setAttribute('class', `nav-item ${typeOfLog}`)        
         }
         for (botonIn of btns_logIn){
             botonIn.setAttribute("class", "nav-item loggedIn visually-hidden");
@@ -41,6 +36,8 @@ function mostrarNavBar(booleano, typeOfLog){
     }
 }
 
+const btn_cerrar_sesion = document.querySelectorAll(".loggedIn")[1]
+btn_cerrar_sesion.onclick = window.localStorage.loggedIn = false;
 /**
  * @function ejecuta la funcion cuando se termina de cargar toda la informacion de la pagina
  */
