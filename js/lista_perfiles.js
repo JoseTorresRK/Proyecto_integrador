@@ -17,7 +17,8 @@ function obtenerLocal(){
   
   return variables;
 }
- function calculateTotalStars( clientReviews) {
+
+function calculateTotalStars( clientReviews) {
   let sumStars = 0;
   
   clientReviews.forEach(function(element){
@@ -31,8 +32,6 @@ function obtenerLocal(){
  * @function strJson que contien/obtiene un objeto y lo convierte a JSON String
  * @returns un JSON String de los perfiles
  */
-
-
 function strJson(){
   let perfiles =[
 
@@ -249,7 +248,7 @@ function calcularEstrellasResenas(){
 
 
 /**
- * @function convierte los JSON a 
+ * @function convierte los JSON a objetos
  * @returns cadena con todos las cards de los empleados
  */
 function paqueteCards(){
@@ -264,7 +263,7 @@ function paqueteCards(){
 }
 
 function agregaLocal(){
-  console.log("bain"); 
+  //console.log("bain"); 
   let arregloTrabajadores=JSON.parse( strJson());
    let localTrabajadores=obtenerLocal();
    //myStorage.setItem("Trabajadores",JSON.stringify(localTrabajadores));
