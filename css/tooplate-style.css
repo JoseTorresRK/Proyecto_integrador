@@ -474,7 +474,17 @@ header .active {
 
     margin-top: 7em;
   }
-.colorrojo{
+i{
+  font-size: xx-large;
+}
+.iconopeq{
+  font-size: x-large;
+}
+.botonicono{
+  background-color: transparent;
+  border: none;
+}
+.colororo{
   color: gold;
 }
   .paginaperfil{
