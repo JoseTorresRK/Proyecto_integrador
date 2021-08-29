@@ -474,7 +474,14 @@ header .active {
 
     margin-top: 7em;
   }
-
+.colorrojo{
+  color: gold;
+}
+  .paginaperfil{
+    padding-top: 5em;
+    padding-left: 5em;
+    padding-right: 5em;
+  }
   /*---------------------------------------
       ABOUT              
   -----------------------------------------*/
@@ -737,8 +744,17 @@ header .active {
     color: white;
   }
 
-
-
+/*----------------------------------------
+Vista de perfiles
+----------------------------------------*/
+.imgRedonda {
+  width:200px;
+  height:200px;
+  border-radius:150px;
+}
+li{
+  list-style: none;
+}
   /*---------------------------------------
      SOCIAL ICON              
   -----------------------------------------*/

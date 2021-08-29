@@ -7,7 +7,7 @@
     <title>Agregar publicación</title>
     <link rel="shortcut icon" type="image/x-icon" href="../images/Tekton_icono.png" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        
+
     <!-- ICONS BOOTSTRAP v.1.4.0 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../css/tooplate-style.css" />
@@ -24,20 +24,20 @@
           <span class="spinner-rotate"></span>
         </div>
       </section>
-  
+
       <!-- MENU -->
-  
-       
+
+
           <header class="header">
           <nav class="navbar navbar-expand-lg me-auto fixed-top " >
             <div class="container-fluid">
-              
+
               <a class="navbar-brand colorindex alinear" href="../index.html"> <picture> <source srcset="../images/Tekton_icono.png" media="(max-width:768px)"><img src="../images/TEKTON  orange .svg"  alt=""></picture></a>
 
               <button class="navbar-toggler alinearmenu navbar-dark shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon" ></span>
               </button>
-              
+
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                   <li class="nav-item">
@@ -89,7 +89,10 @@
                       </li>
                     </ul>
                   </li>
-  
+                  <li class="nav-item">
+                    <a class="nav-link colorindex fw-bolder" href="./lista_pub_trabajo.html">Servicios</a>
+                  </li>
+
                 </ul>
               </div>
             </div>
@@ -106,7 +109,7 @@
                     </div>
                         <div class="row margen-formulario">
                             <div class="col-md-4 col-sm-4  position-relative">
-                              
+
                               <input
                                 id="full_name"
                                 type="text"
@@ -114,13 +117,13 @@
                                 placeholder="Nombre completo"
                                 name="name"
                                 required
-            
+
                               />
                               <div class="valid-tooltip">
                                 Campo válido.
                               </div>
-                              
-                              
+
+
                             </div>
                             <div class="col-md-4 col-sm-4 offset-md-1 position-relative">
                               <input
@@ -132,11 +135,11 @@
                                 required
                               />
                               <div class="valid-tooltip">
-                                 
+
                                 </div>
                             </div>
                             <div class="col-md-3 col-sm-3  position-relative">
-                              <input 
+                              <input
                                 id="tel"
                                 type="tel"
                                 class="form-control formato"
@@ -145,7 +148,7 @@
                                required
                               />
                               <div class="valid-tooltip">
-                               
+
                               </div>
                             </div>
                           </div>
@@ -190,7 +193,7 @@
                               <div class="valid-tooltip">
                                 Campo válido.
                               </div>
-                              
+
                             </div>
                             <div class="offset-md-2 col-md-3 col-sm-3 position-relative">
                               <input  id="city"
@@ -201,13 +204,13 @@
                               required
                              >
                              <div class="valid-tooltip">
-                              
+
                             </div>
-                            
+
                             </div>
-                            
+
                             <div class="offset-1 col-md-3 col-sm-3 position-relative">
-                             
+
                               <input
                                 type="text"
                                 class="form-control formato"
@@ -218,9 +221,9 @@
                               <div class="valid-tooltip">
                                 Campo válido.
                               </div>
-                              
-                         
-                          
+
+
+
                         </div>
                           </div>
                           <div class="row margen-formulario">
@@ -229,7 +232,7 @@
                               <div class="valid-tooltip">
                                 Campo válido.
                               </div>
-                              
+
                            </div>
 
                            <div class="col-md-2 col-sm-2 offset-md-1 offset-md-1 position-relative dinamico">
@@ -238,7 +241,7 @@
                             <div class="valid-tooltip">
                               Campo válido.
                             </div>
-                            
+
                            </div>
 
                            <div class="col-md-2 col-sm-2 offset-md-1 offset-md-1 position-relative dinamico">
@@ -247,7 +250,7 @@
                             <div class="valid-tooltip">
                               Campo válido.
                             </div>
-                            
+
                            </div>
 
                             <div class="col-md-4 col-sm-4 position-relative dinamico">
@@ -255,45 +258,45 @@
 
                               <select id="Category" class="form-select">
                                 <option value="">Seleccione una categoría</option>
-                                <option value="Albañileria">Albañileria</option>
+                                <option value="Albañileria">Albañilería</option>
                                 <option value="Carpinteria">Carpintería</option>
                                 <option value="Cocina">Cocina</option>
                                 <option value="Herreria">Herrería</option>
                                 <option value="Jardineria">Jardinería</option>
-                                <option value="Plomeria">Plomería</option>                               
+                                <option value="Plomeria">Plomería</option>
                               </select>
                               <div class="valid-tooltip">
                                 Campo válido.
                               </div>
-                              
+
                             </div>
-                            
-                            
-                            
+
+
+
                           </div>
-                          
+
                           <div class="row">
                             <div class="col-md-4 col-sm-4 position-relative dinamico">
-                              
+
                               <label for="Subcategory">Subcategorias</label>
                               <select id="Subcategory" class="form-select" multiple="multiple" size="4">
                                 <option value="">Seleccione subcategorias</option>
-                                                              
+
                               </select>
                               <div class="valid-tooltip">
                                 Campo válido.
                               </div>
-                              
+
                             </div>
                             <div class="form-group col-md-4 col-lg-4 position-relative dinamico">
-                              
+
                               <input type="password" placeholder="Contraseña" class="form-control formato" id="inputPassword" />
                               <div class="valid-tooltip">
                                 Campo válido.
                               </div>
                             </div>
                             <div class="form-group col-md-4 col-lg-4 position-relative dinamico">
-                             
+
                               <input
                                 type="password"
                                 class="form-control formato"
@@ -304,8 +307,23 @@
                               <div class="valid-tooltip">
                                 Campo válido.
                               </div>
-                              
+
                             </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-9 col-lg-9 position-relative">
+                              <br>
+                              <button id="upload_widget" class="cloudinary-button">Ingresa Imagen</button>
+                              <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+                              <div id="Preview">
+
+                              </div>
+                              <div class="valid-tooltip" >
+                                Campo válido.
+                              </div>
+
+                            </div>
+                            
                           </div>
                     <!-- <div class="row">
                       <div class="input-group  position-relative" style="margin-top: 2em;">
@@ -317,8 +335,8 @@
                           Campo válido.
                         </div>
                       </div>
-                      
-                      
+
+
                     </div> -->
                     <div class="row" >
                       <div class="col-md-12 col-sm-12 position-relative" style="margin-top: 3em;">
@@ -333,25 +351,25 @@
                         <div class="valid-tooltip">
                           Campo válido.
                         </div>
-                        
+
                       </div>
                     </div>
                     <div class="row">
                       <div class="offset-md-5 col-12">
-                        <button type="submit" class="btn btn-primary btn-margen">
+                        <button type="submit" class="btn btn-primary btn-margen"id="botonenvia">
                           Registarse!!
                         </button>
                       </div>
                     </div>
                 </form>
                 <div id="Imagenesa">
-                    
+
                 </div>
-                
-                
+
+
             </div>
         </section>
-  
+
         <footer id="footer" data-stellar-background-ratio="0.5">
           <div class="container">
             <div class="row">
@@ -360,7 +378,7 @@
                 <div class="col-md-6 col-sm-6">
                   <p>Copyright &copy; 2021 TEKTÔN S.A. de C.V.</p>
                 </div>
-    
+
                 <div class="col-md-6 col-sm-6">
                   <ul class="social-icon">
                     <li>
@@ -381,7 +399,7 @@
         </footer>
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
      <script src="./../js/jquery.js"></script>
-   
+
      <script src="./../js/jquery.stellar.min.js"></script>
      <script src="./../js/owl.carousel.min.js"></script>
      <script src="./../js/smoothscroll.js"></script>

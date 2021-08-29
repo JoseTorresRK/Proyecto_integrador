@@ -208,10 +208,10 @@ function plantilla (worker){
     <div class="card">
       <div class="card-body">
         <div class="row">
-          <img src="./../images/profile_mute.png" alt="profile_mute" class="col-2">
+          <img src="${worker.profileImg}" alt="profile_mute" class="col-2" style="width: 250;height: 250;">
           <div class="nombre col-9">
             <h4 class="card-title">${worker.name}</h4>
-            <i class="bi bi-star-fill"></i> <!-- ESTRELLA COMPLETA -->
+            <i class="bi bi-star-fill colorrojo"></i> <!-- ESTRELLA COMPLETA -->
             <i class="bi bi-star-fill"></i> <!-- ESTRELLA COMPLETA -->
             <i class="bi bi-star-half"></i> <!-- ESTRELLA a la MITAD -->
             <i class="bi bi-star"></i> <!-- ESTRELLA VACIA -->
@@ -298,3 +298,4 @@ window.addEventListener("load", (event)=>{
     renderCard();
 
 });
+a
