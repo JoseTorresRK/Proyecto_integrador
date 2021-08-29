@@ -116,7 +116,7 @@ function validarEmail(email){
     return true;
 }
 let global;
-function crearWidgetCloudinary(){
+function crearWidgetCloudinary(boleano=true){
     
     var myWidget = cloudinary.createUploadWidget({
         cloudName: 'dqzvtvjhu',
@@ -133,7 +133,9 @@ function crearWidgetCloudinary(){
             const imgElement = document.createElement('img');
             imgElement.src =result.info.thumbnail_url;
             console.log(result.info.thumbnail_url)
+            if(boleano){
             imgContainer.append(imgElement)
+            }
             global=result.info.url;
           }
         }

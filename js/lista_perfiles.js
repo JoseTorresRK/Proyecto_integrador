@@ -18,9 +18,11 @@ function obtenerLocal(){
   return variables;
 }
 
-function calculateTotalStars( clientReviews) {
+ function calculateTotalStars( clientReviews) {
   let sumStars = 0;
-  
+  if(clientReviews.length===0){
+    return sumStars=false;
+  }
   clientReviews.forEach(function(element){
         sumStars += element.starsForJob;
  });
@@ -212,9 +214,9 @@ function plantilla (worker){
           <div class="nombre col-9">
             <h4 class="card-title">${worker.name}</h4>
             <i class="bi bi-star-fill colorrojo"></i> <!-- ESTRELLA COMPLETA -->
-            <i class="bi bi-star-fill"></i> <!-- ESTRELLA COMPLETA -->
-            <i class="bi bi-star-half"></i> <!-- ESTRELLA a la MITAD -->
-            <i class="bi bi-star"></i> <!-- ESTRELLA VACIA -->
+            <i class="bi bi-star-fill colorrojo"></i> <!-- ESTRELLA COMPLETA -->
+            <i class="bi bi-star-half colorrojo"></i> <!-- ESTRELLA a la MITAD -->
+            <i class="bi bi-star colorrojo"></i> <!-- ESTRELLA VACIA -->
             <span class="p-1">(${worker.reviews} reseñas )</span>
             <i class="bi bi-pin-map-fill p-5"> <!--MAPA-->
               <span class="p-2">${worker.municipal_delegation}</span> – <span>${worker.state}</span>
@@ -298,4 +300,3 @@ window.addEventListener("load", (event)=>{
     renderCard();
 
 });
-a

@@ -1,4 +1,54 @@
-
+// function calculateTotalStars( clientReviews) {
+//     let sumStars = 0;
+//     if(clientReviews.length===0){
+//       return sumStars=false;
+//     }
+//     clientReviews.forEach(function(element){
+//           sumStars += element.starsForJob;
+//    });
+//    return ( sumStars / clientReviews.length) ;
+//   }
+function creaEstrellas(reviews){
+    //let star=calculateTotalStars(reviews);
+    let star=reviews;
+    let temp;
+    let mensaje=``;
+    if(!star){
+        return `Espera a realizar un trabajo para obtener una calificación`;
+    }
+    temp=star-Math.floor(star);
+    
+    if(temp>=0 && temp<=.25){
+        for(let i=0;i<Math.floor(star);i++){
+            mensaje+=`<i class="bi bi-star-fill colororo"></i>`;
+        }
+        for(let i=0;i<5-Math.floor(star);i++){
+            mensaje+=`<i class="bi bi-star colororo"></i>`;
+        }
+    }
+    else{
+        if(temp>.25 && temp<=.75){
+            for(let i=0;i<Math.floor(star);i++){
+                mensaje+=`<i class="bi bi-star-fill colororo"></i>`;
+            }
+            mensaje+=`<i class="bi bi-star-half colororo"></i>`;
+            for(let i=0;i<5-Math.floor(star)-1;i++){
+                mensaje+=`<i class="bi bi-star colororo"></i>`;
+            }
+            
+        }
+        else{
+            for(let i=0;i<Math.round(star);i++){
+                mensaje+=`<i class="bi bi-star-fill colororo"></i>`;
+            }
+            
+            for(let i=0;i<5-Math.round(star);i++){
+                mensaje+=`<i class="bi bi-star colororo"></i>`;
+            }
+        }
+    }
+    return mensaje;
+}
 function tempLocal(id){
     let registro
     arreglo=recolectarMyStorage("Trabajador");
@@ -51,25 +101,40 @@ function renderPerfil(perfil){
     <img src="${perfil.profileImg}" class="imgRedonda mx-auto"  alt="...">
   
     <h3 style="text-align: center;"> ${perfil.name}</h3>
+    <li class=" mx-auto">
+    ${creaEstrellas(4.5)} 
+
+    </li>
+    
+    <button class="botonicono" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-pencil-square iconopeq"></i></button>
+
     <ul class="list-group list-group-flush">
+   
       <li class="list-group-item">
         <div class="accordion accordion-flush" id="accordionFlushExample">
           <div class="accordion-item">
             <h2 class="accordion-header" id="flush-headingOne">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="true" aria-controls="flush-collapseOne">
-                Descripción
+                <strong>Descripción</strong>
               </button>
             </h2>
+            
             <div id="flush-collapseOne" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-              <div class="accordion-body">${perfil.description}</div>
+              <div class="accordion-body">${perfil.description} <button class="botonicono"><i class="bi bi-pencil-square iconopeq"></i></botton></div>
+              
             </div>
+            <ul>
+          
+          
+           
+        </ul>
           </div>
           </div>
       </li>
       <li class="list-group-item ">
         
         <strong>Categorías:</strong>
-        <button><img src="../images/boligrafo.svg" style="height: 20px;width: 20px;" alt=""></button>
+        <button class="botonicono"><i class="bi bi-pencil-square iconopeq"></i></button>
         <ul>
           <li class="d-flex justify-content-between align-items-center">
              ${perfil.categories}
@@ -80,14 +145,14 @@ function renderPerfil(perfil){
 
       <li class="list-group-item ">
         <strong>Subcategorías:</strong>
-        <button><img src="../images/boligrafo.svg" style="height: 20px;width: 20px;" alt=""></button>
+        <button class="botonicono"><i class="bi bi-pencil-square iconopeq"></i></button>
         <ul>
           ${mensajeSubcategoria(perfil.subcategories)}
         </ul>
       </li>
 
-      <li class="list-group-item"><strong>Localidad</strong>
-        <button><img src="../images/boligrafo.svg" style="height: 20px;width: 20px;" alt=""></button>
+      <li class="list-group-item"><strong>Localidad:</strong>
+      <button class="botonicono"><i class="bi bi-pencil-square iconopeq"></i></button>
       <ul>
         <li>Estado: ${perfil.state}</li>
         <li>Municipio:${perfil.municipal_delegation}</li>
@@ -95,7 +160,8 @@ function renderPerfil(perfil){
       </ul></li>
       <li class="list-group-item">
         <strong>Contacto:</strong>
-        <button><img src="../images/boligrafo.svg" style="height: 20px;width: 20px;" alt=""></button>
+        <button class="botonicono"><i class="bi bi-pencil-square iconopeq"></i></button>
+
         <ul>
           <li>
             Correo: ${perfil.email}
@@ -111,4 +177,6 @@ function renderPerfil(perfil){
   </div>
 `;
 }
-renderPerfil(tempLocal(1008));
+function cambiarImagen(){
+    
+}
