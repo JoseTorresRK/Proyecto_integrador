@@ -382,6 +382,11 @@ function saveToMyStorage(perfil,bandera){
         array_trabajador.push(perfil);
         myStorage.setItem("Cliente",JSON.stringify(array_trabajador));
     }
+    window.localStorage.loggedIn = true;
+    /**
+     * Para verificar si esta abierta su sesion
+     * window.localStorage.loggedIn = true;
+     */
 }
     // imagen.innerHTML+=`<img src=${file.value}>`;
 
