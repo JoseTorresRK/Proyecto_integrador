@@ -36,11 +36,20 @@ function mostrarNavBar(booleano, typeOfLog){
     }
 }
 
-const btn_cerrar_sesion = document.querySelectorAll(".loggedIn")[1]
-btn_cerrar_sesion.onclick = window.localStorage.loggedIn = false;
+//const btn_cerrar_sesion = document.querySelector("#cerrar-sesion")
+//btn_cerrar_sesion.onclick = window.localStorage.loggedIn = false;
+function cerrar_sesion(){
+    const btn_cerrar_sesion = document.querySelector("#cerrar-sesion")
+    btn_cerrar_sesion.addEventListener("click", (event)=>{
+        window.localStorage.loggedIn = false;
+    })
+    
+}
 /**
  * @function ejecuta la funcion cuando se termina de cargar toda la informacion de la pagina
  */
-window.addEventListener("onload",
-    checkerLogIn()
-)
+window.addEventListener("load", (event)=>{
+    checkerLogIn();
+    //btn_cerrar_sesion.addEventListener("click",cerrar_sesion)
+    cerrar_sesion();
+})
