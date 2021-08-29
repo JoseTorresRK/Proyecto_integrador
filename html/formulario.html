@@ -49,20 +49,41 @@
                   <li class="nav-item">
                     <a class="nav-link colorindex fw-bolder" href="./contact.html">Contacto</a>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item loggedIn">
+                    <a class="nav-link colorindex fw-bolder " href="./html/miperfil.html">Mi perfil</a>
+                  </li>
+                  <li class="nav-item loggedIn">
+                    <a class="nav-link colorindex fw-bolder " href="./index.html">Cerrar Sesión</a>
+                  </li>
+                  <li class="nav-item loggedOut">
                     <a class="nav-link colorindex fw-bolder" href="./registro.html">Ingresar</a>
                   </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link active dropdown-toggle fw-bolder" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <li class="nav-item active dropdown loggedOut">
+                    <button
+                      class="btn nav-link dropdown-toggle colorindex fw-bolder"
+                  
+                      id="navbarDropdownMenuLink"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
                       Registrarse
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <li><button class="dropdown-item colorindex fw-bolder">Trabajadores</button></li>
-                      <li><button class="dropdown-item colorindex fw-bolder">Clientes</button></li>
+                    </button>
+                    <ul
+                      class="dropdown-menu dropdown-menu-end"
+                      aria-labelledby="navbarDropdownMenuLink"
+                    >
+                      <li>
+                        <button class="dropdown-item colorindex fw-bolder">
+                          Trabajadores
+                        </button>
+                      </li>
+                      <li>
+                        <button class="dropdown-item colorindex fw-bolder">
+                          Clientes
+                        </button>
+                      </li>
                     </ul>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link colorindex fw-bolder" href="./lista_pub_trabajo.html">Servicios</a>
                   </li>
   
                 </ul>
@@ -367,7 +388,7 @@
      <script src="./../js/FuncionesParaValidarRegistro.js">  </script>
      <script src="./../js/ValidarRegistroPerfil.js"> </script>
      <script src="../js/escogeTrabajadorCliente.js"></script>
-
+    <script src="./../js/checkerLogIn.js"></script>
       <script src="./../js/formulario_cliente_trabajador.js"></script> 
 </body>
 </html>
