@@ -37,15 +37,7 @@ function mensajeValidacion(tipoMensaje,input,campo){
     }
 
 }
-function validarImagen(imagen){
-    if("Ningún archivo seleccionado"===imagen){
-        return "Debes seleccionar un archivo";
-    }
-    if(!((/\.(jpg|png|jfif)$/).test(imagen))){
-        return "Debes seleccionar una imagen jpg png o jfif";
-    }
-    return true;
-}
+
 function validarNum(numero){
     if(numero.length<=0){
         return "El campo no puede estar vacío";
@@ -123,6 +115,42 @@ function validarEmail(email){
     }
     return true;
 }
+let global;
+function crearWidgetCloudinary(){
+    
+    var myWidget = cloudinary.createUploadWidget({
+        cloudName: 'dqzvtvjhu',
+      //  autoMinimize: true,
+        singleUploadAutoClose:false,
+        showUploadMoreButton:false,
+        uploadPreset: 'jdzyk9os',
+        maxFiles:1,
+        resource_type: "image",
+        sources: [ 'local','camera']}, (error, result) => {
+          if (!error && result && result.event === "success") {
+            console.log('Done! Here is the image info: ', result.info);
+            var imgContainer=document.getElementById("Preview");
+            const imgElement = document.createElement('img');
+            imgElement.src =result.info.thumbnail_url;
+            console.log(result.info.thumbnail_url)
+            imgContainer.append(imgElement)
+            global=result.info.url;
+          }
+        }
+      )
+      let arreglo=[myWidget,global];
+      console.log(arreglo);
+      return arreglo;
+}
+function validarImagen(){
+    let confirmacionImagen=document.getElementById("Preview");
+    console.log(confirmacionImagen.children);
+    if(confirmacionImagen.children.length===0){
+        return "Debes seleccionar una imagen";
+    }
+    return true;
+    return confirmacionImagen;
+}
 
 function validarTelefono(telefono){
     console.log(typeof(telefono));
@@ -151,8 +179,9 @@ function construirSweetAlert(imagen,titulo,mensaje,piePagina){
     })
 }
 function validarFormulario(e){
-    console.log("entre");
+    
     e.preventDefault();
+    console.log(validarImagen());
     
     let arreglo=[];
     let modificador=2;
@@ -210,9 +239,10 @@ function validarFormulario(e){
      
     aciertos.push(mensajeValidacion(confirmaContrasena(confirmacionContrasena.value,contrasena.value,validaContrasena(confirmacionContrasena.value)),confirmacionContrasena,12-modificador));
      //let imagen=document.querySelector("form");
-     aciertos.push(mensajeValidacion(validarDescripcion(inputDescripcion.value),inputDescripcion,13-modificador));
+     aciertos.push(mensajeValidacion(validarDescripcion(inputDescripcion.value),inputDescripcion,14-modificador));
      //console.log("VAB",file.files[0]);
-     //aciertos.push( mensajeValidacion(validarImagen(file.value),file,13-modificador));
+     
+     aciertos.push( mensajeValidacion(validarImagen(),document.getElementById("upload_widget"),13-modificador));
      console.log(aciertos);
      //let imagenesa=document.getElementById("Imagenesa");
      //const objetoUrl=URL.createObjectURL(file.files[0]);
@@ -233,6 +263,7 @@ function validarFormulario(e){
      camposValidados.push(inputNombre.value);
      camposValidados.push(0);
      camposValidados.push(inputEmail.value);
+     camposValidados.push(inputtel.value);
      camposValidados.push(inputCalle.value);
      camposValidados.push(inputZip.value);
      camposValidados.push(inputNumExt.value);
@@ -242,6 +273,7 @@ function validarFormulario(e){
      camposValidados.push(0);
      camposValidados.push(inputCity.value);
      camposValidados.push(inputSeleccion.value);
+     camposValidados.push(global);
      camposValidados.push(inputDescripcion.value);
      console.log("Nueva");
      //console.log(inputCategory.value);
@@ -250,9 +282,12 @@ function validarFormulario(e){
          console.log("No entraaaaaaaaaaa");
         camposValidados.push(inputCategory.value);
         camposValidados.push(arreglo);
+        
+        
         saveToMyStorage(crearTrabajador(camposValidados),myStorage.Bandera);
      }
      else{
+        // camposValidados.push(global);
         saveToMyStorage(crearCliente(camposValidados),myStorage.Bandera);
      }
      
@@ -288,20 +323,21 @@ function validarFormulario(e){
     let cliente={
         "idUser":1008,
         "isEmployee":false,
-        //"profileImg": camposValidados[0],
+        "profileImg": camposValidados[13],
         "name":camposValidados[0],
         "stars":camposValidados[1],
         "email":camposValidados[2],
-        "stret":camposValidados[3],
-        "zip":camposValidados[4],
-        "numExt":camposValidados[5],
-        "numInt":camposValidados[6],
-        "password":camposValidados[7],
-        "clientReviews":camposValidados[8],
-        "reviews":camposValidados[9],
-        "municipal_delegation":camposValidados[10],
-        "state":camposValidados[11],
-        "description":camposValidados[12]
+        "tel":camposValidados[3],
+        "stret":camposValidados[4],
+        "zip":camposValidados[5],
+        "numExt":camposValidados[6],
+        "numInt":camposValidados[7],
+        "password":camposValidados[8],
+        "clientReviews":camposValidados[9],
+        "reviews":camposValidados[10],
+        "municipal_delegation":camposValidados[11],
+        "state":camposValidados[12],
+        "description":camposValidados[14]
     };
     return cliente; 
  }
@@ -311,22 +347,23 @@ function validarFormulario(e){
    let Trabajador={
     "idUser":1008,
     "isEmployee":false,
-    //"profileImg": camposValidados[0],
+    "profileImg": camposValidados[13],
     "name":camposValidados[0],
     "stars":camposValidados[1],
     "email":camposValidados[2],
-    "stret":camposValidados[3],
-    "zip":camposValidados[4],
-    "numExt":camposValidados[5],
-    "numInt":camposValidados[6],
-    "password":camposValidados[7],
-    "clientReviews":camposValidados[8],
-    "reviews":camposValidados[9],
-    "municipal_delegation":camposValidados[10],
-    "state":camposValidados[11],
-    "description":camposValidados[12],
-       "categories":camposValidados[13],
-       "subcategories":camposValidados[14]
+    "tel":camposValidados[3],
+    "stret":camposValidados[4],
+    "zip":camposValidados[5],
+    "numExt":camposValidados[6],
+    "numInt":camposValidados[7],
+    "password":camposValidados[8],
+    "clientReviews":camposValidados[9],
+    "reviews":camposValidados[10],
+    "municipal_delegation":camposValidados[11],
+    "state":camposValidados[12],
+    "description":camposValidados[14],
+       "categories":camposValidados[15],
+       "subcategories":camposValidados[16]
    };
    
    return Trabajador; 
