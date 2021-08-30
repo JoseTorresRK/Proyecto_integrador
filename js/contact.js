@@ -46,6 +46,7 @@ function getContactDetails() {
             "message" : text_area
         }
         saveToMyStorage(potential_client);
+        Swal.fire('Any fool can use a computer')
         //clearInputs(formInputs);
         event.preventDefault();
     });

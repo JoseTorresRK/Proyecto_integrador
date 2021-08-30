@@ -1,5 +1,22 @@
 console.log(recolectarMyStorage("Cliente"));
-console.log(recolectarMyStorage("Trabajador"))
+console.log(recolectarMyStorage("Trabajador"));
+function dobleCuenta(){
+    let arreglo=recolectarMyStorage("Trabajador");
+    let arreglo2=recolectarMyStorage("Cliente");
+    let resultado=[];
+    for(let i=0;i<arreglo;i++){
+        if(arreglo2.indexOf(arreglo[i])!==-1){
+            resultado.push(true);
+            resultado.push(i);
+            resultado.push(arreglo2.indexOf(arreglo[i]));
+        }  
+    }
+    if(resultado.length===0){
+        resultado.push(false);
+    }
+    
+    return resultado;
+}
 function encontrarPerfil(){
     let arreglo=recolectarMyStorage("Trabajador");
     console.log(arreglo);
