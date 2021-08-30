@@ -4,7 +4,7 @@
 function checkerLogIn(){
     if(window.localStorage.loggedIn === "true"){
         mostrarNavBar(false,"loggedIn");
-    }else if(window.localStorage.loggedIn === "false"){
+    }else if(window.localStorage.loggedIn === "false"  || window.localStorage.loggedIn == undefined){
         mostrarNavBar(true,"loggedOut");
     }
 }
