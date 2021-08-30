@@ -62,10 +62,18 @@ botonesEditar[2].addEventListener("click",function(e){
   </div>
   </div>` 
 ;  
-    cambiarDatos(1,mensaje,true,"Categoria");
+    let arreglo=["Albañileria","Carpinteria","Cocina","Herreria","Jardineria","Plomeria"];
+    cambiarDatos(1,mensaje,true,"Categoria",arreglo);
 
 })
 botonesEditar[3].addEventListener("click",function(e){
     e.preventDefault();
-    let mensaje=``    
+    let arregloCompleto;
+    arreglo=["Cocina","Carpinteria","Plomeria"]
+    
+    crearMensaje(arreglo);
+   
+    
+   
+  cambiarDatos(2,crearMensaje(arreglo),true,"Subcategoria",["Castillos y trabes", "Colados","Muros","Estructuras Pequeñas","Bardas","Muebles de Jardín","Estructuras metálicas","Soldadura smaw","Soldadura con microalambre","Cortadora de plasma","Plantas exóticas","Árboles frutales","Bonsáis","Invernaderos","Jardineras","Fregaderos","Tuberías tapadas","Lavabos","Caños atascados","Instalaciones sanitarias","Muebles domésticos","Estructuras exteriores","Cobertizos","Barnices y pulidos","Juguetes de madera","Comida Internacional","Comida casera","Ingredientes de primera calidad","Ingredientes orgánicos y frescos","Platillos exóticos"]);
 })

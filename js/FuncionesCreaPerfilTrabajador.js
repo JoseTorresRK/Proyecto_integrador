@@ -177,7 +177,7 @@ function renderPerfil(perfil){
   </div>
 `;
 }
-function cambiarDatos(numeroCampo,mensaje,boleano,id){
+function cambiarDatos(numeroCampo,mensaje,boleano,id,arregloTrabajos){
   let botonConfirmar;
   let botonCancelar;
   let elemento=document.querySelectorAll(".list-group-item");
@@ -190,7 +190,7 @@ mensajeAnterior.push(elemento[numeroCampo].firstElementChild);
   elemento[numeroCampo].innerHTML=mensaje;
  // console.log(aux);
   if(boleano){
-    marcarCorrecto(id,camposAnteriores);
+    marcarCorrecto(id,camposAnteriores,arregloTrabajos);
   }
   console.log(document.querySelector("#"+id+" #formConfirmar"));
   botonConfirmar=document.querySelector("#"+id+" #formConfirmar");
@@ -225,16 +225,21 @@ function recolectar(id,elemento,mensajeAnterior){
   let checkbox=document.querySelectorAll("#"+id+" .form-check input");
   //let etiquetas=document.querySelectorAll("#"+id+" .form-check label");
   let mensaje="";
+  let imagen="";
   elemento.innerHTML="";
   elemento.appendChild(mensajeAnterior[0]);
   elemento.appendChild(mensajeAnterior[2]);
   let valores=[];
+ 
   for(let i=0;i<checkbox.length;i++){
+    if(id==="Categoria"){
+      imagen=`<img  src="${definirIcono(checkbox[i].value)}" class="pr-auto" style="height: 50px;width: 50px;" alt=""> `;
+    }
     console.log(checkbox[i].checked);
     if(checkbox[i].checked){
       mensaje+=`<li class="d-flex justify-content-between align-items-center">
-      ${checkbox[i].value}
-       <img  src="${definirIcono(checkbox[i].value)}" class="pr-auto" style="height: 50px;width: 50px;" alt=""> </li>`;
+      ${checkbox[i].value}${imagen}</li>`;
+       
     }
   }
 
@@ -246,12 +251,21 @@ function recolectar(id,elemento,mensajeAnterior){
 
   return valores;
 }
+function conseguirArreglo(checkbox){
+  let arreglo=[];
+  for(let i=0;i<checkbox.length;i++){
+    arreglo.push(checkbox[i].value.trim());
+  }
+  console.log(arreglo);
+  return arreglo;
+}
 
-function marcarCorrecto(id,camposAnteriores){
-  let arregloTrabajos=["Albañileria","Carpinteria","Cocina","Herreria","Jardineria","Plomeria"];
+function marcarCorrecto(id,camposAnteriores,arregloTrabajos){
+  
   console.log(document.querySelectorAll("#"+id+" .form-check"));
   let checkbox=document.querySelectorAll("#"+id+" .form-check input");
-
+  //let checker=document.querySelectorAll("#"+id+" .form-check label");
+  //console.log(checker)
   let categoriasAnteriores=[];
   for(let i=0;i<camposAnteriores.length;i++){
     categoriasAnteriores[i]=camposAnteriores[i].textContent.trim();
@@ -259,11 +273,13 @@ function marcarCorrecto(id,camposAnteriores){
     console.log(categoriasAnteriores[i]);
   }
   console.log(checkbox)
-
+  arregloTrabajos= conseguirArreglo(checkbox);
+  console.log(arregloTrabajos)
   //let entradas=checkbox.querySelectorAll("form-check-input");
   
   categoriasAnteriores.forEach(function(elemento){
-    console.log(arregloTrabajos.indexOf(elemento));
+    console.log(arregloTrabajos.indexOf("Fregaderos"));
+    console.log(arregloTrabajos);
     checkbox[arregloTrabajos.indexOf(elemento)].setAttribute("checked","true");
     console.log(checkbox)
   })
@@ -353,4 +369,32 @@ function cambiarClase(modificador){
 
 function cambiarImagen(){
     
+}
+function crearMensaje(arreglo){
+  let mensaje=`
+  <strong>Selecciona tus subcategorias</strong>
+  <div id="Subcategoria">${obtenerArregloCompleto(arreglo)}
+  <div class="row" style="margin-top:3em">
+  <div class="col-6">
+    <button class="btn btn-success"id="formConfirmar" type="submit">Confirmar cambio</button>
+  </div>
+  <div class="col-6">
+    <button class="btn btn-danger" id="formCancelar" type="submit">Cancelar</button>
+  </div>
+  </div>
+  </div>`
+  console.log(mensaje);
+  return mensaje;
+  console.log(completo);
+  
+}
+function obtenerArregloCompleto(arreglo){
+  let completo="";
+  arreglo.forEach(function(elemento){
+     console.log(opcionesSubcategory(elemento))
+     completo+=opcionesSubcategory(elemento);
+    });
+
+  console.log(completo);
+  return completo;
 }
