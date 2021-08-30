@@ -22,7 +22,7 @@ function compararPerfil(correo,contrasena){
         if(element.email===correo&&contrasena===element.password){
             crearMinimo();
             window.location="./lista_perfiles.html";
-
+            //window.localStorage.loggedIn= true;
         }
         else{
             construirSweetAlert("error","La contraseña o el usuario están mal");
