@@ -177,6 +177,224 @@ function renderPerfil(perfil){
   </div>
 `;
 }
+function cambiarDatos(numeroCampo,mensaje,boleano,id,arregloTrabajos){
+  let botonConfirmar;
+  let botonCancelar;
+  let elemento=document.querySelectorAll(".list-group-item");
+  let mensajeAnterior=[elemento[numeroCampo].firstElementChild,elemento[numeroCampo].lastElementChild];
+  elemento[numeroCampo].removeChild(elemento[numeroCampo].firstElementChild);
+mensajeAnterior.push(elemento[numeroCampo].firstElementChild);
+  let camposAnteriores=elemento[numeroCampo].querySelectorAll("ul li ul li");
+  console.log(camposAnteriores[0]);
+
+  elemento[numeroCampo].innerHTML=mensaje;
+ // console.log(aux);
+  if(boleano){
+    marcarCorrecto(id,camposAnteriores,arregloTrabajos);
+  }
+  console.log(document.querySelector("#"+id+" #formConfirmar"));
+  botonConfirmar=document.querySelector("#"+id+" #formConfirmar");
+  botonCancelar=document.querySelector("#"+id+" #formCancelar");
+  console.log(botonCancelar);
+  botonConfirmar.addEventListener("click",function(e){
+    e.preventDefault();
+    if(boleano){
+      recolectar(id,elemento[numeroCampo],mensajeAnterior);
+    }
+    
+  })
+  botonCancelar.addEventListener("click",function(e){
+    e.preventDefault();
+    console.log(mensajeAnterior);
+    agregarAnterior(mensajeAnterior,elemento[numeroCampo]);
+
+  })
+}
+
+function agregarAnterior(mensajeAnterior,elemento){
+  console.log(mensajeAnterior);
+  console.log(elemento)
+  elemento.innerHTML="";
+  elemento.appendChild(mensajeAnterior[0]);
+  elemento.appendChild(mensajeAnterior[2]);
+  elemento.appendChild(mensajeAnterior[1])
+  //elemento.innerHTML+=mensajeAnterior[0]+mensajeAnterior[1];
+}
+
+function recolectar(id,elemento,mensajeAnterior){
+  let checkbox=document.querySelectorAll("#"+id+" .form-check input");
+  //let etiquetas=document.querySelectorAll("#"+id+" .form-check label");
+  let mensaje="";
+  let imagen="";
+  elemento.innerHTML="";
+  elemento.appendChild(mensajeAnterior[0]);
+  elemento.appendChild(mensajeAnterior[2]);
+  let valores=[];
+ 
+  for(let i=0;i<checkbox.length;i++){
+    if(id==="Categoria"){
+      imagen=`<img  src="${definirIcono(checkbox[i].value)}" class="pr-auto" style="height: 50px;width: 50px;" alt=""> `;
+    }
+    console.log(checkbox[i].checked);
+    if(checkbox[i].checked){
+      mensaje+=`<li class="d-flex justify-content-between align-items-center">
+      ${checkbox[i].value}${imagen}</li>`;
+       
+    }
+  }
+
+  //elemento.appendChild(document.createElement("ul"));
+  let variable=document.createElement("ul");
+  variable.innerHTML=mensaje;
+  elemento.appendChild(variable);
+
+
+  return valores;
+}
+function conseguirArreglo(checkbox){
+  let arreglo=[];
+  for(let i=0;i<checkbox.length;i++){
+    arreglo.push(checkbox[i].value.trim());
+  }
+  console.log(arreglo);
+  return arreglo;
+}
+
+function marcarCorrecto(id,camposAnteriores,arregloTrabajos){
+  
+  console.log(document.querySelectorAll("#"+id+" .form-check"));
+  let checkbox=document.querySelectorAll("#"+id+" .form-check input");
+  //let checker=document.querySelectorAll("#"+id+" .form-check label");
+  //console.log(checker)
+  let categoriasAnteriores=[];
+  for(let i=0;i<camposAnteriores.length;i++){
+    categoriasAnteriores[i]=camposAnteriores[i].textContent.trim();
+    console.log(categoriasAnteriores[i]);
+    console.log(categoriasAnteriores[i]);
+  }
+  console.log(checkbox)
+  arregloTrabajos= conseguirArreglo(checkbox);
+  console.log(arregloTrabajos)
+  //let entradas=checkbox.querySelectorAll("form-check-input");
+  
+  categoriasAnteriores.forEach(function(elemento){
+    console.log(arregloTrabajos.indexOf("Fregaderos"));
+    console.log(arregloTrabajos);
+    checkbox[arregloTrabajos.indexOf(elemento)].setAttribute("checked","true");
+    console.log(checkbox)
+  })
+/*
+  // for(let i=0;i<etiquetas.length;i++){
+  //   if(etiquetas.textContent)
+  // }*/
+}
+
+
+function cambiarDesc(){
+  //
+  let botonSuc;
+  let botonDan;
+  let modificador;
+  let descripcionOriginal;
+  let elemento=document.querySelector(".list-group-item .accordion-body");
+  descripcionOriginal=elemento.childNodes;
+  console.log(descripcionOriginal[0].textContent);
+  mensaje=descripcionOriginal[0].textContent;
+  botonOriginal=elemento.lastChild;
+  elemento.innerHTML=`
+  <div class="position-relative">
+  <textarea
+  class="form-control formato"
+  rows="8"
+  placeholder="Un mensaje para nosotros:"
+  name="message"
+  id="Descripcion"
+  required
+  ></textarea>
+  <div class="valid-tooltip">
+    Campo válido.
+  </div>
+  </div>
+  <div class="row" style="margin-top:3em">
+  <div class="col-6">
+    <button class="btn btn-success"id="Descconfirmar" type="submit">Confirmar cambio</button>
+  </div>
+  <div class="col-6">
+    <button class="btn btn-danger" id="Desccancelar" type="submit">Cancelar</button>
+  </div>
+  </div>`
+  ;
+  modificador=document.getElementsByClassName("position-relative");
+  botonSuc=document.getElementById("Descconfirmar");
+  
+  botonSuc.addEventListener("click",function(e){
+    e.preventDefault();
+    //console.log(modificador[0].lastElementChild)
+    let nuevaDescripicion=cambiarClase(modificador[0].lastElementChild);
+    elemento.innerHTML=`${nuevaDescripicion}`;
+    elemento.appendChild(botonOriginal);
+   // modificador[0].lastElementChild.innerText="Bankai";
+  })
+  botonDan=document.getElementById("Desccancelar");
+  botonDan.addEventListener("click",function(e){
+    e.preventDefault();
+    console.log(botonOriginal)
+    elemento.innerHTML=`${mensaje}`;
+    elemento.appendChild(botonOriginal);
+  })
+}
+
+
+function cambiarClase(modificador){
+  let cambio;
+  cambio=document.getElementById("Descripcion");
+  let mensaje=validarDescripcion(cambio.value);
+  if(mensaje==="El campo no puede estar vacío"){
+    cambio.classList.remove("is-valid");
+    cambio.classList.add("is-invalid");
+    modificador.classList.remove("valid-tooltip");
+    modificador.classList.add("invalid-tooltip");
+    modificador.innerText=mensaje;
+  }
+  else{
+    cambio.classList.remove("is-invalid");
+    cambio.classList.add("is-valid");
+    modificador.classList.remove("invalid-tooltip");
+    modificador.classList.add("valid-tooltip");
+    modificador.innerText="Campo válido";
+  }
+  return cambio.value
+}
+ 
+
 function cambiarImagen(){
     
+}
+function crearMensaje(arreglo){
+  let mensaje=`
+  <strong>Selecciona tus subcategorias</strong>
+  <div id="Subcategoria">${obtenerArregloCompleto(arreglo)}
+  <div class="row" style="margin-top:3em">
+  <div class="col-6">
+    <button class="btn btn-success"id="formConfirmar" type="submit">Confirmar cambio</button>
+  </div>
+  <div class="col-6">
+    <button class="btn btn-danger" id="formCancelar" type="submit">Cancelar</button>
+  </div>
+  </div>
+  </div>`
+  console.log(mensaje);
+  return mensaje;
+  console.log(completo);
+  
+}
+function obtenerArregloCompleto(arreglo){
+  let completo="";
+  arreglo.forEach(function(elemento){
+     console.log(opcionesSubcategory(elemento))
+     completo+=opcionesSubcategory(elemento);
+    });
+
+  console.log(completo);
+  return completo;
 }
