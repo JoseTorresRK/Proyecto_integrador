@@ -30,7 +30,7 @@ const clearInputs = (...args)=>{
 function getContactDetails() {
     form.addEventListener('submit', (event)=>{
 
-        
+        Swal.fire('Any fool can use a computer')
         let full_name = document.getElementById('full_name').value;
         let email = form.querySelector('[name=email]').value;
         let phone_number = form.querySelector('[name=phone]').value;
