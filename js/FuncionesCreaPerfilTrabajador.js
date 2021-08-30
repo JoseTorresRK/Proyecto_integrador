@@ -50,7 +50,7 @@ function creaEstrellas(reviews){
     return mensaje;
 }
 function tempLocal(id){
-    let registro
+    let registro;
     arreglo=recolectarMyStorage("Trabajador");
     for(let i=0;i<arreglo.length;i++){
         console.log(arreglo[i]);
@@ -96,6 +96,29 @@ function mensajeSubcategoria(arreglo){
 }
 function renderPerfil(perfil){
     let cardPerfil=document.getElementById("perfil");
+    let categorias="";
+    let subcategoria="";
+    if(perfil.isEmployee){
+        categorias=`<li class="list-group-item ">
+        
+        <strong>Categorías:</strong>
+        <button class="botonicono"><i class="bi bi-pencil-square iconopeq"></i></button>
+        <ul>
+          <li class="d-flex justify-content-between align-items-center">
+             ${perfil.categories}
+              <img  src="${definirIcono(perfil.categories)}" class="pr-auto" style="height: 50px;width: 50px;" alt=""> </li>
+          
+        </ul>
+      </li>`
+      subcategoria=`
+      <li class="list-group-item ">
+        <strong>Subcategorías:</strong>
+        <button class="botonicono"><i class="bi bi-pencil-square iconopeq"></i></button>
+        <ul>
+          ${mensajeSubcategoria(perfil.subcategories)}
+        </ul>
+      </li>`;
+    }
     cardPerfil.innerHTML=`<div class="card" style="width: 100%;height: 100%;">
     <br>
     <img src="${perfil.profileImg}" class="imgRedonda mx-auto"  alt="...">
@@ -131,25 +154,8 @@ function renderPerfil(perfil){
           </div>
           </div>
       </li>
-      <li class="list-group-item ">
-        
-        <strong>Categorías:</strong>
-        <button class="botonicono"><i class="bi bi-pencil-square iconopeq"></i></button>
-        <ul>
-          <li class="d-flex justify-content-between align-items-center">
-             ${perfil.categories}
-              <img  src="${definirIcono(perfil.categories)}" class="pr-auto" style="height: 50px;width: 50px;" alt=""> </li>
-          
-        </ul>
-      </li>
-
-      <li class="list-group-item ">
-        <strong>Subcategorías:</strong>
-        <button class="botonicono"><i class="bi bi-pencil-square iconopeq"></i></button>
-        <ul>
-          ${mensajeSubcategoria(perfil.subcategories)}
-        </ul>
-      </li>
+      ${categorias}      
+      ${subcategoria}
 
       <li class="list-group-item"><strong>Localidad:</strong>
       <button class="botonicono"><i class="bi bi-pencil-square iconopeq"></i></button>
@@ -176,6 +182,7 @@ function renderPerfil(perfil){
     
   </div>
 `;
+return perfil;
 }
 function cambiarDatos(numeroCampo,mensaje,boleano,id,arregloTrabajos){
   let botonConfirmar;
@@ -185,6 +192,7 @@ function cambiarDatos(numeroCampo,mensaje,boleano,id,arregloTrabajos){
   elemento[numeroCampo].removeChild(elemento[numeroCampo].firstElementChild);
 mensajeAnterior.push(elemento[numeroCampo].firstElementChild);
   let camposAnteriores=elemento[numeroCampo].querySelectorAll("ul li ul li");
+  let contenedor;
   console.log(camposAnteriores[0]);
 
   elemento[numeroCampo].innerHTML=mensaje;
@@ -192,7 +200,7 @@ mensajeAnterior.push(elemento[numeroCampo].firstElementChild);
   if(boleano){
     marcarCorrecto(id,camposAnteriores,arregloTrabajos);
   }
-  console.log(document.querySelector("#"+id+" #formConfirmar"));
+  console.log(document.querySelector("#"+id));
   botonConfirmar=document.querySelector("#"+id+" #formConfirmar");
   botonCancelar=document.querySelector("#"+id+" #formCancelar");
   console.log(botonCancelar);
@@ -201,6 +209,29 @@ mensajeAnterior.push(elemento[numeroCampo].firstElementChild);
     if(boleano){
       recolectar(id,elemento[numeroCampo],mensajeAnterior);
     }
+    else{
+      console.log("Localidad");
+      if(id==="Localidad"){
+        let arregloLocal=[validarSeleccion,validarLetras,validarLetras,validarZip,validarNum,validarNum];
+        
+        contenedor=document.querySelectorAll("#Localidad .position-relative");
+       // console.log(contenedor[0].querySelector("#inputState").value)
+       console.log(cambiarClase(contenedor[0].lastElementChild,arregloLocal[0](contenedor[0].querySelector("#inputState").value),contenedor[0].querySelector("#inputState")));
+       for(let i=1;i<contenedor.length;i++){
+        console.log(cambiarClase(contenedor[i].lastElementChild,arregloLocal[i](contenedor[i].firstElementChild.value),contenedor[i].firstElementChild));
+       }
+        
+   //     cambiarClase(contenedor[1].lastElementChild,)
+      }
+      if(id==="Contacto"){
+        contenedor=document.querySelectorAll("#Contacto .position-relative");
+        cambiarClase(contenedor[0].lastElementChild,validarEmail(contenedor[0].firstElementChild.value),contenedor[0].firstElementChild);
+        cambiarClase(contenedor[1].lastElementChild,validarTelefono(contenedor[1].firstElementChild.value),contenedor[1].firstElementChild);
+
+
+      }
+    }
+
     
   })
   botonCancelar.addEventListener("click",function(e){
@@ -210,6 +241,7 @@ mensajeAnterior.push(elemento[numeroCampo].firstElementChild);
 
   })
 }
+ 
 
 function agregarAnterior(mensajeAnterior,elemento){
   console.log(mensajeAnterior);
@@ -298,6 +330,7 @@ function cambiarDesc(){
   let descripcionOriginal;
   let elemento=document.querySelector(".list-group-item .accordion-body");
   descripcionOriginal=elemento.childNodes;
+  console.log(elemento)
   console.log(descripcionOriginal[0].textContent);
   mensaje=descripcionOriginal[0].textContent;
   botonOriginal=elemento.lastChild;
@@ -330,9 +363,14 @@ function cambiarDesc(){
   botonSuc.addEventListener("click",function(e){
     e.preventDefault();
     //console.log(modificador[0].lastElementChild)
-    let nuevaDescripicion=cambiarClase(modificador[0].lastElementChild);
-    elemento.innerHTML=`${nuevaDescripicion}`;
-    elemento.appendChild(botonOriginal);
+    let mensaje=validarDescripcion(cambio.value);
+    let nuevaDescripicion=cambiarClase(modificador[0].lastElementChild,mensaje);
+    console.log(nuevaDescripicion);
+    if(nuevaDescripicion!==""){
+      elemento.innerHTML=`${nuevaDescripicion}`;
+      elemento.appendChild(botonOriginal);
+    }
+    
    // modificador[0].lastElementChild.innerText="Bankai";
   })
   botonDan=document.getElementById("Desccancelar");
@@ -345,22 +383,37 @@ function cambiarDesc(){
 }
 
 
-function cambiarClase(modificador){
-  let cambio;
-  cambio=document.getElementById("Descripcion");
-  let mensaje=validarDescripcion(cambio.value);
-  if(mensaje==="El campo no puede estar vacío"){
+function cambiarClase(modificador,mensaje, cambio=document.getElementById("Descripcion")){
+  
+  //let mensaje=validarDescripcion(cambio.value);
+  
+  console.log(modificador);
+  console.log(mensaje);
+  if(typeof(mensaje)==="string"){
+    console.log(modificador);
+    console.log(cambio.classList);
     cambio.classList.remove("is-valid");
     cambio.classList.add("is-invalid");
+    console.log(modificador.classList);
+    
     modificador.classList.remove("valid-tooltip");
+    
     modificador.classList.add("invalid-tooltip");
+    console.log(modificador.classList);
+    //cambio.getElementById()
     modificador.innerText=mensaje;
   }
   else{
     cambio.classList.remove("is-invalid");
     cambio.classList.add("is-valid");
+    console.log(cambio)
+    console.log(modificador)
     modificador.classList.remove("invalid-tooltip");
+    console.log(modificador);
     modificador.classList.add("valid-tooltip");
+    
+    
+    
     modificador.innerText="Campo válido";
   }
   return cambio.value
