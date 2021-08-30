@@ -72,7 +72,7 @@ function validarLetras(nombre){
        console.log(nombre.length);
         return "El campo no puede estar vacío";
     }
-    if(!(/^[A-Za-z\sÁÉÍÓÚáéíóúñÑüÜ]+$/.test(nombre))){
+    if(!(/^[A-Za-z\sÁÉÍÓÚáéíóúñÑüÜ.]+$/.test(nombre))){
         return "El campo solo puede tener letras, espacios, acentos y ¨";
     }
     return true;
