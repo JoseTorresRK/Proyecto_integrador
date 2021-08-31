@@ -109,12 +109,13 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12 col-sm-12">
-              <form id="contact-form" class="needs-validation" role="form" action="" method="post" >
+              <form id="contact-form" class="needs-validation" role="form" action="" novalidate>
                 <div class="section-title">
                   <h1>Reseña el trabajo que se desempeñó</h1>
                   <p class=" offset-lg-2 col-lg-8">Es importante que nos compartas tu opinión a detalle del trabajo que se realizó, calificalo para que esa persona pueda recibir retroalimentación, esto le ayudará a seguir mejorando.</p>
                 </div>
                 <div class="container">
+                  
                     <div class="row justify-content-around">
                         <div class="col-md-4 col-sm-6 position-relative">
                         <label for="jobTitle">Trabajo</label>
@@ -185,8 +186,10 @@
                             <option value="YUC">Yucatán</option>
                             <option value="ZAC">Zacatecas</option>
                             </select>
-                        <div class="valid-tooltip">
-                        <div class="offset-md-2 col-md-3 col-sm-3 position-relative">
+                        <div class="valid-tooltip"> </div>
+                      </div>
+                        <div class="row">
+                        <div class="offset-md-2 col-md-6 col-sm-6 position-relative">
                             <input  id="city"
                             type="text"
                             class="form-control formato"
@@ -199,13 +202,14 @@
                             </div>
 
                         </div>
-                        
+                      </div>
                     </div>
-                    </div>
+                    
                     </div>
                 </div>
                 <div class="col-md-12 col-sm-12" style="margin-top: 3em;">
                   <textarea
+                  id="area"
                   class="form-control formato"
                   rows="8"
                   placeholder="Descripción del trabajo realizado:"
@@ -213,7 +217,7 @@
                   required
                   ></textarea>
                 </div>
-                
+                <div class="valid-tooltip"></div>
                 <div class="offset-md-4 col-md-4 offset-sm-3 col-sm-6" style="margin-bottom: 1em;">
                   <input
                     id="send_msg"
@@ -222,7 +226,7 @@
                     name="send message"
                     value="Enviar Reseña"
                   />
-                  <div class="valid-tooltip"></div>
+                  
                 </div>
                 
               </form>
@@ -268,8 +272,11 @@
     <script src="./../js/owl.carousel.min.js"></script>
     <script src="./../js/smoothscroll.js"></script>
     <script src="./../js/custom.js"></script>
-    <script src="./../js/contact.js"></script> 
-    <script src="../js/validaciones.js"></script>
+    <!-- <script src="./../js/contact.js"></script>  -->
+    <!-- <script src="../js/validaciones.js"></script> -->
+    <script src="../js/FuncionesParaValidarRegistro.js"></script>
+    <script src="../js/Funcioesvalidar.js"></script>
+    <script src="../js/resenas.js"></script>
     <script src="../js/escogeTrabajadorCliente.js"></script>
     <script src="./../js/checkerLogIn.js"></script>
 
