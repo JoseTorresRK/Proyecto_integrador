@@ -9,13 +9,16 @@ function dobleCuenta(email){
         if(arreglo[i].email===email){
             resultado.push("Trabajador");
             resultado.push(i);
+            break;
         }
     }
     for(let i=0;i<arreglo2.length;i++){
         
-        if(arreglo[i].email===email){
+        if(arreglo2[i].email===email){
             resultado.push("Cliente");
+            console.log("CLiente", i);
             resultado.push(i);
+            break;
         }
     }
     if(resultado.length===0){
@@ -32,9 +35,37 @@ function recolectarUsuario(usuario,posicion){
 
 }
 function nuevoEncontrarPerfil(result){
-    
+    let aux;
+    console.log(result);
     if(result.length===4){
-
+        aux=result;
+        console.log("Rayito");
+        Swal.fire({
+            title: 'Usted tiene dos cuentas cliente y trabajador',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            cancelButtonText:'Entrar como trabajador ',
+            confirmButtonText: 'Entrar como cliente'
+          }).then((result) => {
+            if (result.isConfirmed) {
+                recolectarUsuario(aux[0],aux[1]);
+                console.log(aux[0])
+                console.log(aux[1])
+                crearMinimo();
+                    
+                   window.location="./lista_perfiles.html";
+                    window.localStorage.loggedIn = true;
+            }
+             else{
+                recolectarUsuario(aux[2],aux[3]);
+                crearMinimo();
+            
+               window.location="./lista_perfiles.html";
+                window.localStorage.loggedIn = true;
+            }
+          });
     }
     else{
         if("Trabajador"===result[0]){
@@ -48,7 +79,7 @@ function nuevoEncontrarPerfil(result){
             recolectarUsuario(result[2],result[3]);
             crearMinimo();
         
-            window.location="./lista_perfiles.html";
+           window.location="./lista_perfiles.html";
             window.localStorage.loggedIn = true;
         }
     }
@@ -64,9 +95,7 @@ function encontrarPerfil(){
 }
 
 function compararPerfil(correo,contrasena){
-   // e.preventDefault();
-    //console.log("Mensaje para errores");
-    //console.log(encontrarPerfil());
+    let aux=true;
     if(encontrarPerfil().length===0){
         construirSweetAlert("error","La contraseña o el usuario están mal");
     }
@@ -78,16 +107,26 @@ function compararPerfil(correo,contrasena){
         console.log(correo)
         if(element.email===correo&&contrasena===element.password){
             console.log("entraste");
+            aux=false;
             nuevoEncontrarPerfil(dobleCuenta(correo));
-            return;
+            
+            
         }
         else{
             console.log(correo);
             console.log(contrasena);    
         }
-        
+                
     });
-    construirSweetAlert("error","La contraseña o el usuario están mal");
+    if(aux){
+    new Swal({
+        icon: "error",
+        title: "La contraseña o el usuario están mal",
+        confirmButtonColor:"#ff4716",
+    });
+}
+    
+    //
 }
 function crearMinimo(){
     const Toast = Swal.mixin({
