@@ -189,15 +189,20 @@ function renderPerfil(perfil){
 `;
 return perfil;
 }
+
+
+
 function cambiarDatos(numeroCampo,mensaje,boleano,id,arregloTrabajos){
   let botonConfirmar;
   let botonCancelar;
+  let cancelar=[];
   let elemento=document.querySelectorAll(".list-group-item");
   let mensajeAnterior=[elemento[numeroCampo].firstElementChild,elemento[numeroCampo].lastElementChild];
   elemento[numeroCampo].removeChild(elemento[numeroCampo].firstElementChild);
   mensajeAnterior.push(elemento[numeroCampo].firstElementChild);
   let camposAnteriores=elemento[numeroCampo].querySelectorAll("ul li ul li");
   let contenedor;
+  let cancelar2=[];
   console.log(elemento);
   console.log(mensajeAnterior[0]);
   console.log(mensajeAnterior[1])
@@ -224,23 +229,28 @@ function cambiarDatos(numeroCampo,mensaje,boleano,id,arregloTrabajos){
         
         contenedor=document.querySelectorAll("#Localidad .position-relative");
        // console.log(contenedor[0].querySelector("#inputState").value)
-       console.log(cambiarClase(contenedor[0].lastElementChild,arregloLocal[0](contenedor[0].querySelector("#inputState").value),contenedor[0].querySelector("#inputState")));
+       cancelar.push(arregloLocal[0](contenedor[0].querySelector("#inputState").value));
+       cambiarClase(contenedor[0].lastElementChild,arregloLocal[0](contenedor[0].querySelector("#inputState").value),contenedor[0].querySelector("#inputState"));
        for(let i=1;i<contenedor.length;i++){
-        console.log(cambiarClase(contenedor[i].lastElementChild,arregloLocal[i](contenedor[i].firstElementChild.value),contenedor[i].firstElementChild));
+        cancelar.push(arregloLocal[0](contenedor[0].querySelector("#inputState").value));
+      (cambiarClase(contenedor[i].lastElementChild,arregloLocal[i](contenedor[i].firstElementChild.value),contenedor[i].firstElementChild));
        }
-       recolectar(id,elemento[numeroCampo],mensajeAnterior);
+       recolectar(id,elemento[numeroCampo],mensajeAnterior,cancelar);
         
    //     cambiarClase(contenedor[1].lastElementChild,)
       }
       if(id==="Contacto"){
         contenedor=document.querySelectorAll("#Contacto .position-relative");
-        cambiarClase(contenedor[0].lastElementChild,validarEmail(contenedor[0].firstElementChild.value),contenedor[0].firstElementChild);
-        cambiarClase(contenedor[1].lastElementChild,validarTelefono(contenedor[1].firstElementChild.value),contenedor[1].firstElementChild);
-        recolectar(id,elemento[numeroCampo],mensajeAnterior);
+         (cambiarClase(contenedor[0].lastElementChild,validarEmail(contenedor[0].firstElementChild.value),contenedor[0].firstElementChild));
+        cancelar2.push(validarEmail(contenedor[0].firstElementChild.value));
+        (cambiarClase(contenedor[1].lastElementChild,validarTelefono(contenedor[1].firstElementChild.value),contenedor[1].firstElementChild));
+        cancelar2.push(validarTelefono(contenedor[1].firstElementChild.value));
+        recolectar(id,elemento[numeroCampo],mensajeAnterior,cancelar2);
 
       }
     }
-
+    cancelar=[];
+    cancelar2=[];
     
   })
   botonCancelar.addEventListener("click",function(e){
@@ -262,18 +272,48 @@ function agregarAnterior(mensajeAnterior,elemento){
   //elemento.innerHTML+=mensajeAnterior[0]+mensajeAnterior[1];
 }
 
-function recolectar(id,elemento,mensajeAnterior){
+function todoCorrecto(cancelar){
+  console.log(cancelar);
+  for(let i=0;i<cancelar.length;i++){
+    if(cancelar[i]!==true){
+      return false;
+    }
+  }
+ 
+  return true
+}
+
+function recolectar(id,elemento,mensajeAnterior,cancelar){
   let checkbox=document.querySelectorAll("#"+id+" .form-check input");
   //let etiquetas=document.querySelectorAll("#"+id+" .form-check label");
+  let lista ;
+
+  
+  
+    if("Localidad"===id){
+      lista=cambioFormulario(id,true);
+    }
+    if("Contacto"===id){
+      lista=cambioFormulario(id,false);
+    }
+    if("Localidad"===id||"Contacto"===id){
+      if(todoCorrecto(cancelar)){
+     elemento.innerHTML="";
+      elemento.appendChild(mensajeAnterior[0]);
+    elemento.appendChild(mensajeAnterior[2]);
+    elemento.appendChild(lista);
+      }
+      return
+   }
+  
   let mensaje="";
   let imagen="";
   elemento.innerHTML="";
+  
   elemento.appendChild(mensajeAnterior[0]);
   elemento.appendChild(mensajeAnterior[2]);
   let valores=[];
-  if("Localidad"===id||"Contacto"===id){
-    cambioFormulario()
-  }
+ 
   
   for(let i=0;i<checkbox.length;i++){
     if(id==="Categoria"){
@@ -295,8 +335,24 @@ function recolectar(id,elemento,mensajeAnterior){
 
   return valores;
 }
-function cambioFormulario(){
-  let checkbox=document.querySelectorAll("#"+id+" .form-check input");
+function cambioFormulario(id,num){
+  
+  let seleccion=document.querySelectorAll("#"+id+" input");
+  let entradas=document.querySelectorAll("#"+id+" #inputState");
+  let mensaje;
+  console.log(entradas)
+  if(num===true){
+    mensaje=`<li>Estado:${entradas[0].value}</li><li>Municipio:${seleccion[0].value}</li><li>CP:${seleccion[1].value}</li>`;
+  }
+  else{
+    mensaje=`<li>Correo:${seleccion[0].value}</li><li>Teléfono:${seleccion[1].value}</li>`;
+  }
+  let variable=document.createElement("ul");
+  
+  
+  variable.innerHTML=mensaje;
+  return variable;
+
 }
 function conseguirArreglo(checkbox){
   let arreglo=[];
