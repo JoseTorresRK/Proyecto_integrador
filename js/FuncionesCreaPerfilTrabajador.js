@@ -49,6 +49,11 @@ function creaEstrellas(reviews){
     }
     return mensaje;
 }
+function recolectarPerfiles(){
+  console.log(myStorage.Temporal);
+  console.log(JSON.parse(myStorage.Temporal));
+  return (JSON.parse(myStorage.Temporal));
+}
 function tempLocal(id){
     let registro;
     arreglo=recolectarMyStorage("Trabajador");
@@ -190,10 +195,13 @@ function cambiarDatos(numeroCampo,mensaje,boleano,id,arregloTrabajos){
   let elemento=document.querySelectorAll(".list-group-item");
   let mensajeAnterior=[elemento[numeroCampo].firstElementChild,elemento[numeroCampo].lastElementChild];
   elemento[numeroCampo].removeChild(elemento[numeroCampo].firstElementChild);
-mensajeAnterior.push(elemento[numeroCampo].firstElementChild);
+  mensajeAnterior.push(elemento[numeroCampo].firstElementChild);
   let camposAnteriores=elemento[numeroCampo].querySelectorAll("ul li ul li");
   let contenedor;
-  console.log(camposAnteriores[0]);
+  console.log(elemento);
+  console.log(mensajeAnterior[0]);
+  console.log(mensajeAnterior[1])
+  console.log(mensajeAnterior[2]);
 
   elemento[numeroCampo].innerHTML=mensaje;
  // console.log(aux);
@@ -220,6 +228,7 @@ mensajeAnterior.push(elemento[numeroCampo].firstElementChild);
        for(let i=1;i<contenedor.length;i++){
         console.log(cambiarClase(contenedor[i].lastElementChild,arregloLocal[i](contenedor[i].firstElementChild.value),contenedor[i].firstElementChild));
        }
+       recolectar(id,elemento[numeroCampo],mensajeAnterior);
         
    //     cambiarClase(contenedor[1].lastElementChild,)
       }
@@ -227,7 +236,7 @@ mensajeAnterior.push(elemento[numeroCampo].firstElementChild);
         contenedor=document.querySelectorAll("#Contacto .position-relative");
         cambiarClase(contenedor[0].lastElementChild,validarEmail(contenedor[0].firstElementChild.value),contenedor[0].firstElementChild);
         cambiarClase(contenedor[1].lastElementChild,validarTelefono(contenedor[1].firstElementChild.value),contenedor[1].firstElementChild);
-
+        recolectar(id,elemento[numeroCampo],mensajeAnterior);
 
       }
     }
@@ -262,7 +271,10 @@ function recolectar(id,elemento,mensajeAnterior){
   elemento.appendChild(mensajeAnterior[0]);
   elemento.appendChild(mensajeAnterior[2]);
   let valores=[];
- 
+  if("Localidad"===id||"Contacto"===id){
+    cambioFormulario()
+  }
+  
   for(let i=0;i<checkbox.length;i++){
     if(id==="Categoria"){
       imagen=`<img  src="${definirIcono(checkbox[i].value)}" class="pr-auto" style="height: 50px;width: 50px;" alt=""> `;
@@ -282,6 +294,9 @@ function recolectar(id,elemento,mensajeAnterior){
 
 
   return valores;
+}
+function cambioFormulario(){
+  let checkbox=document.querySelectorAll("#"+id+" .form-check input");
 }
 function conseguirArreglo(checkbox){
   let arreglo=[];

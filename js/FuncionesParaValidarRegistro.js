@@ -348,7 +348,7 @@ function validarFormulario(e){
     //let usuario=new User(1008,myStorage.Bandera,camposValidados[1],camposValidados[3],camposValidados[11])
    let Trabajador={
     "idUser":1008,
-    "isEmployee":false,
+    "isEmployee":true,
     "profileImg": camposValidados[13],
     "name":camposValidados[0],
     "stars":camposValidados[1],
@@ -370,12 +370,17 @@ function validarFormulario(e){
    
    return Trabajador; 
 }
-
+function creaTemporal(parametro){
+    myStorage.setItem("Temporal",[]);
+    myStorage.Temporal=parametro;
+}
 function saveToMyStorage(perfil,bandera){
     if(bandera==='true'){
         let array_trabajador=recolectarMyStorage("Trabajador");
         console.log(array_trabajador,"1234");
         array_trabajador.push(perfil);
+        myStorage.setItem("Temporal",JSON.stringify(perfil));
+        
         myStorage.setItem("Trabajador",JSON.stringify(array_trabajador));
     }
     else{
@@ -383,6 +388,7 @@ function saveToMyStorage(perfil,bandera){
         console.log(array_trabajador,"1234");
         array_trabajador.push(perfil);
         myStorage.setItem("Cliente",JSON.stringify(array_trabajador));
+        myStorage.setItem("Temporal",JSON.stringify(perfil));
     }
     window.localStorage.loggedIn = true;
     /**
