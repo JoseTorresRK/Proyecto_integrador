@@ -231,7 +231,7 @@ function plantilla (worker){
           <li class="list-inline-item p-2"><strong>${worker.categories}</strong></li>
           ${subCategoryGenerator(worker.subcategories)}
         </ul>
-        <a href="#" class="btn btn-primary">Conóceme</a>
+        <button class="btn btn-primary" id="${worker.idUser}">Conóceme</button>
       </div>
     </div>
   </div>
@@ -239,6 +239,7 @@ function plantilla (worker){
   <br>
     `
 }
+
 let validacion=document.getElementById("contact-form");
 
 function calcularEstrellasResenas(){
@@ -298,5 +299,26 @@ function renderCard(){
 window.addEventListener("load", (event)=>{
     
     renderCard();
+    obtenerTrabajador();
 
 });
+function obtenerTrabajador(){
+  variable=document.getElementsByClassName("btn-primary");
+  console.log(variable);
+  for(let i=8;i<variable.length;i++){
+    variable[i].addEventListener("click",function(e){
+      e.preventDefault();
+      redigirCliente(i);
+    });
+    
+  }
+}
+function redigirCliente(indice){
+  
+  let arreglo=obtenerLocal();
+  console.log(obtenerLocal());
+  myStorage.setItem("TempTrabajador",[]);
+  console.log(arreglo[indice]);
+  myStorage.TempTrabajador=JSON.stringify(arreglo[indice-8]);
+  window.location="./otroperfil.html"
+}
