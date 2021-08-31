@@ -62,7 +62,7 @@ header .active {
   }
 
   h2 {
-    color: #353535;
+    color: white;
     font-size: 2em;
   }
 
@@ -599,7 +599,7 @@ i{
   }
 
   .testimonial-info {
-    background:linear-gradient(.25turn,#ff4716,#14315d);
+    background:linear-gradient(.25turn,#0a65ff,#14315d);
     padding: 60px;
     height: 65vh;
   }

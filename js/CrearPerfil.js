@@ -1,4 +1,6 @@
-campo=renderPerfil(tempLocal(1008));
+
+campo=renderPerfil(recolectarPerfiles());
+console.log(campo);
 let reductor=2;
 let botonesEditar=document.getElementsByClassName("botonicono");
 botonesEditar[0].addEventListener("click",function(e){
@@ -90,7 +92,7 @@ botonesEditar[4-reductor].addEventListener("click",function(e){
     <div class="position-relative">
 
     <label for="inputState">Estado</label>
-    <select id="inputState" class="form-select is-valid" > 
+    <select  id="inputState" class="form-select is-valid" > 
       <option value="">Seleccione uno...</option>
       <option value="AGS">Aguascalientes</option>
       <option value="BC">Baja California</option>
@@ -134,8 +136,8 @@ botonesEditar[4-reductor].addEventListener("click",function(e){
     <input  id="city"
          type="text"
           class="form-control formato is-valid"
-         placeholder="Municipio
-         value=${campo.municipal_delegation}"
+         placeholder="Municipio"
+         value="${campo.municipal_delegation}"
         style="margin-top:3em"
         name="city"
         required
@@ -149,8 +151,10 @@ botonesEditar[4-reductor].addEventListener("click",function(e){
             type="text"
             class="form-control formato is-valid"
             id="inputAddress"
+            value="${campo.stret}"
             style="margin-top:3em"
             placeholder="Ej. Calle Hidalgo"
+            
             name="inputAddress"
             />
             <div class="valid-tooltip">
@@ -158,19 +162,19 @@ botonesEditar[4-reductor].addEventListener("click",function(e){
         </div>
     </div>
     <div class="position-relative">
-        <input type="text" style="margin-top:3em" class="form-control formato is-valid" id="inputZip" name="inputZip" placeholder="C.P." />
+        <input type="text" style="margin-top:3em" class="form-control formato is-valid" id="inputZip" name="inputZip" value="${campo.zip}" placeholder="C.P." />
         <div class="valid-tooltip">
          Campo válido.
         </div>
     </div>
     <div class="position-relative">   
-        <input type="text" style="margin-top:3em" class="form-control formato is-valid" id="Num-ext" name="Num-ext" placeholder="Número Exterior" />
+        <input type="text" style="margin-top:3em" class="form-control formato is-valid" id="Num-ext" name="Num-ext" value="${campo.numExt}" placeholder="Número Exterior" />
         <div class="valid-tooltip">
          Campo válido.
         </div>
     </div>
     <div class="position-relative"> 
-        <input type="text" style="margin-top:3em"  class="form-control formato is-valid" id="Num-int" placeholder="Número Interior" />
+        <input type="text" style="margin-top:3em"  class="form-control formato is-valid" id="Num-int" value="${campo.numInt}" placeholder="Número Interior" />
         <div class="valid-tooltip">
          Campo válido.
         </div>
