@@ -204,7 +204,7 @@ function subCategoryGenerator(subCategories){
  */
 function plantilla (worker){
   //const imag=URL.createObjectURL(worker.img);
-  console.log(worker);
+  //console.log(worker);
     return `
     <div class="row">
     <div class="card">
