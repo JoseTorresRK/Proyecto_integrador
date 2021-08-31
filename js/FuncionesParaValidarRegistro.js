@@ -377,16 +377,20 @@ function creaTemporal(parametro){
 function saveToMyStorage(perfil,bandera){
     if(bandera==='true'){
         let array_trabajador=recolectarMyStorage("Trabajador");
+       
         console.log(array_trabajador,"1234");
         array_trabajador.push(perfil);
+        array_trabajador[array_trabajador.length-1].idUser=array_trabajador.length
         myStorage.setItem("Temporal",JSON.stringify(perfil));
         
         myStorage.setItem("Trabajador",JSON.stringify(array_trabajador));
     }
     else{
         let array_trabajador=recolectarMyStorage("Cliente");
+        
         console.log(array_trabajador,"1234");
         array_trabajador.push(perfil);
+        array_trabajador[array_trabajador.length-1].idUser=array_trabajador.length
         myStorage.setItem("Cliente",JSON.stringify(array_trabajador));
         myStorage.setItem("Temporal",JSON.stringify(perfil));
     }
