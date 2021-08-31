@@ -200,6 +200,7 @@ botonesEditar[5-reductor].addEventListener("click",function(e){
         id="email"
         type="email"
         class="is-valid form-control formato"
+        value="${campo.email}"
     placeholder="Dirección de correo / email"
     name="email"
     required
@@ -216,6 +217,7 @@ botonesEditar[5-reductor].addEventListener("click",function(e){
         class="form-control formato is-valid"
         placeholder="Número de telefono"
         name="phone"
+        value="${campo.tel}"
         required/>
         <div class="valid-tooltip">
          Campo válido.
