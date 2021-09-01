@@ -55,7 +55,7 @@ function nuevoEncontrarPerfil(result){
                 console.log(aux[1])
                 crearMinimo();
                     
-                   window.location="./lista_perfiles.html";
+                window.location="./lista_perfiles.html";
                     window.localStorage.loggedIn = true;
             }
              else{
@@ -76,7 +76,7 @@ function nuevoEncontrarPerfil(result){
             window.localStorage.loggedIn = true;
         }
         if("Cliente"===result[0]){
-            recolectarUsuario(result[2],result[3]);
+            recolectarUsuario(result[0],result[1]);
             crearMinimo();
         
            window.location="./lista_perfiles.html";
