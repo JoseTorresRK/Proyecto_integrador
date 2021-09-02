@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../images/Tekton_icono.png" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- ICONS BOOTSTRAP v.1.4.0 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/tooplate-style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+     <!-- PRE LOADER -->
+     <section class="preloader">
+        <div class="spinner">
+          <span class="spinner-rotate"></span>
+        </div>
+      </section>
+
+      <!-- MENU -->
+
+
+          <header class="header">
+          <nav class="navbar navbar-expand-lg me-auto fixed-top " >
+            <div class="container-fluid">
+
+              <a class="navbar-brand colorindex alinear" href="../index.html"> <picture> <source srcset="../images/TEKTONLOGOT.svg" media="(max-width:768px)"><img src="../images/TEKTON  orange .svg"  alt=""></picture></a>
+
+              <button class="navbar-toggler alinearmenu navbar-dark shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon" ></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                    <a class="nav-link colorindex fw-bolder" aria-current="page" href="../index.html" >Inicio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link colorindex fw-bolder" href="./Acerca_nosotros.html">Acerca de Nosotros</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link colorindex fw-bolder" href="./contact.html">Contacto</a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link colorindex fw-bolder"
+                      href="./html/lista_pub_trabajo.html"
+                      >Servicios
+                    </a>
+                  </li>
+                  <li class="nav-item loggedIn">
+                    <a class="nav-link active colorindex fw-bolder " href="./html/miperfil.html">Mi perfil</a>
+                  </li>
+                  <li class="nav-item loggedIn">
+                    <a id="cerrar-sesion" class="nav-link colorindex fw-bolder " href="./../index.html">Cerrar Sesión</a>
+                  </li>
+                  <li class="nav-item loggedOut">
+                    <a class="nav-link colorindex fw-bolder" href="./registro.html">Ingresar</a>
+                  </li>
+                  <li class="nav-item dropdown loggedOut">
+                    <button
+                      class="btn nav-link dropdown-toggle col-12 colorindex fw-bolder"
+                  
+                      id="navbarDropdownMenuLink"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Registrarse
+                    </button>
+                    <ul
+                      class="dropdown-menu dropdown-menu-end"
+                      aria-labelledby="navbarDropdownMenuLink"
+                    >
+                      <li>
+                        <button class="dropdown-item colorindex fw-bolder">
+                          Trabajadores
+                        </button>
+                      </li>
+                      <li>
+                        <button class="dropdown-item colorindex fw-bolder">
+                          Clientes
+                        </button>
+                      </li>
+                    </ul>
+                  </li>
+
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </header>
+        <section  data-stellar-background-ratio="0.5">
+            <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-3" id="perfil">
+                  </div>  
+                  <div class="col-md-9" > 
+                    <section id="feature" class="paginaperfil" >
+                      <!-- Aqui usamos la clase nav-tabs, para poder elegir entre dos opciones, para desplegar la información -->
+                      <ul class="nav nav-tabs justify-content-center" role="tablist" >
+                        <li class="active">
+                          <a
+                            href="#tab01"
+                            aria-controls="tab01"
+                            role="tab"
+                            data-toggle="tab"
+                            id="Reviews"
+                            >Reseñas</a
+                          >
+                        </li>
+          
+                        <li>
+                          <a
+                            href="#tab02"
+                            aria-controls="tab02"
+                            role="tab"
+                            data-toggle="tab"
+                            id="Status-empleado"
+                            >Solicitudes pendientes</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#tab03"
+                             aria-controls="tab03"
+                             role="tab"
+                             data-toggle="tab"
+                             id="Status-progreso"   
+                          >Trabajo en progreso </a>
+                        </li>
+                      </ul>
+          
+                      <div class="tab-content">
+                        <!-- Este es el contenido del primet tab, lo podemos identificar por su id para poder hacer referencia a este -->
+                        <div class="tab-pane active" id="tab01" role="tabpanel">
+                          <div class="tab-pane-item">
+                            <h2>Encuentra trabajo de manera rápida</h2>
+                            <p>Pública tu perfil y miles de personas podrán ver.</p>
+                          </div>
+                          <div class="tab-pane-item">
+                            <h2>Obtén más trabajo por tu buen desempeño</h2>
+                            <p>
+                              Con las calificaciones que obtengas de tus clientes serás
+                              priorizado en la lista de selección.
+                            </p>
+                          </div>
+                          <div class="tab-pane-item">
+                            <h2>Nosotros cuidamos tu trabajo</h2>
+                            <p>
+                              Nosotros actuaremos de intermediarios entre el cliente y tú.
+                              Si por algún motivo el cliente no quiere pagarte, mientras
+                              hayas actuado bajo nuestras normas de trabajo. Nosotros nos
+                              aseguraremos que tu trabajo sea recompensado.
+                            </p>
+                            <h2>Califica a los usuarios</h2>
+                            <p>
+                              Queremos también escuchar tu experiencia con el cliente,
+                              tendrás la posibilidad de calificar de la misma manera al
+                              cliente.
+                            </p>
+                            <h2>No te contratan, búscalo por ti mismo</h2>
+                            <p>
+                              También tenemos un apartado donde te puedes postular a una
+                              oferta de trabajo publicada por las empresas.
+                            </p>
+                          </div>
+                        </div>
+          
+                        <div class="tab-pane" id="tab02" role="tabpanel">
+                          <!-- Este es el contenido del primet tab, lo podemos identificar por su id para poder hacer referencia a este -->
+                          <div class="tab-pane-item">
+                              <h5>Aún no tienes Solicitudes pendientes</h5>
+                              <p>Pública tu perfil y miles de personas podrán ver.</p>
+                              <br>
+                          </div>
+                          <div class="tab-pane-item">
+                            <h2>Nosotros también te cuidamos</h2>
+                            <p>
+                              Actuaremos como intermediarios entre el cliente y empleado,
+                              si por alguna razón notas algún comportamiento que rompa con
+                              nuestros términos y condiciones, repórtalo de inmediato con
+                              pruebas y nosotros lo solucionaremos. Ya sea con otro
+                              trabajador o rembolso de tu dinero
+                            </p>
+                          </div>
+                        </div>
+
+                        <div class="tab-pane" id="tab03" role="tabpanel">
+                          <!-- Este es el contenido del primet tab, lo podemos identificar por su id para poder hacer referencia a este -->
+                          <div class="tab-pane-item">
+                              <h5>Aún no tienes Trabajos en progreso</h5>
+                              <p>Pública tu perfil y miles de personas podrán ver.</p>
+                              <br>
+                          </div>
+                          <div class="tab-pane-item">
+                            <h2>Nosotros también te cuidamos</h2>
+                            <p>
+                              Actuaremos como intermediarios entre el cliente y empleado,
+                              si por alguna razón notas algún comportamiento que rompa con
+                              nuestros términos y condiciones, repórtalo de inmediato con
+                              pruebas y nosotros lo solucionaremos. Ya sea con otro
+                              trabajador o rembolso de tu dinero
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            ...
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+            </div>
+        </section>
+        <!-- PIEDE PAGINA  donde vienen los iconos de redes sociales-->
+    <footer id="footer" data-stellar-background-ratio="0.5">
+        <div class="container" >
+          <div class="row" >
+            <div class="copyright-text col-md-12 col-sm-6">
+              <div class="row">
+              <div class="col-md-6 col-sm-6">
+                <p>Copyright &copy; 2021 TEKTÔN S.A. de C.V.</p>
+              </div>
+  
+              <div class="col-md-6 col-sm-6">
+                <ul class="social-icon">
+                  <li>
+                    <a
+                      href="#"
+                      class="fa fa-facebook-square"
+                      attr="facebook icon"
+                    ></a>
+                  </li>
+                  <li><a href="#" class="fa fa-twitter"></a></li>
+                  <li><a href="#" class="fa fa-instagram"></a></li>
+                </ul>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+           <!-- SCRIPTS -->
+           <script src="../js/jquery.js"></script>
+           <script src="../js/bootstrap.min.js"></script>
+           <script src="../js/jquery.stellar.min.js"></script>
+           <script src="../js/owl.carousel.min.js"></script>
+           <script src="../js/smoothscroll.js"></script>
+           <script src="../js/custom.js"></script>
+           <script src="../js/escogeTrabajadorCliente.js"></script>
+           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+           <script src="../js/FuncionesParaValidarRegistro.js"></script> 
+           <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+           <script src="../js/FuncionesCreaPerfilTrabajador.js"></script>
+           <script src="../js/FuncionesGenerarCategoria.js"></script>
+           <script src="./../js/checkerLogIn.js"></script>
+           <script src="../js/CrearPerfil.js"></script>
+         
+          <script src="../js/funcionCrearTrabajador.js"></script>
+          <script src="../js/crearTrabajador.js"></script>         
+          <script src="./../js/usuario_reviews.js"></script>
+</body>
+</html>

@@ -1,0 +1,255 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Lista de perfiles</title>
+    
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="team" content="" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1"
+        />
+    
+        <!-- <link rel="stylesheet" href="../css/bootstrap.min.css" /> -->
+        <link rel="stylesheet" href="../css/owl.carousel.css" />
+        <link rel="stylesheet" href="../css/owl.theme.default.min.css" />
+        <link rel="stylesheet" href="../css/font-awesome.min.css" />
+        <link rel="shortcut icon" type="image/x-icon" href="../images/Tekton_icono.png" />
+        <!-- BOOTSTRAP v.5.0.2 -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+        <!-- ICONS BOOTSTRAP v.1.4.0 -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+
+        <!-- MAIN CSS -->
+        <link rel="stylesheet" href="../css/tooplate-style.css" />
+    </head>
+<body>
+    <!-- PRE LOADER -->
+    <section class="preloader">
+        <div class="spinner">
+          <span class="spinner-rotate"></span>
+        </div>
+    </section>
+
+    <!-- MENU -->
+    <header class="header">
+      <nav class="navbar navbar-expand-lg me-auto fixed-top" >
+        <div class="container-fluid">
+          <a class="navbar-brand colorindex alinear" href="../index.html"> <picture> <source srcset="../images/TEKTONLOGOT.svg" media="(max-width:768px)"><img src="../images/TEKTON  orange .svg"  alt=""></picture></a>
+
+          <button class="navbar-toggler alinearmenu navbar-dark shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link colorindex fw-bolder" aria-current="page" href="../index.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link colorindex fw-bolder" href="./Acerca_nosotros.html">Acerca de Nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link colorindex fw-bolder" href="./contact.html">Contacto</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active fw-bolder" href="./contact.html">Perfiles</a>
+              </li>
+              <li class="nav-item loggedIn">
+                <a class="nav-link colorindex fw-bolder " href="./miperfil.html">Mi perfil</a>
+              </li>
+              <li class="nav-item loggedIn">
+                <a id="cerrar-sesion" class="nav-link colorindex fw-bolder " href="./../index.html">Cerrar Sesión</a>
+              </li>
+              <li class="nav-item loggedOut">
+                <a class="nav-link colorindex fw-bolder" href="./registro.html">Ingresar</a>
+              </li>
+              <li class="nav-item dropdown loggedOut">
+                <button
+                  class="btn nav-link dropdown-toggle colorindex fw-bolder"
+              
+                  id="navbarDropdownMenuLink"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Registrarse
+                </button>
+                <ul
+                  class="dropdown-menu dropdown-menu-end"
+                  aria-labelledby="navbarDropdownMenuLink"
+                >
+                  <li>
+                    <button class="dropdown-item colorindex fw-bolder">
+                      Trabajadores
+                    </button>
+                  </li>
+                  <li>
+                    <button class="dropdown-item colorindex fw-bolder">
+                      Clientes
+                    </button>
+                  </li>
+                </ul>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- LISTA PERFILES TRABAJADORES  -->
+    <section id="lista_perfiles" data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="section-title">
+          <h1>La persona ideal para el trabajo ideal.</h1>
+          <p>Conoce los perfiles de las y los profesionales que ya se encuentran en <span id="inline_tekton">TEKTÔN</span>, ¡animate y contactalos!</p>
+        </div>
+
+        <!-- BTN-FILTROS -->
+
+        <!-- <div class="col-sm-12">
+          <div class="col-sm-3 col-xs-4" >
+            <div class="col-xs-11" id="btn-filtro">
+              <h5>Filtros</h5>
+            </div>
+          </div> </div> -->
+
+          <!-- COLUMNA DE PERFILES -->
+          <div id="contenedor_cards" class="card-group col-12">
+            <!-- CARDS EN columna -->
+
+            <!-- INICIO DE CARD -->
+            <div class="row">
+              <div class="card">
+                <div class="card-body">
+                  <div class="row">
+                    <img src="./../images/profile_mute.png" alt="profile_mute" class="col-2">
+                    <div class="nombre col-9">
+                      <h4 class="card-title">Andres Galindo Pérez</h4>
+                      <i class="bi bi-star-fill"></i> <!-- ESTRELLA COMPLETA -->
+                      <i class="bi bi-star-fill"></i> <!-- ESTRELLA COMPLETA -->
+                      <i class="bi bi-star-half"></i> <!-- ESTRELLA a la MITAD -->
+                      <i class="bi bi-star"></i> <!-- ESTRELLA VACIA -->
+                      <span class="p-1">(49 reseñas )</span>
+                      <i class="bi bi-pin-map-fill p-5"> <!--MAPA-->
+                        <span class="p-2">Toluca</span> – <span>Estado de México</span>
+                      </i>
+                    </div>
+                  </div>
+                <br>
+                  <p class="card-text">
+                    Herrero con 10 años de experiencia, realizando estrcuturas metálicas complejas para montajes de elementos pesados como tinacos, escaleras, balcones, puertas y brandillas así como labranza y herraduras. En busca de utilizar mis habilidades de creatividad y atención al detalle a disposicion de personas o empresas que requieran de mis servicios.
+                  </p>
+                  <ul class="list-inline">
+                    <li class="list-inline-item p-2"><strong>Herrería</strong></li>
+                    <li class="list-inline-item p-2">Muebles de jardín</li>
+                    <li class="list-inline-item p-2">Estructuras metálicas generales</li>
+                    <li class="list-inline-item p-2">Soldadura smaw</li>
+                    <li class="list-inline-item p-2">Soldadura con microalambre</li>
+                    <li class="list-inline-item p-2">Cortadora de plasma</li>
+                  </ul>
+                  <a href="#" class="btn btn-primary">Conóceme</a>
+                </div>
+              </div>
+            </div>
+            
+            <br>
+            <!-- INICIO DE CARD -->
+            <div class="row">
+              <div class="card">
+                <div class="card-body">
+                  <div class="row">
+                    <img src="./../images/profile_mute.png" alt="profile_mute" class="col-2">
+                    <div class="nombre col-9">
+                      <h4 class="card-title">Pablo Perez López</h4>
+                      <i class="bi bi-star-fill"></i> <!-- ESTRELLA COMPLETA -->
+                      <i class="bi bi-star-fill"></i> <!-- ESTRELLA a la MITAD -->
+                      <i class="bi bi-star-half"></i> <!-- ESTRELLA a la MITAD -->
+                      <i class="bi bi-star"></i> <!-- ESTRELLA VACIA -->
+                      <span class="p-1">(30 reseñas )</span>
+                      <i class="bi bi-pin-map-fill p-5"> <!--MAPA-->
+                        <span class="p-2">Cuahutemoc</span> – <span>Ciudad de México</span>
+                      </i>
+                    </div>
+                  </div>
+                  <br>
+                  <p class="card-text">
+                    Cuando crecí comencé a ver las plantas de otro modo, dejaron de ser juguetes y aprendí a cuidarlas como lo hacía mi madre para que se llenaran de flores en primavera. Las primeras plantas que recuerdo regar son los geranios del balcón de casa. También me gustan las flores porque son bonitas y transmiten alegría con sus colores, es reconfortante estar en el jardín descansando al aire libre o con la familia pasando el día. <br>Esta tranquilidad la podemos llevar a cualquier casa o neogcio por lo que pongo a su disposicion servicios de jardineria profesional.
+                  </p>
+                  <ul class="list-inline">
+                    <li class="list-inline-item p-2"><strong>Jardinería</strong></li>
+                    <li class="list-inline-item p-2">Plantas exóticas</li>
+                    <li class="list-inline-item p-2">Árboles frutales</li>
+                    <li class="list-inline-item p-2">Invernaderos</li>
+                    <li class="list-inline-item p-2">Bonsáis</li>
+                    <li class="list-inline-item p-2">Jardineras</li>
+                  </ul>
+                  <a href="#" class="btn btn-primary">Conóceme</a>
+                </div>
+              </div>
+            </div>
+            <br>
+            <!-- FIN DE CARD -->
+          </div>
+          
+        
+          
+      </div>
+     
+    </section>
+
+    <!-- PIE DE PAGINA -->
+    <footer id="footer" data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row">
+          <div class="copyright-text col-md-12 col-sm-6">
+            <div class="row">
+            <div class="col-md-6 col-sm-6">
+              <p>Copyright &copy; 2021 TEKTÔN S.A. de C.V.</p>
+            </div>
+
+            <div class="col-md-6 col-sm-6">
+              <ul class="social-icon">
+                <li>
+                  <a
+                    href="#"
+                    class="fa fa-facebook-square"
+                    attr="facebook icon"
+                  ></a>
+                </li>
+                <li><a href="#" class="fa fa-twitter"></a></li>
+                <li><a href="#" class="fa fa-instagram"></a></li>
+              </ul>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- SCRIPTS -->
+    <script src="./../js/jquery.js"></script>
+    <script src="./../js/bootstrap.min.js"></script>
+    <script src="./../js/jquery.stellar.min.js"></script>
+    <script src="./../js/owl.carousel.min.js"></script>
+    <script src="./../js/smoothscroll.js"></script>
+    <script src="./../js/custom.js"></script>
+    <script src="../js/escogeTrabajadorCliente.js"></script>
+
+    <script src="./../js/checkerLogIn.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
+    <!-- JS- CONTROLADOR DE CARDS -->
+    <script src="./../js/lista_perfiles.js"></script>
+</body>
+</html>

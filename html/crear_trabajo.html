@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Crea un nuevo trabajo</title>
+    
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="team" content="" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1"
+        />
+    
+        <!-- <link rel="stylesheet" href="../css/bootstrap.min.css" /> -->
+        <link rel="stylesheet" href="../css/owl.carousel.css" />
+        <link rel="stylesheet" href="../css/owl.theme.default.min.css" />
+        <link rel="stylesheet" href="../css/font-awesome.min.css" />
+        <link rel="shortcut icon" type="image/x-icon" href="../images/Tekton_icono.png" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+        <!-- MAIN CSS -->
+        <link rel="stylesheet" href="../css/tooplate-style.css" />
+    </head>
+<body>
+    <!-- PRE LOADER -->
+    <section class="preloader">
+        <div class="spinner">
+          <span class="spinner-rotate"></span>
+        </div>
+    </section>
+
+    <!-- MENU -->
+    <header class="header">
+      <nav class="navbar navbar-expand-lg me-auto fixed-top" >
+        <div class="container-fluid">
+          <a class="navbar-brand colorindex alinear" href="../index.html"> <picture> <source srcset="../images/TEKTONLOGOT.svg" media="(max-width:768px)"><img src="../images/TEKTON  orange .svg"  alt=""></picture></a>
+
+          <button class="navbar-toggler alinearmenu navbar-dark shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link colorindex fw-bolder" aria-current="page" href="../index.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link colorindex fw-bolder" href="./Acerca_nosotros.html">Acerca de Nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active fw-bolder" href="#jobTitle">Crear Trabajo</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link colorindex fw-bolder" href="./contact.html">Contacto</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link colorindex fw-bolder" href="./lista_pub_trabajo.html">Servicios</a>
+              </li>
+              <li class="nav-item loggedIn">
+                <a class="nav-link colorindex fw-bolder " href="./miperfil.html">Mi perfil</a>
+              </li>
+              <li class="nav-item loggedIn">
+                <a id="cerrar-sesion" class="nav-link colorindex fw-bolder " href="./../index.html">Cerrar Sesión</a>
+              </li>
+              <li class="nav-item loggedOut">
+                <a class="nav-link colorindex fw-bolder" href="./registro.html">Ingresar</a>
+              </li>
+              <li class="nav-item dropdown loggedOut">
+                <button
+                  class="btn nav-link dropdown-toggle col-12 colorindex fw-bolder"
+              
+                  id="navbarDropdownMenuLink"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Registrarse
+                </button>
+                <ul
+                  class="dropdown-menu dropdown-menu-end"
+                  aria-labelledby="navbarDropdownMenuLink"
+                >
+                  <li>
+                    <button class="dropdown-item colorindex fw-bolder">
+                      Trabajadores
+                    </button>
+                  </li>
+                  <li>
+                    <button class="dropdown-item colorindex fw-bolder">
+                      Clientes
+                    </button>
+                  </li>
+                </ul>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- CONTACTANOS -->
+    <section  data-stellar-background-ratio="0.5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-sm-12">
+              <form id="contact-form" class="needs-validation" role="form" action="" novalidate >
+                <div class="section-title">
+                  <h1>¡Postula un nuevo empleo e inicia un nuevo proyecto!</h1>
+                  <p class=" offset-lg-2 col-lg-8">Asignale un nombre a lo que necesitas, algo descriptivo en pocas palabras ayudará, llena las categorias y los demás campos, muy pronto alguien se interesará en tu proyecto y juntos lo consolidarán.</p>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6 position-relative">
+                        <label for="jobTitle">Trabajo</label>
+                        <input
+                            id="jobTitle"
+                            type="text"
+                            class="form-control formato"
+                            placeholder="Titulo del trabajo realizado"
+                            name="name"
+                            required
+    
+                        />
+                        <div class="valid-tooltip">
+                            Campo válido.
+                        </div>
+                        
+                        
+                        </div>
+                        <div class="col-md-4 col-sm-6 position-relative">
+                            <label for="inputState">Estado</label>
+                            <select id="inputState" class="form-select ">
+                            <option value="">Ubicacion del trabajo</option>
+                            <option value="AGS">Aguascalientes</option>
+                            <option value="BC">Baja California</option>
+                            <option value="BCS">Baja California Sur</option>
+                            <option value="CAMP">Campeche</option>
+                            <option value="CHIS">Chiapas</option>
+                            <option value="CHIH">Chihuahua</option>
+                            <option value="CDMX">Ciudad de México</option>
+                            <option value="COAH">Coahuila</option>
+                            <option value="COL">Colima</option>
+                            <option value="DGO">Durango</option>
+                            <option value="EMEX">Estado de México</option>
+                            <option value="GTO">Guanajuato</option>
+                            <option value="GRO">Guerrero</option>
+                            <option value="HGO">Hidalgo</option>
+                            <option value="JAL">Jalisco</option>
+                            <option value="MICH">Michoacán</option>
+                            <option value="MOR">Morelos</option>
+                            <option value="NAY">Nayarit</option>
+                            <option value="NL">Nuevo León</option>
+                            <option value="OAX">Oaxaca</option>
+                            <option value="PUE">Puebla</option>
+                            <option value="QRO">Querétaro</option>
+                            <option value="QR">Quintana Roo</option>
+                            <option value="SLP">San Luis Potosí</option>
+                            <option value="SIN">Sinaloa</option>
+                            <option value="SON">Sonora</option>
+                            <option value="TAB">Tabasco</option>
+                            <option value="TAMP">Tamaulipas</option>
+                            <option value="TLAX">Tlaxcala</option>
+                            <option value="VER">Veracruz</option>
+                            <option value="YUC">Yucatán</option>
+                            <option value="ZAC">Zacatecas</option>
+                            </select>
+                            <div class="valid-tooltip"></div>
+                        </div>
+                        
+                        <div class=" col-md-3 col-sm-3 position-relative">
+                            <input  id="city"
+                            type="text"
+                            class="form-control formato"
+                            placeholder="Municipio"
+                            name="city"
+                            required
+                            >
+                            <div class="valid-tooltip">
+                                
+                            </div>
+
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-4 col-sm-6 position-relative">
+                          <label for="Subcategory">Subcategorias</label>
+                          <select id="Subcategory" class="form-select" multiple="multiple" size="4">
+                            <option value="">Seleccione subcategorias</option>
+
+                          </select>
+                          <div class="valid-tooltip">
+                            Campo válido.
+                          </div>
+                        </div>
+                        
+                    
+                    </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 position-relative" style="margin-top: 3em;">
+                  <textarea
+                  class="form-control formato"
+                  rows="8"
+                  id="area"
+                  placeholder="Descripción del trabajo a realizar:"
+                  name="message"
+                  required
+                  ></textarea>
+                </div>
+                <div class="valid-tooltip"></div>
+              </div>
+                <div class="offset-md-4 col-md-4 offset-sm-3 col-sm-6" style="margin-bottom: 1em;">
+                  <input
+                    id="send_msg"
+                    type="submit"
+                    class="form-control"
+                    name="send message"
+                    value="Crear Trabajo"
+                  />
+                 
+                </div>
+                
+              </form>
+             
+            </div>
+          </div>
+        </div>
+    </section>
+    
+    <!-- PIE DE PAGINA -->
+    <footer id="footer" data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row">
+          <div class="copyright-text col-md-12 col-sm-12">
+            <div class="row">
+            <div class="col-md-6 col-sm-6">
+              <p>Copyright &copy; 2021 TEKTÔN S.A. de C.V.</p>
+            </div>
+
+            <div class="col-md-6 col-sm-6">
+              <ul class="social-icon">
+                <li>
+                  <a
+                    href="#"
+                    class="fa fa-facebook-square"
+                    attr="facebook icon"
+                  ></a>
+                </li>
+                <li><a href="#" class="fa fa-twitter"></a></li>
+                <li><a href="#" class="fa fa-instagram"></a></li>
+              </ul>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  
+    <!-- SCRIPTS -->
+    <script src="./../js/jquery.js"></script>
+    <script src="./../js/bootstrap.min.js"></script>
+    <script src="./../js/jquery.stellar.min.js"></script>
+    <script src="./../js/owl.carousel.min.js"></script>
+    <script src="./../js/smoothscroll.js"></script>
+    <script src="./../js/custom.js"></script>
+    
+    <script src="../js/escogeTrabajadorCliente.js"></script>
+    <script src="./../js/checkerLogIn.js"></script>
+    <script src="../js/FuncionesParaValidarRegistro.js"></script>
+    <script src="../js/Funcioesvalidar.js"></script>
+    <script src="../js/publicarTrabajo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>
