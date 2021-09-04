@@ -210,16 +210,16 @@ function plantilla (worker){
     <div class="card">
       <div class="card-body">
         <div class="row">
-          <img src="${worker.profileImg}" alt="profile_mute" class="col-2" style="width: 250;height: 250;">
+          <img src="${worker.img_perfil}" alt="profile_mute" class="col-2" style="width: 250;height: 250;">
           <div class="nombre col-9">
-            <h4 class="card-title">${worker.name}</h4>
+            <h4 class="card-title">${worker.nombre}</h4>
             <i class="bi bi-star-fill colorrojo"></i> <!-- ESTRELLA COMPLETA -->
             <i class="bi bi-star-fill colorrojo"></i> <!-- ESTRELLA COMPLETA -->
             <i class="bi bi-star-half colorrojo"></i> <!-- ESTRELLA a la MITAD -->
             <i class="bi bi-star colorrojo"></i> <!-- ESTRELLA VACIA -->
             <span class="p-1">(${worker.reviews} reseñas )</span>
             <i class="bi bi-pin-map-fill p-5"> <!--MAPA-->
-              <span class="p-2">${worker.municipal_delegation}</span> – <span>${worker.state}</span>
+              <span class="p-2">${worker.municipal_}</span> – <span>${worker.state}</span>
             </i>
           </div>
         </div>
@@ -259,10 +259,29 @@ function paqueteCards(){
     calcularEstrellasResenas();
     console.log("banto");
     console.log(JSON.parse( agregaLocal()));
+    
     JSON.parse(agregaLocal()).forEach(element => {
         cards += plantilla(element);
     });
     return cards;
+}
+
+function buscaTodos(){
+  
+  fetch(`http://localhost:8080/api/users/`)
+  .then(response => response.json())
+  .then(data => {
+    let card="";
+    data.forEach(element=>{
+      card+=plantilla(element);
+    })
+    renderCard(card);}
+  )
+  .catch(error=>{new Swal({
+    icon: "error",
+    title: "Error en la conexión. Lo lamentamos intenta recargar" ,
+    confirmButtonColor:"#ff4716",
+})})
 }
 
 function agregaLocal(){
@@ -284,7 +303,7 @@ function agregaLocal(){
 /**
  * @function añade al div padre, todas las card ya con la informacion
  */
-function renderCard(){
+function renderCard(card){
     let contenedor_cards = document.getElementById("contenedor_cards"); 
     //console.log(strJson());
    console.log(validacion) 

@@ -6,4 +6,5 @@ console.log(password);
 const boton=document.getElementById("registro");
 boton.addEventListener("submit",function(e){
     e.preventDefault();
-    compararPerfil(email.value,password.value)});
+    buscaApi(email.value,password.value);
+    });
