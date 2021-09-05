@@ -3,5 +3,5 @@ validacion.addEventListener("click",validarFormulario);
 document.getElementById("upload_widget").addEventListener("click", function(e){
     e.preventDefault();
     
-    crearWidgetCloudinary()[0].open();
+    crearWidgetCloudinary("#Preview")[0].open();
     }, false);

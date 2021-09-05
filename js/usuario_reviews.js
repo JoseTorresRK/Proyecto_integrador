@@ -76,14 +76,7 @@ function plantilla(resena_cliente) {
                         <h5 class="card-title fw-bold">${
                           resena_cliente.jobTitle
                         }</h5>
-                        <i class="bi bi-star-fill colorrojo fs-6"></i>
-                        <!-- ESTRELLA COMPLETA -->
-                        <i class="bi bi-star-fill colorrojo fs-6"></i>
-                        <!-- ESTRELLA COMPLETA -->
-                        <i class="bi bi-star-fill colorrojo fs-6"></i>
-                        <!-- ESTRELLA a la MITAD -->
-                        <i class="bi bi-star colorrojo fs-6"></i>
-                        <!-- ESTRELLA VACIA -->
+                        ${creaEstrellas(resena_cliente.starsForJob,"colorrojo fs-6")}
                             <span class="p-1">(${
                               resena_cliente.starsForJob
                             } Estrellas )</span>
@@ -125,14 +118,7 @@ function plantilla(resena_cliente) {
                               Cliente: ${resena_cliente.clientName}
                             </div>
                             <div class="col-6">
-                              <i class="bi bi-star-fill colorrojo fs-6"></i>
-                              <!-- ESTRELLA COMPLETA -->
-                              <i class="bi bi-star-fill colorrojo fs-6"></i>
-                              <!-- ESTRELLA COMPLETA -->
-                              <i class="bi bi-star-fill colorrojo fs-6"></i>
-                              <!-- ESTRELLA a la MITAD -->
-                              <i class="bi bi-star colorrojo fs-6"></i>
-                              <!-- ESTRELLA VACIA -->
+                            ${creaEstrellas(resena_cliente.starsForJob,"colorrojo fs-6")}
                               <span
                                 >(${resena_cliente.starsForJob} estrellas
                                 )</span
@@ -245,19 +231,20 @@ function initMapaGoogle(latbyResena, lngbyResena, idMapa) {
 /**
  * traemos de aqui a las bases de datos de los trabajadores
  */
-let db_user = JSON.parse(window.localStorage.Trabajador);
+let db_user = [];
+//console.log(db_user
 // let db_user = JSON.parse(window.localStorage.Trabajador)[0].clientReviews;
 // db_user = [];
 let ubicacionDataQuery;
 // url (required), options (optional)
-fetch("http://localhost:8081/api/ubicacion/").then(async function (response) {
+fetch("http://localhost:8080/api/ubicacion/").then(async function (response) {
   let res = await response.json();
   ubicacionDataQuery = res;
   console.log("Query Ubicacion", res);
   return res;
 });
 let usuariosDataQuery;
-let usertest = fetch("http://localhost:8081/api/users/").then(async function (
+let usertest = fetch("http://localhost:8080/api/users/").then(async function (
   response
 ) {
   let res = await response.json();
@@ -267,19 +254,19 @@ let usertest = fetch("http://localhost:8081/api/users/").then(async function (
 });
 
 // url (required), options (optional)
-fetch("http://localhost:8081/api/resenas/")
+fetch("http://localhost:8080/api/resenas/")
   .then(function (response) {
     let res = response.json();
     
   })
   async function fetchAllData(){
-    const ubicacionResp = await fetch("http://localhost:8081/api/ubicacion/")
+    const ubicacionResp = await fetch("http://localhost:8080/api/ubicacion/")
     const ubicacion = await ubicacionResp.json();
     
-    const usersResp = await fetch("http://localhost:8081/api/users/")
+    const usersResp = await fetch("http://localhost:8080/api/users/")
     const usuarios = await usersResp.json();
     
-    const resenasResp = await fetch("http://localhost:8081/api/resenas/")
+    const resenasResp = await fetch("http://localhost:8080/api/resenas/")
     const resenas = await resenasResp.json();
     
     return {
@@ -326,10 +313,10 @@ fetch("http://localhost:8081/api/resenas/")
     return allResenasObj;
   })
   .then(function (allResenas) {
-    console.log("Resenas Agregadas al Trabajador = ", db_user[0].clientReviews);
-    db_user[0].clientReviews = [...allResenas];
-    console.log("Resenas Agregadas al Trabajador = ", db_user[0].clientReviews);
-    tieneResenas(db_user[0]);
+    console.log("Resenas Agregadas al Trabajador = ", db_user.clientReviews);
+    db_user.clientReviews = [...allResenas];
+    console.log("Resenas Agregadas al Trabajador = ", db_user.clientReviews);
+    tieneResenas(db_user);
     return allResenas;
   }).then(function (resenastoMap){
     resenastoMap.forEach((unireview) => {
@@ -345,5 +332,5 @@ fetch("http://localhost:8081/api/resenas/")
 
 window.addEventListener("load", (e) => {
   console.log("Termino de cargar la página");
-  window.localStorage.Trabajador = JSON.stringify(db_user);
+  window.localStorage.Temp = JSON.stringify(db_user);
 });
