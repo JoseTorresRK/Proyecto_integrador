@@ -103,7 +103,7 @@ function renderPerfil(perfil){
     let cardPerfil=document.getElementById("perfil");
     let categorias="";
     let subcategoria="";
-    if(perfil.isEmployee){
+    if(perfil.Tipo){
         categorias=`<li class="list-group-item ">
         
         <strong>Categorías:</strong>
