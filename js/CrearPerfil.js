@@ -88,7 +88,7 @@ if(campo.tipo===1){
     botonesEditar[3].addEventListener("click",function(e){
         e.preventDefault();
         let arregloCompleto=JSON.parse (window.localStorage.Temporal);
-        arreglo=[arregloCompleto.categoria]
+        arreglo=separaCadena(arregloCompleto.categoria);
         console.log(arregloCompleto)
         crearMensaje(arreglo);
    

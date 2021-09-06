@@ -99,6 +99,44 @@ function mensajeSubcategoria(arreglo){
     ///});
     return mensaje;
 }
+
+function separaCadena(cadena){
+  let arreglo=cadena.split("*");
+  if(arreglo.length===1){
+    return arreglo;
+  }
+  arreglo.pop();
+  console.log(arreglo)
+  return arreglo;
+}
+
+function generarCategoria(arreglo){
+  let categoria="";
+  arreglo.forEach(element=>{
+    categoria+= 
+    `<ul>
+      <li class="d-flex justify-content-between align-items-center">
+         ${element}
+          <img  src="${definirIcono(element)}" class="pr-auto" style="height: 50px;width: 50px;" alt=""> </li>
+      
+    </ul>`;
+  
+  })
+  return categoria;
+}
+function generarSubcategoria(arreglo){
+  let subcategoria="";
+  arreglo.forEach(element=>{
+    subcategoria+=
+      `
+      <ul>
+        ${element}
+      </ul>
+    `;
+  })
+  return subcategoria;
+}
+
 function renderPerfil(perfil,ubicacionPerfil){
     let cardPerfil=document.getElementById("perfil");
     console.log(perfil)
@@ -109,22 +147,13 @@ function renderPerfil(perfil,ubicacionPerfil){
         categorias=`<li class="list-group-item ">
         
         <strong>Categorías:</strong>
-        <button class="botonicono"><i class="bi bi-pencil-square iconopeq"></i></button>
-        <ul>
-          <li class="d-flex justify-content-between align-items-center">
-             ${perfil.categoria}
-              <img  src="${definirIcono(perfil.categoria)}" class="pr-auto" style="height: 50px;width: 50px;" alt=""> </li>
-          
-        </ul>
-      </li>`
+        <button class="botonicono"><i class="bi bi-pencil-square iconopeq"></i></button>${generarCategoria(separaCadena(perfil.categoria))}</li>`;
       subcategoria=`
       <li class="list-group-item ">
         <strong>Subcategorías:</strong>
         <button class="botonicono"><i class="bi bi-pencil-square iconopeq"></i></button>
-        <ul>
-          ${mensajeSubcategoria(perfil.subcategoria)}
-        </ul>
-      </li>`;
+          ${ generarSubcategoria(separaCadena(perfil.subcategoria))}
+        </li>`;
     }
     cardPerfil.innerHTML=`<div class="card" style="width: 100%;height: 100%;">
     <br>
@@ -288,23 +317,51 @@ function todoCorrecto(cancelar){
 
 function categoriaSubcategoria(aux,categoria,id){
   console.log(id);
+  let auxiliar;
   if(id==="Categoria"){
-    alterarCampo(aux.value,categoria.idusuarios,"categoria/","?categoria=");
+    alterarCampo(aux,categoria.idusuarios,"categoria/","?categoria=");
   //elemento.appendChild(document.createElement("ul"));
-  console.log(aux.value);
-    categoria.categoria=aux.value;
+  console.log(aux);
+    categoria.categoria=aux;
     window.localStorage.Temporal=JSON.stringify(categoria);
   }
   else{
-    alterarCampo(aux.value,categoria.idusuarios,"subcategoria/","?subcategoria=");
+    
+    alterarCampo(cambiarEspaciosBlanco(aux),categoria.idusuarios,"subcategoria/","?subcategoria=");
   //elemento.appendChild(document.createElement("ul"));
   console.log(categoria);
   console.log(aux.value);
-    categoria.subcategoria=aux.value;
+    categoria.subcategoria=aux;
     console.log(categoria);
     window.localStorage.Temporal=JSON.stringify(categoria);
   }
   
+}
+
+function obtenerCadenaCompleta(arreglo){
+  let mensaje="";
+  console.log(arreglo);
+  console.log(arreglo[0])
+  for(let i=0;i<arreglo.length;i++){
+    console.log(arreglo[i]);
+    mensaje+=arreglo[i].value+"*";
+  }
+  return mensaje;
+}
+
+function cambiarEspaciosBlanco(cadena){
+  let arreglo= cadena.split(" ");
+  let cadenaConSeparador="";
+  for(let i=0;i<arreglo.length;i++){
+    if(i!==arreglo.length-1){
+      cadenaConSeparador+=arreglo[i]+"+";
+
+    }
+    else{
+      cadenaConSeparador+=arreglo[i];
+    }
+  }
+  return cadenaConSeparador;
 }
 
 function recolectar(id,elemento,mensajeAnterior,cancelar){
@@ -346,6 +403,7 @@ function recolectar(id,elemento,mensajeAnterior,cancelar){
   
   let mensaje="";
   let imagen="";
+  let cadena="";
   elemento.innerHTML="";
   
   elemento.appendChild(mensajeAnterior[0]);
@@ -362,10 +420,12 @@ function recolectar(id,elemento,mensajeAnterior,cancelar){
     if(checkbox[i].checked){
       mensaje+=`<li class="d-flex justify-content-between align-items-center">
       ${checkbox[i].value}${imagen}</li>`;
-      aux=checkbox[i];
+      //aux=checkbox[i]; 
+      cadena+=checkbox[i].value+"*";
     }
   }
-  categoriaSubcategoria(aux,categoria,id)
+ 
+  categoriaSubcategoria(cadena,categoria,id)
   
   //elemento.appendChild(document.createElement("ul"));
 

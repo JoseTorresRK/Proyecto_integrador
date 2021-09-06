@@ -334,7 +334,7 @@ function validarFormulario(e){
      if(myStorage.Bandera==='true'){
          console.log("No entraaaaaaaaaaa");
         camposValidados.push(inputCategory.value);
-        camposValidados.push(arreglo[0]);
+        camposValidados.push(generarCadena(arreglo));
         
         postearPerfil(crearUbicacion(camposValidados),crearCliente(camposValidados,1));
         
@@ -349,7 +349,17 @@ function validarFormulario(e){
      
      //
 
-    }
+}
+
+function generarCadena(arreglo){
+    let cadena="";
+    arreglo.forEach(element => {
+        cadena=cadena+element+"#";
+    });
+    return cadena;
+}
+
+
 function postearPerfil(nuevaUbicacion,nuevoUsuario){
     let url="http://localhost:8080/api/ubicacion";
     let a=false;
@@ -399,14 +409,23 @@ function postearPerfil(nuevaUbicacion,nuevoUsuario){
                               //window.location="lista_perfiles.html";})
                               .catch(error => {console.error('Error:')
                               console.log("Bankai")
-                              saveToMyStorage(nuevoUsuario)
-                              window.location="lista_perfiles.html";  })
+                              fetch(`http://localhost:8080/api/users/login/?usuario=${nuevoUsuario.email}&contrasena=${nuevoUsuario.pwd}`)
+                            .then(response => response.json())
+                            .then(data => {
+                                    window.localStorage.setItem("Temporal",[]);
+                                    //crearMinimo();
+                                    window.localStorage.Temporal=JSON.stringify(data);
+                                    window.localStorage.setItem("loggedIn",true);
+    
+                                    window.location="./lista_perfiles.html";}
+                            )
                              })
-                            });
+                            })
+                        })
 } 
    
 
- function recolectarMyStorage(perfil){
+function recolectarMyStorage(perfil){
      let arregloTrabajadores=[];
      console.log("Final")
      console.log(perfil);
