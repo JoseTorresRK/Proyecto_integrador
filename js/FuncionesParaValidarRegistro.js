@@ -116,7 +116,7 @@ function validarEmail(email){
     return true;
 }
 let global;
-function crearWidgetCloudinary(boleano=true){
+function crearWidgetCloudinary(opciones,boleano=true){
     
     var myWidget = cloudinary.createUploadWidget({
         cloudName: 'dqzvtvjhu',
@@ -129,14 +129,36 @@ function crearWidgetCloudinary(boleano=true){
         sources: [ 'local','camera']}, (error, result) => {
           if (!error && result && result.event === "success") {
             console.log('Done! Here is the image info: ', result.info);
-            var imgContainer=document.getElementById("Preview");
+            var imgContainer=document.querySelector(opciones);
+            console.log(opciones)
+            console.log(imgContainer)
+            
             const imgElement = document.createElement('img');
             imgElement.src =result.info.thumbnail_url;
+            console.log(imgContainer);
+            console.log(boleano)
             console.log(result.info.thumbnail_url)
             if(boleano){
             imgContainer.append(imgElement)
             }
+            else{
+                let elemento=document.querySelector(opciones)
+                let arreglo;
+                elemento.src=result.info.url;
+                console.log(window.localStorage.Temporal);
+                //console.log(JSON.parse(window.Temporal));
+                
+                arreglo= JSON.parse(window.localStorage.Temporal)
+                arreglo.imgperfil=result.info.url;
+                window.localStorage.Temporal=JSON.stringify(arreglo);
+                console.log(arreglo);
+                console.log(arreglo.idusuarios)
+                console.log()
+                
+                alterarCampo(result.info.url,arreglo.idusuarios,"Imag/","?Imagen=");
+            }
             global=result.info.url;
+            
           }
         }
       )
@@ -144,6 +166,32 @@ function crearWidgetCloudinary(boleano=true){
       console.log(arreglo);
       return arreglo;
 }
+function alterarCampo(campo,idusuario,enlace,mensaje,valorDefault=""){
+    console.log(mensaje);
+    console.log(valorDefault);
+    console.log(idusuario);
+    let global;
+    console.log(enlace);
+    url=`http://localhost:8080/api/users/${enlace}${idusuario}${mensaje}${campo}${valorDefault}`
+    fetch(url, {
+        method: 'PUT', // or 'PUT'
+        
+      }).then(res => res.json())
+      .then( data=>{
+                    console.log(data);
+                    //console.log(data.status);
+                    
+                   /* if(data.status!==undefined){
+
+                        console.log("EEEEEEEEEEEEEEE");
+                        construirSweetAlert("error","Ese correo ya esta usado por una cuenta, ingrese otro correo.","","");
+                        global=true;
+                                 
+                    }*/})
+      .catch(error=>{console.log("error")});
+      //
+}
+
 function validarImagen(){
     let confirmacionImagen=document.getElementById("Preview");
     console.log(confirmacionImagen.children);
@@ -172,7 +220,10 @@ function validarTelefono(telefono){
     return true;
 }
 function construirSweetAlert(imagen,titulo,mensaje,piePagina){
-     Swal.fire({
+    console.log("no estoy construyendo el sweet")
+    console.log(imagen);
+    console.log(titulo); 
+    Swal.fire({
         icon: imagen,
         title: titulo,
         text: mensaje,
@@ -283,20 +334,98 @@ function validarFormulario(e){
      if(myStorage.Bandera==='true'){
          console.log("No entraaaaaaaaaaa");
         camposValidados.push(inputCategory.value);
-        camposValidados.push(arreglo);
+        camposValidados.push(generarCadena(arreglo));
         
+        postearPerfil(crearUbicacion(camposValidados),crearCliente(camposValidados,1));
         
-        saveToMyStorage(crearTrabajador(camposValidados),myStorage.Bandera);
      }
      else{
-        // camposValidados.push(global);
-        saveToMyStorage(crearCliente(camposValidados),myStorage.Bandera);
+         camposValidados.push(null);
+         camposValidados.push(null);
+         
+         postearPerfil(crearUbicacion(camposValidados),crearCliente(camposValidados,0))
+       
      }
      
-     window.location="lista_perfiles.html"; 
+     //
 
-    }
- function recolectarMyStorage(perfil){
+}
+
+function generarCadena(arreglo){
+    let cadena="";
+    arreglo.forEach(element => {
+        cadena=cadena+element+"#";
+    });
+    return cadena;
+}
+
+
+function postearPerfil(nuevaUbicacion,nuevoUsuario){
+    let url="http://localhost:8080/api/ubicacion";
+    let a=false;
+    console.log(JSON.stringify(nuevaUbicacion));
+    console.log(JSON.stringify(nuevoUsuario));
+   
+    fetch(url, {
+        method: 'POST', // or 'PUT'
+        body: JSON.stringify(nuevaUbicacion), // data can be `string` or {object}!
+        headers:{
+          'Content-Type': 'application/json'
+        }
+      }).then(res => res.json())
+      .catch(error => console.error('Error:', error))
+      .then(response => {
+                         console.log('Success:');
+                         fetch("http://localhost:8080/api/ubicacion/ultima")
+                        .then(respuesta=>respuesta.json())
+                        .then( data=>{
+                            console.log(data)
+                            nuevoUsuario.idubicacion=data.idubicacion;
+                            fetch("http://localhost:8080/api/users/",
+                              
+                                 {
+                                    method: 'POST', // or 'PUT'
+                                    body: JSON.stringify(nuevoUsuario), // data can be `string` or {object}!
+                                    headers:{
+                                    'Content-Type': 'application/json'
+                                     },
+                                     
+                                })
+                              .then(res=>res.json())
+                              .then(data=> {console.log(data.status)
+                                if(data.status!==undefined){
+                                    a=true;
+                                    console.log(`http://localhost:8080/api/ubicacion/${nuevoUsuario.idubicacion}`)
+                                    fetch(`http://localhost:8080/api/ubicacion/${nuevoUsuario.idubicacion}`, {
+                                        method: 'DELETE',
+                                        
+                                      })
+                                      .then(response => response.json())
+                                      .catch(error => console.error('Error:', error))
+                                      .then(response => {console.log('Success:', response)
+                                      construirSweetAlert("error",'Ese correo ya esta usado por una cuenta, ingrese otro correo.',"",'');})
+                                }
+                                })
+                              //window.location="lista_perfiles.html";})
+                              .catch(error => {console.error('Error:')
+                              console.log("Bankai")
+                              fetch(`http://localhost:8080/api/users/login/?usuario=${nuevoUsuario.email}&contrasena=${nuevoUsuario.pwd}`)
+                            .then(response => response.json())
+                            .then(data => {
+                                    window.localStorage.setItem("Temporal",[]);
+                                    //crearMinimo();
+                                    window.localStorage.Temporal=JSON.stringify(data);
+                                    window.localStorage.setItem("loggedIn",true);
+    
+                                    window.location="./lista_perfiles.html";}
+                            )
+                             })
+                            })
+                        })
+} 
+   
+
+function recolectarMyStorage(perfil){
      let arregloTrabajadores=[];
      console.log("Final")
      console.log(perfil);
@@ -320,81 +449,50 @@ function validarFormulario(e){
         return arregloTrabajadores;
     }    
  }
- function crearCliente(camposValidados){
+ function crearCliente(camposValidados,bandera){
      //let usuario=new User(1008,myStorage.Bandera,camposValidados[1],camposValidados[3],camposValidados[11])
-    let cliente={
-        "idUser":1008,
-        "isEmployee":false,
-        "profileImg": camposValidados[13],
-        "name":camposValidados[0],
-        "stars":camposValidados[1],
-        "email":camposValidados[2],
-        "tel":camposValidados[3],
-        "stret":camposValidados[4],
-        "zip":camposValidados[5],
-        "numExt":camposValidados[6],
-        "numInt":camposValidados[7],
-        "password":camposValidados[8],
-        "clientReviews":camposValidados[9],
-        "reviews":camposValidados[10],
-        "municipal_delegation":camposValidados[11],
-        "state":camposValidados[12],
-        "description":camposValidados[14]
-    };
+    let cliente=
+        {"tipo":bandera,"descripcionusuario":camposValidados[14],"imgperfil":camposValidados[13],"nombre":camposValidados[0],"estrellas":camposValidados[1],"email":camposValidados[2],"telefono":camposValidados[3],"pwd":camposValidados[8],"idubicacion":2,"categoria":camposValidados[15],"subcategoria":camposValidados[16]};
     return cliente; 
  }
 
- function crearTrabajador(camposValidados){
+ function crearUbicacion(camposValidados){
+
+
     //let usuario=new User(1008,myStorage.Bandera,camposValidados[1],camposValidados[3],camposValidados[11])
-   let Trabajador={
-    "idUser":1008,
-    "isEmployee":true,
-    "profileImg": camposValidados[13],
-    "name":camposValidados[0],
-    "stars":camposValidados[1],
-    "email":camposValidados[2],
-    "tel":camposValidados[3],
-    "stret":camposValidados[4],
-    "zip":camposValidados[5],
-    "numExt":camposValidados[6],
-    "numInt":camposValidados[7],
-    "password":camposValidados[8],
-    "clientReviews":camposValidados[9],
-    "reviews":camposValidados[10],
-    "municipal_delegation":camposValidados[11],
-    "state":camposValidados[12],
-    "description":camposValidados[14],
-       "categories":camposValidados[15],
-       "subcategories":camposValidados[16]
+   let Ubicacion={
+    "idubicacion":0,"estado":camposValidados[12],"municipio":camposValidados[11],"calle":camposValidados[4],"codigopostal":camposValidados[5],"numeroext":camposValidados[6],"numeroint":camposValidados[7],"latitud":19.486,"longitud":19.486
    };
    
-   return Trabajador; 
+   return Ubicacion; 
 }
 function creaTemporal(parametro){
     myStorage.setItem("Temporal",[]);
     myStorage.Temporal=parametro;
 }
-function saveToMyStorage(perfil,bandera){
-    if(bandera==='true'){
-        let array_trabajador=recolectarMyStorage("Trabajador");
+function saveToMyStorage(perfil){
+  //  if(bandera==='true'){
+        //let array_trabajador=recolectarMyStorage("Trabajador");
        
+        //console.log(array_trabajador,"1234");
+        
+        //array_trabajador.push(perfil);
+        //array_trabajador[array_trabajador.length-1].idUser=array_trabajador.length
+        myStorage.setItem("Temporal",JSON.stringify(perfil));
+        console.log("aqui esstoy");
+       // myStorage.setItem("Trabajador",JSON.stringify(array_trabajador));
+   // }
+    //else{
+        /*let array_trabajador=recolectarMyStorage("Cliente");
+        
         console.log(array_trabajador,"1234");
         array_trabajador.push(perfil);
         array_trabajador[array_trabajador.length-1].idUser=array_trabajador.length
-        myStorage.setItem("Temporal",JSON.stringify(perfil));
-        
-        myStorage.setItem("Trabajador",JSON.stringify(array_trabajador));
-    }
-    else{
-        let array_trabajador=recolectarMyStorage("Cliente");
-        
-        console.log(array_trabajador,"1234");
-        array_trabajador.push(perfil);
-        array_trabajador[array_trabajador.length-1].idUser=array_trabajador.length
-        myStorage.setItem("Cliente",JSON.stringify(array_trabajador));
-        myStorage.setItem("Temporal",JSON.stringify(perfil));
-    }
-    window.localStorage.loggedIn = true;
+        myStorage.setItem("Cliente",JSON.stringify(array_trabajador));*/
+      //  myStorage.setItem("Temporal",JSON.stringify(perfil));
+    //}
+    window.localStorage.setItem("loggedIn",true)
+    
     /**
      * Para verificar si esta abierta su sesion
      * window.localStorage.loggedIn = true;

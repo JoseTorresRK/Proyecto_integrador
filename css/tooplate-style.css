@@ -456,6 +456,9 @@ header .active {
     border-bottom: 3px solid #ff4716;
     color: #202020;
   }
+  #feature h2{
+    color: #202020;
+  }
 
   #feature .tab-content {
     margin-top: 50px;

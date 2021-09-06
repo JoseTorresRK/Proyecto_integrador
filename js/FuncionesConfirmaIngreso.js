@@ -1,5 +1,37 @@
 console.log(recolectarMyStorage("Cliente"));
 console.log(recolectarMyStorage("Trabajador"));
+let canva;
+
+function buscaApi(email,password){
+
+    fetch(`http://localhost:8080/api/users/login/?usuario=${email}&contrasena=${password}`)
+  .then(response => response.json())
+  .then(data => {
+      window.localStorage.setItem("Temporal",[]);
+      
+      if(data.status!==undefined){
+        new Swal({
+            icon: "error",
+            title: "La contraseña o el usuario están mal",
+            confirmButtonColor:"#ff4716",
+            
+        })
+        return;
+      }
+      crearMinimo();
+      window.localStorage.Temporal=JSON.stringify(data);
+      window.localStorage.setItem("loggedIn",true);
+    
+    window.location="./lista_perfiles.html";}
+  )
+  .catch(error=>{new Swal({
+    icon: "error",
+    title: "Error en la conexión. Lo lamentamos intenta recargar" ,
+    confirmButtonColor:"#ff4716",
+});
+console.log(error)});
+  
+}
 function dobleCuenta(email){
     let arreglo=recolectarMyStorage("Trabajador");
     let arreglo2=recolectarMyStorage("Cliente");
@@ -96,6 +128,7 @@ function encontrarPerfil(){
 
 function compararPerfil(correo,contrasena){
     let aux=true;
+    console.log(buscaApi());
     if(encontrarPerfil().length===0){
         construirSweetAlert("error","La contraseña o el usuario están mal");
     }
