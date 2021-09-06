@@ -1,20 +1,32 @@
 
-campo=renderPerfil(recolectarPerfiles());
-console.log(campo);
+
+let arreglo=window.localStorage.Temporal;
+
+
+fetch(`http://localhost:8080/api/ubicacion/${JSON.parse(arreglo).idubicacion}`)
+.then(response=>response.json())
+.then(data=>{ 
+    window.localStorage.setItem("UbicacionTemp",JSON.stringify(data));  
+    console.log(window.localStorage.UbicacionTemp)
+    campo=renderPerfil(recolectarPerfiles(),JSON.parse(window.localStorage.UbicacionTemp));
+    ubicacion=JSON.parse(window.localStorage.UbicacionTemp);
+    console.log(campo);
+
+
 let reductor=2;
 let botonesEditar=document.getElementsByClassName("botonicono");
 botonesEditar[0].addEventListener("click",function(e){
     e.preventDefault();
     
-    crearWidgetCloudinary(false)[0].open();
-    
+    crearWidgetCloudinary(".imgRedonda",false)[0].open();
+   
     }, false);
 botonesEditar[1].addEventListener("click",function(e){
     e.preventDefault();
     cambiarDesc();
 });
 console.log(campo);
-if(campo.isEmployee){
+if(campo.tipo===1){
     //console.log("SSSSSSSSSSS");
     reductor=0;
     botonesEditar[2].addEventListener("click",function(e){
@@ -75,9 +87,9 @@ if(campo.isEmployee){
     })
     botonesEditar[3].addEventListener("click",function(e){
         e.preventDefault();
-        let arregloCompleto;
-        arreglo=["Cocina","Carpinteria","Plomeria"]
-    
+        let arregloCompleto=JSON.parse (window.localStorage.Temporal);
+        arreglo=separaCadena(arregloCompleto.categoria);
+        console.log(arregloCompleto)
         crearMensaje(arreglo);
    
     
@@ -137,7 +149,7 @@ botonesEditar[4-reductor].addEventListener("click",function(e){
          type="text"
           class="form-control formato is-valid"
          placeholder="Municipio"
-         value="${campo.municipal_delegation}"
+         value="${JSON.parse(window.localStorage.UbicacionTemp).municipio}"
         style="margin-top:3em"
         name="city"
         required
@@ -151,7 +163,7 @@ botonesEditar[4-reductor].addEventListener("click",function(e){
             type="text"
             class="form-control formato is-valid"
             id="inputAddress"
-            value="${campo.stret}"
+            value="${JSON.parse(window.localStorage.UbicacionTemp).calle}"
             style="margin-top:3em"
             placeholder="Ej. Calle Hidalgo"
             
@@ -162,19 +174,19 @@ botonesEditar[4-reductor].addEventListener("click",function(e){
         </div>
     </div>
     <div class="position-relative">
-        <input type="text" style="margin-top:3em" class="form-control formato is-valid" id="inputZip" name="inputZip" value="${campo.zip}" placeholder="C.P." />
+        <input type="text" style="margin-top:3em" class="form-control formato is-valid" id="inputZip" name="inputZip" value="${JSON.parse(window.localStorage.UbicacionTemp).codigopostal}" placeholder="C.P." />
         <div class="valid-tooltip">
          Campo válido.
         </div>
     </div>
     <div class="position-relative">   
-        <input type="text" style="margin-top:3em" class="form-control formato is-valid" id="Num-ext" name="Num-ext" value="${campo.numExt}" placeholder="Número Exterior" />
+        <input type="text" style="margin-top:3em" class="form-control formato is-valid" id="Num-ext" name="Num-ext" value="${JSON.parse(window.localStorage.UbicacionTemp).numeroext}" placeholder="Número Exterior" />
         <div class="valid-tooltip">
          Campo válido.
         </div>
     </div>
     <div class="position-relative"> 
-        <input type="text" style="margin-top:3em"  class="form-control formato is-valid" id="Num-int" value="${campo.numInt}" placeholder="Número Interior" />
+        <input type="text" style="margin-top:3em"  class="form-control formato is-valid" id="Num-int" value="${JSON.parse(window.localStorage.UbicacionTemp).numeroint}" placeholder="Número Interior" />
         <div class="valid-tooltip">
          Campo válido.
         </div>
@@ -200,7 +212,7 @@ botonesEditar[5-reductor].addEventListener("click",function(e){
         id="email"
         type="email"
         class="is-valid form-control formato"
-        value="${campo.email}"
+        value="${JSON.parse(window.localStorage.Temporal).email}"
     placeholder="Dirección de correo / email"
     name="email"
     required
@@ -217,7 +229,7 @@ botonesEditar[5-reductor].addEventListener("click",function(e){
         class="form-control formato is-valid"
         placeholder="Número de telefono"
         name="phone"
-        value="${campo.tel}"
+        value="${JSON.parse(window.localStorage.Temporal).telefono}"
         required/>
         <div class="valid-tooltip">
          Campo válido.
@@ -235,4 +247,5 @@ botonesEditar[5-reductor].addEventListener("click",function(e){
     </div>`;
     cambiarDatos(4-reductor,mensaje,false,"Contacto",["Castillos y trabes", "Colados","Muros","Estructuras Pequeñas","Bardas","Muebles de Jardín","Estructuras metálicas","Soldadura smaw","Soldadura con microalambre","Cortadora de plasma","Plantas exóticas","Árboles frutales","Bonsáis","Invernaderos","Jardineras","Fregaderos","Tuberías tapadas","Lavabos","Caños atascados","Instalaciones sanitarias","Muebles domésticos","Estructuras exteriores","Cobertizos","Barnices y pulidos","Juguetes de madera","Comida Internacional","Comida casera","Ingredientes de primera calidad","Ingredientes orgánicos y frescos","Platillos exóticos"]);
 
+})
 })

@@ -116,7 +116,7 @@ function validarEmail(email){
     return true;
 }
 let global;
-function crearWidgetCloudinary(boleano=true){
+function crearWidgetCloudinary(opciones,boleano=true){
     
     var myWidget = cloudinary.createUploadWidget({
         cloudName: 'dqzvtvjhu',
@@ -129,14 +129,36 @@ function crearWidgetCloudinary(boleano=true){
         sources: [ 'local','camera']}, (error, result) => {
           if (!error && result && result.event === "success") {
             console.log('Done! Here is the image info: ', result.info);
-            var imgContainer=document.getElementById("Preview");
+            var imgContainer=document.querySelector(opciones);
+            console.log(opciones)
+            console.log(imgContainer)
+            
             const imgElement = document.createElement('img');
             imgElement.src =result.info.thumbnail_url;
+            console.log(imgContainer);
+            console.log(boleano)
             console.log(result.info.thumbnail_url)
             if(boleano){
             imgContainer.append(imgElement)
             }
+            else{
+                let elemento=document.querySelector(opciones)
+                let arreglo;
+                elemento.src=result.info.url;
+                console.log(window.localStorage.Temporal);
+                //console.log(JSON.parse(window.Temporal));
+                
+                arreglo= JSON.parse(window.localStorage.Temporal)
+                arreglo.imgperfil=result.info.url;
+                window.localStorage.Temporal=JSON.stringify(arreglo);
+                console.log(arreglo);
+                console.log(arreglo.idusuarios)
+                console.log()
+                
+                alterarCampo(result.info.url,arreglo.idusuarios,"Imag/","?Imagen=");
+            }
             global=result.info.url;
+            
           }
         }
       )
@@ -144,6 +166,32 @@ function crearWidgetCloudinary(boleano=true){
       console.log(arreglo);
       return arreglo;
 }
+function alterarCampo(campo,idusuario,enlace,mensaje,valorDefault=""){
+    console.log(mensaje);
+    console.log(valorDefault);
+    console.log(idusuario);
+    let global;
+    console.log(enlace);
+    url=`http://localhost:8080/api/users/${enlace}${idusuario}${mensaje}${campo}${valorDefault}`
+    fetch(url, {
+        method: 'PUT', // or 'PUT'
+        
+      }).then(res => res.json())
+      .then( data=>{
+                    console.log(data);
+                    //console.log(data.status);
+                    
+                   /* if(data.status!==undefined){
+
+                        console.log("EEEEEEEEEEEEEEE");
+                        construirSweetAlert("error","Ese correo ya esta usado por una cuenta, ingrese otro correo.","","");
+                        global=true;
+                                 
+                    }*/})
+      .catch(error=>{console.log("error")});
+      //
+}
+
 function validarImagen(){
     let confirmacionImagen=document.getElementById("Preview");
     console.log(confirmacionImagen.children);
@@ -172,7 +220,10 @@ function validarTelefono(telefono){
     return true;
 }
 function construirSweetAlert(imagen,titulo,mensaje,piePagina){
-     Swal.fire({
+    console.log("no estoy construyendo el sweet")
+    console.log(imagen);
+    console.log(titulo); 
+    Swal.fire({
         icon: imagen,
         title: titulo,
         text: mensaje,
@@ -283,7 +334,7 @@ function validarFormulario(e){
      if(myStorage.Bandera==='true'){
          console.log("No entraaaaaaaaaaa");
         camposValidados.push(inputCategory.value);
-        camposValidados.push(arreglo[0]);
+        camposValidados.push(generarCadena(arreglo));
         
         postearPerfil(crearUbicacion(camposValidados),crearCliente(camposValidados,1));
         
@@ -298,7 +349,17 @@ function validarFormulario(e){
      
      //
 
-    }
+}
+
+function generarCadena(arreglo){
+    let cadena="";
+    arreglo.forEach(element => {
+        cadena=cadena+element+"#";
+    });
+    return cadena;
+}
+
+
 function postearPerfil(nuevaUbicacion,nuevoUsuario){
     let url="http://localhost:8080/api/ubicacion";
     let a=false;
@@ -348,14 +409,23 @@ function postearPerfil(nuevaUbicacion,nuevoUsuario){
                               //window.location="lista_perfiles.html";})
                               .catch(error => {console.error('Error:')
                               console.log("Bankai")
-                              saveToMyStorage(nuevoUsuario)
-                              window.location="lista_perfiles.html";  })
+                              fetch(`http://localhost:8080/api/users/login/?usuario=${nuevoUsuario.email}&contrasena=${nuevoUsuario.pwd}`)
+                            .then(response => response.json())
+                            .then(data => {
+                                    window.localStorage.setItem("Temporal",[]);
+                                    //crearMinimo();
+                                    window.localStorage.Temporal=JSON.stringify(data);
+                                    window.localStorage.setItem("loggedIn",true);
+    
+                                    window.location="./lista_perfiles.html";}
+                            )
                              })
-                            });
+                            })
+                        })
 } 
    
 
- function recolectarMyStorage(perfil){
+function recolectarMyStorage(perfil){
      let arregloTrabajadores=[];
      console.log("Final")
      console.log(perfil);
