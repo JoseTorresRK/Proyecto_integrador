@@ -1,12 +1,14 @@
 console.log(recolectarMyStorage("Cliente"));
 console.log(recolectarMyStorage("Trabajador"));
 let canva;
+
 function buscaApi(email,password){
 
     fetch(`http://localhost:8080/api/users/login/?usuario=${email}&contrasena=${password}`)
   .then(response => response.json())
   .then(data => {
       window.localStorage.setItem("Temporal",[]);
+      
       if(data.status!==undefined){
         new Swal({
             icon: "error",
@@ -18,6 +20,7 @@ function buscaApi(email,password){
       }
       crearMinimo();
       window.localStorage.Temporal=JSON.stringify(data);
+      window.localStorage.setItem("loggedIn",true);
     
     window.location="./lista_perfiles.html";}
   )
