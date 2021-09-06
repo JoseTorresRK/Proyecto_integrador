@@ -1,5 +1,5 @@
 /** @class User creates a new user whether is employee or user*/ 
-export class User {
+class User {
     /**
      * 
      * @param {number} idUser is the unique number of identification
@@ -11,7 +11,7 @@ export class User {
      * @param {string} state  user associated to a city
      */
     constructor(idUser, isEmployee , name, email,
-     municipal_delegation, state,zip,stret,numExt,numInt,password,description, profileImg="./../images/profile_mute.png"){
+     municipal_delegation, state,zip,stret,numExt,numInt,description, profileImg="./../images/profile_mute.png"){
         this.idUser = idUser;
         this.isEmployee = isEmployee;
         this.name = name.toUpperCase();
@@ -23,7 +23,6 @@ export class User {
         this.stret=stret;
         this.numExt=numExt;
         this.numInt=numInt;
-        this.password=password;
         this.description=description;
 
         /**
@@ -129,3 +128,16 @@ export class User {
         
     }
 }
+
+let usuariosTrabajadores;
+let usuariosClientes;
+
+window.addEventListener('load', (event)=>{
+    fetch('http://localhost:8080/api/users/')
+        .then(response=>response.json())
+        .then(data=>{
+           usuariosTrabajadores = data.filter( (worker)=> worker.tipo===1);
+           usuariosClientes = data.filter( (client)=> client.tipo===0 );
+        })
+
+})

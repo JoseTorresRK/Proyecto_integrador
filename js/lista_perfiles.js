@@ -1,5 +1,6 @@
 
 
+
 /**
  * @todo crear funcion para calcular cuantas estrellas requiere el perfil en la card al renderizarse de acuerdo al numero de reseñas del perfil
  * @todo crear funcion para filtrar datos
@@ -12,7 +13,7 @@ function obtenerLocal(){
   }
   const variables=JSON.parse(myStorage.Trabajador);
   
-  console.log(variables);
+  //console.log(variables);
   
   
   return variables;
@@ -42,7 +43,7 @@ function strJson(){
       isEmployee:true,
       profileImg: "./../images/profile_mute.png",
       name: "Lucas Rogelio Martinez",
-      email: "Shawn@gmail.com",
+      email: "lucas@gmail.com",
       stret: "Roma",
       zip:34567,
       numExt:19,
@@ -68,7 +69,7 @@ function strJson(){
       profileImg: "./../images/profile_mute.png",
       name: "Ana Pamela Rubio",
       stars: 9,
-      email: "Shawn@gmail.com",
+      email: "anapam@gmail.com",
       stret: "Roma",
       zip:34567,
       numExt:19,
@@ -91,7 +92,7 @@ function strJson(){
       profileImg: "./../images/profile_mute.png",
       name: "Benito Acosta",
       stars: 0,
-      email: "Shawn@gmail.com",
+      email: "benacosta@gmail.com",
       stret: "Roma",
       zip:34567,
       numExt:19,
@@ -114,7 +115,7 @@ function strJson(){
       profileImg: "./../images/profile_mute.png",
       name: "Jorge Antonio de la Rosa ",
       stars: 0,
-      email: "Shawn@gmail.com",
+      email: "jorgerosa@gmail.com",
       stret: "Roma",
       zip:34567,
       numExt:19,
@@ -160,7 +161,7 @@ function strJson(){
       profileImg: "./../images/profile_mute.png",
       name: "Citlali Amanda Sanchez",
       stars: 0,
-      email: "Shawn@gmail.com",
+      email: "citali@gmail.com",
       stret: "Roma",
       zip:34567,
       numExt:19,
@@ -219,7 +220,7 @@ function plantilla (worker){
             <i class="bi bi-star colorrojo"></i> <!-- ESTRELLA VACIA -->
             <span class="p-1">(${worker.reviews} reseñas )</span>
             <i class="bi bi-pin-map-fill p-5"> <!--MAPA-->
-              <span class="p-2">${worker.municipal_}</span> – <span>${worker.state}</span>
+              <span class="p-2">${worker.municipal_delegation}</span> – <span>${worker.state}</span>
             </i>
           </div>
         </div>
@@ -256,9 +257,9 @@ function calcularEstrellasResenas(){
  */
 function paqueteCards(){
     let cards ="";
-    calcularEstrellasResenas();
-    console.log("banto");
-    console.log(JSON.parse( agregaLocal()));
+    //calcularEstrellasResenas();
+    //console.log("banto");
+    //console.log(JSON.parse( agregaLocal()));
     
     JSON.parse(agregaLocal()).forEach(element => {
         cards += plantilla(element);
@@ -289,14 +290,14 @@ function agregaLocal(){
   let arregloTrabajadores=JSON.parse( strJson());
    let localTrabajadores=obtenerLocal();
    //myStorage.setItem("Trabajadores",JSON.stringify(localTrabajadores));
-   console.log(obtenerLocal());
+   //console.log(obtenerLocal());
 
    for(let i=0;i<localTrabajadores.length;i++){
     arregloTrabajadores.push(localTrabajadores[i]);
    }
    
-   console.log("Pasado");
-   console.log(arregloTrabajadores)
+   //console.log("Pasado");
+   //console.log(arregloTrabajadores)
    return JSON.stringify(arregloTrabajadores);
 }
 
@@ -304,10 +305,10 @@ function agregaLocal(){
  * @function añade al div padre, todas las card ya con la informacion
  */
 function renderCard(card){
-    let contenedor_cards = document.getElementById("contenedor_cards"); 
+  let contenedor_cards = document.getElementById("contenedor_cards"); 
     //console.log(strJson());
-   console.log(validacion) 
-    contenedor_cards.innerHTML += paqueteCards();
+   //console.log(validacion) 
+  contenedor_cards.innerHTML += paqueteCards();
 }
 
 
@@ -323,7 +324,7 @@ window.addEventListener("load", (event)=>{
 });
 function obtenerTrabajador(){
   variable=document.getElementsByClassName("btn-primary");
-  console.log(variable);
+  //console.log(variable);
   for(let i=8;i<variable.length;i++){
     variable[i].addEventListener("click",function(e){
       e.preventDefault();
@@ -335,9 +336,9 @@ function obtenerTrabajador(){
 function redigirCliente(indice){
   
   let arreglo=obtenerLocal();
-  console.log(obtenerLocal());
+  //console.log(obtenerLocal());
   myStorage.setItem("TempTrabajador",[]);
-  console.log(arreglo[indice]);
+  //console.log(arreglo[indice]);
   myStorage.TempTrabajador=JSON.stringify(arreglo[indice-8]);
   window.location="./otroperfil.html"
 }
