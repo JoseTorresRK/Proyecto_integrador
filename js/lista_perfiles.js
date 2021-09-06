@@ -8,10 +8,10 @@
  */
 const myStorage=window.localStorage;
 function obtenerLocal(){
-  if(myStorage.Trabajador===undefined||myStorage.Trabajador===[]){
+  if(myStorage.Trabajadores===undefined||myStorage.Trabajadores===[]){
     return [];
   }
-  const variables=JSON.parse(myStorage.Trabajador);
+  const variables=JSON.parse(myStorage.Trabajadores);
   
   //console.log(variables);
   
@@ -181,8 +181,9 @@ function strJson(){
     }
       
   ];
-
-  return JSON.stringify(perfiles);
+  //return JSON.stringify(perfiles);
+  perfiles = window.localStorage.Trabajadores;
+  return perfiles;
 }
 
 /**
@@ -211,14 +212,14 @@ function plantilla (worker){
     <div class="card">
       <div class="card-body">
         <div class="row">
-          <img src="${worker.img_perfil}" alt="profile_mute" class="col-2" style="width: 250;height: 250;">
+          <img src="${worker.profileImg}" alt="profile_mute" class="col-2" style="width: 250;height: 250;">
           <div class="nombre col-9">
-            <h4 class="card-title">${worker.nombre}</h4>
+            <h4 class="card-title">${worker.name}</h4>
             <i class="bi bi-star-fill colorrojo"></i> <!-- ESTRELLA COMPLETA -->
             <i class="bi bi-star-fill colorrojo"></i> <!-- ESTRELLA COMPLETA -->
             <i class="bi bi-star-half colorrojo"></i> <!-- ESTRELLA a la MITAD -->
             <i class="bi bi-star colorrojo"></i> <!-- ESTRELLA VACIA -->
-            <span class="p-1">(${worker.reviews} reseñas )</span>
+            <span class="p-1">(${worker.clientReviews.length} reseñas )</span>
             <i class="bi bi-pin-map-fill p-5"> <!--MAPA-->
               <span class="p-2">${worker.municipal_delegation}</span> – <span>${worker.state}</span>
             </i>
@@ -261,8 +262,11 @@ function paqueteCards(){
     //console.log("banto");
     //console.log(JSON.parse( agregaLocal()));
     
-    JSON.parse(agregaLocal()).forEach(element => {
-        cards += plantilla(element);
+    // JSON.parse(agregaLocal()).forEach(element => {
+    //     cards += plantilla(element);
+    // });
+    JSON.parse(strJson()).forEach(element => {
+      cards += plantilla(element);
     });
     return cards;
 }
