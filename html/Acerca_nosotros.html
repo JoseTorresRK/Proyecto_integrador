@@ -171,8 +171,8 @@
             recuadro con la información necesaria, con un color determinado-->
           <div class="col-md-12 col-sm-12 descripcion-pagina">
             <div class="section-title col-12">
-              <h1>Acerca de nosotros</h1>
-              <h2>
+              <h1 class="fw-bold">Acerca de nosotros</h1>
+              <h2 class="h2-a-title">
                 Buscas algún trabajador doméstico o buscas empleo, en Tekton te
                 podemos ayudar.<br />Somos una página encargada de ofrecer un
                 contacto con los trabajadores domésticos y llegar a un acuerdo
@@ -182,9 +182,10 @@
           </div>
           <!-- Con las clases offset de bootstrap podemos decirle a nuestras
             columnas que se desplacen cierto numeros de columnas -->
-          <div class="col-md-offset-3 col-md-12 col-sm-12 col-12">
-            <div class="section-title">
-              <a href="#nosotros"><h1>Equipo de desarrollo</h1></a>
+            <img src="./../images/MV.png" alt="mision y vision" srcset="">
+            <div class="col-md-offset-3 col-md-12 col-sm-12 col-12">
+            <div class="section-title" style="margin-top: 4em;">
+              <a href="#nosotros"><h1 class="fw-bold h2-a-title h1-equipo">Equipo de desarrollo</h1></a>
             </div>
           </div>
         </div>
@@ -198,13 +199,13 @@
           para darle formato a la card.-->
           <div class="row justify-content-center">
             <!-- Oscar -->
-          <div class="col-md-4 col-sm-4" style="margin-top: 4em">
-            <div class="team-thumb">
+          <div class="col-md-12 col-sm-12" style="margin-top: 2em">
+            <div class="team-thumb row">
               <!-- Team info sirve para el tipo de texto
                 dentro de la card. -->
-              <div class="team-info team-thumb-down">
-                <h2>Victor Martinez de la O</h2>
-                <small>Diseñador / Desarrollador Full Stack </small>
+              <div class="team-info team-thumb col-lg-8">
+                <h2 class="h2-a">Victor Martinez de la O</h2>
+                <small>Diseñador | Desarrollador Full Stack </small>
                 <p>
                   Soy un diseñador con una fascinación por mejorar los entornos
                   de UI / UX y además el poder aportar con mis conocimientos de
@@ -220,38 +221,43 @@
               <!-- La clase en imagen img-responsive es
                 para hacer a la imagen responsiva y la de size-team para
               darle un tamaño fijo a las imagenes. -->
-              <img
+              <div class="col-lg-4">
+                <img
                 src="../images/VICPERF.png"
                 class="img-responsive size-team"
                 alt="Catherine Soft"
               />
+              </div>
+             
             </div>
           </div>
           <!-- Victor -->
-          <div class="col-md-4 col-sm-4" style="margin-top: 4em">
-            <div class="team-thumb">
+          <div class="col-md-12 col-sm-12" style="margin-top: 2em">
+            <div class="team-thumb row">
               <!-- La clase en imagen img-responsive es
                 para hacer a la imagen responsiva y la de size-team para
               darle un tamaño fijo a las imagenes. -->
-              <img
+              <div class="col-lg-4">
+                <img
                 src="../images/OSCARPERF.png"
                 class="img-responsive size-team"
                 alt="Jack Wilson"
               />
+              </div>
+              
               <!-- Team info sirve para el tipo de texto
                 dentro de la card. -->
-              <div class="team-info team-thumb-up">
-                <h2>Oscar Martinez de la O</h2>
-                <small>Front End Web Developer</small>
+              <div class="team-info team-thumb-up col-lg-8">
+                <h2 class="h2-a">Oscar Martinez de la O</h2>
+                <small>Front End | Web Developer</small>
                 <p>
                   Soy egresado de la carrera de ingeniería aeronáutica y
                   desarrollador web, mis pasiones son la programación y la
                   tecnología, me interesa explorar la conexión entre aeronaves,
                   su mantenimiento y la producción que conlleva de estos bienes
-                  o servicios incorporándolos al mundo digital.<i
-                    >"El hecho de poder conectar gente con el uso de la
-                    tecnología me parece fascinante"</i
-                  >.
+                  o servicios incorporándolos al mundo digital.
+                  "El hecho de poder conectar gente con el uso de la
+                    tecnología me parece fascinante"
                 </p>
               </div>
             </div>
@@ -260,22 +266,14 @@
           
         </div>
         <div class="row">
-          <div class="col-md-2"></div>
           <!-- Torres -->
-          <div class="col-md-4 col-sm-4">
-            <div class="team-thumb">
+          <div class="col-md-12 col-sm-12" style="margin-top: 2em;">
+            <div class="team-thumb row">
               <!-- La clase en imagen img-responsive es
                 para hacer a la imagen responsiva y la de size-team para
               darle un tamaño fijo a las imagenes. -->
-              <img
-                src="../images/TORRESPERF.png"
-                class="img-responsive size-team"
-                alt="Andrew Orange"
-              />
-              <!-- Team info sirve para el tipo de texto
-                dentro de la card. -->
-              <div class="team-info team-thumb-up">
-                <h2>José Antonio Torres López</h2>
+              <div class="team-info team-thumb-up col-lg-8">
+                <h2 class="h2-a">José Antonio Torres López</h2>
                 <small>Desarrollador Full Stack</small>
                 <p>
                   Soy ingeniero en computación con conocimientos en Java Full
@@ -289,15 +287,38 @@
                   al aprendizaje continuo sobre nuevas tecnologías
                 </p>
               </div>
+              <div class="col-lg-4">
+                <img
+                src="../images/TORRESPERF.png"
+                class="img-responsive size-team"
+                alt="Andrew Orange"
+              />
+              </div>
+              
+              <!-- Team info sirve para el tipo de texto
+                dentro de la card. -->
+              
             </div>
           </div>
           <!-- Ramos Garduño -->
-          <div class="col-md-4 col-sm-4">
-            <div class="team-thumb">
+          <br>
+          <div class="col-md-12 col-sm-12" style="margin-top: 2em;">
+            <div class="team-thumb row">
               <!-- Team info sirve para el tipo de texto
                 dentro de la card. -->
-              <div class="team-info team-thumb-down">
-                <h2>Osmar Ramos</h2>
+              
+              <!-- La clase en imagen img-responsive es
+                para hacer a la imagen responsiva y la de size-team para
+              darle un tamaño fijo a las imagenes. -->
+              <div class="col-lg-4">
+                <img
+                src="../images/OSMARPERF.png"
+                class="img-responsive size-team"
+                alt="Osmar Ramos"
+              />
+              </div>
+              <div class="team-info team-thumb-down col-lg-8">
+                <h2 class="h2-a">Osmar Ramos</h2>
                 <small>Backend Developer</small>
                 <p>
                   Soy Desarrollador de aplicaciones integrales de software,
@@ -310,19 +331,12 @@
                   pensamiento analítico, proactividad y trabajo en equipo.
                 </p>
               </div>
-              <!-- La clase en imagen img-responsive es
-                para hacer a la imagen responsiva y la de size-team para
-              darle un tamaño fijo a las imagenes. -->
-              <img
-                src="../images/OSMARPERF.png"
-                class="img-responsive size-team"
-                alt="Osmar Ramos"
-              />
             </div>
           </div>
         </div>
       </div>
     </section>
+    <br>
     <!-- Fin de acerca de nosotros -->
     <!-- TESTIMONIAL -->
     <!-- Se elimina el pading-top con un estilo -->
