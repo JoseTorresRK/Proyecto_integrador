@@ -422,6 +422,10 @@ header .active {
     background: #ffffff;
   }
 
+  #feature h2{
+    color: #202020;
+  }
+
   #feature .nav-tabs {
     border-bottom: 0;
   }
@@ -448,6 +452,9 @@ header .active {
     background: transparent;
     color: #202020;
     border-bottom: 3px solid #ff4716;
+  }
+  #feature h2{
+    color: black;
   }
 
   #feature .nav>li>a:focus, 
@@ -651,7 +658,9 @@ i{
   /*---------------------------------------
       PRICING             
   -----------------------------------------*/
-
+  #pricing h2{
+    color: black;
+  }
   #about .section-title,
   #pricing .section-title {
     text-align: center;
@@ -730,7 +739,7 @@ i{
     height: 50px;
   }
 
-  #contact-form input[type='submit'] {
+  #contact-form input[type='submit'], #crear_trabajo {
     background: #0a65ff;
     border-radius: 50px;
     border: 0;
