@@ -509,13 +509,21 @@ i{
     margin: 0;
     padding: 0;
   }
+  .h2-a{
+    color: #202020;
+  }
+  .h2-a-title {
+    color: #14315d;
+    font-weight: 500;
+  }
+  .h1-equipo {
+    color: #0b54d0;
+  }
   .descripcion-pagina{
-    border-radius: 100px;
-    background:linear-gradient(.25turn,#ff4716,#14315d);
     margin-top: 5em;
     margin-bottom: 1em;
     padding-top: 1em;
-    color: #ffffff;
+    color: #14315d;
   }
   .team-thumb {
     background: #ffffff;
@@ -568,10 +576,12 @@ i{
     display: block;
     font-size: 18px;
     margin: 5px 0 10px 0;
+    color: #0a65ff;
+    font-weight: bold;
   }
 
   .team-thumb img {
-    width: 100%;
+    width: auto;
   }
 
 
