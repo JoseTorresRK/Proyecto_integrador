@@ -422,6 +422,10 @@ header .active {
     background: #ffffff;
   }
 
+  #feature h2{
+    color: #202020;
+  }
+
   #feature .nav-tabs {
     border-bottom: 0;
   }
