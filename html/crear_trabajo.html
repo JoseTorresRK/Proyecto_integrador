@@ -110,99 +110,146 @@
             <div class="col-md-12 col-sm-12">
               <form id="contact-form" class="needs-validation" role="form" action="" novalidate >
                 <div class="section-title">
-                  <h1>¡Postula un nuevo empleo e inicia un nuevo proyecto!</h1>
-                  <p class=" offset-lg-2 col-lg-8">Asignale un nombre a lo que necesitas, algo descriptivo en pocas palabras ayudará, llena las categorias y los demás campos, muy pronto alguien se interesará en tu proyecto y juntos lo consolidarán.</p>
+                  <h1>Crea un nuevo trabajo aquí!</h1>
+                  <p class=" offset-lg-2 col-lg-8">Cuéntanos mas a detalle que trabajo requieres, algo descriptivo en pocas palabras ayudará, llena las categorias y los campos siguientes, muy pronto alguno de nuestros técnicos te ayudará!</p>
                 </div>
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-4 col-sm-6 position-relative">
-                        <label for="jobTitle">Trabajo</label>
-                        <input
-                            id="jobTitle"
-                            type="text"
-                            class="form-control formato"
-                            placeholder="Titulo del trabajo realizado"
-                            name="name"
-                            required
-    
-                        />
-                        <div class="valid-tooltip">
-                            Campo válido.
-                        </div>
-                        
-                        
-                        </div>
-                        <div class="col-md-4 col-sm-6 position-relative">
-                            <label for="inputState">Estado</label>
-                            <select id="inputState" class="form-select ">
-                            <option value="">Ubicacion del trabajo</option>
-                            <option value="AGS">Aguascalientes</option>
-                            <option value="BC">Baja California</option>
-                            <option value="BCS">Baja California Sur</option>
-                            <option value="CAMP">Campeche</option>
-                            <option value="CHIS">Chiapas</option>
-                            <option value="CHIH">Chihuahua</option>
-                            <option value="CDMX">Ciudad de México</option>
-                            <option value="COAH">Coahuila</option>
-                            <option value="COL">Colima</option>
-                            <option value="DGO">Durango</option>
-                            <option value="EMEX">Estado de México</option>
-                            <option value="GTO">Guanajuato</option>
-                            <option value="GRO">Guerrero</option>
-                            <option value="HGO">Hidalgo</option>
-                            <option value="JAL">Jalisco</option>
-                            <option value="MICH">Michoacán</option>
-                            <option value="MOR">Morelos</option>
-                            <option value="NAY">Nayarit</option>
-                            <option value="NL">Nuevo León</option>
-                            <option value="OAX">Oaxaca</option>
-                            <option value="PUE">Puebla</option>
-                            <option value="QRO">Querétaro</option>
-                            <option value="QR">Quintana Roo</option>
-                            <option value="SLP">San Luis Potosí</option>
-                            <option value="SIN">Sinaloa</option>
-                            <option value="SON">Sonora</option>
-                            <option value="TAB">Tabasco</option>
-                            <option value="TAMP">Tamaulipas</option>
-                            <option value="TLAX">Tlaxcala</option>
-                            <option value="VER">Veracruz</option>
-                            <option value="YUC">Yucatán</option>
-                            <option value="ZAC">Zacatecas</option>
-                            </select>
-                            <div class="valid-tooltip"></div>
-                        </div>
-                        
-                        <div class=" col-md-3 col-sm-3 position-relative">
-                            <input  id="city"
-                            type="text"
-                            class="form-control formato"
-                            placeholder="Municipio"
-                            name="city"
-                            required
-                            >
-                            <div class="valid-tooltip">
-                                
-                            </div>
+                      <div class="offset-md-4 col-md-4 col-sm-6 position-relative dinamico">
+                        <label for="Category">Categoría</label>
 
+                        <select id="Category" class="form-select">
+                          <option value="">Seleccione una categoría</option>
+                          <option value="Albañileria">Albañilería</option>
+                          <option value="Carpinteria">Carpintería</option>
+                          <option value="Cocina">Cocina</option>
+                          <option value="Herreria">Herrería</option>
+                          <option value="Jardineria">Jardinería</option>
+                          <option value="Plomeria">Plomería</option>
+                        </select>
+                        <div class="valid-tooltip">
+                          Campo válido.
+                        </div>
+
+                      </div>
+                    </div>
+                      <div class="row">
+                        <div class="offset-md-4 col-md-4 col-sm-6 position-relative">
+                          <label for="inputState">Estado</label>
+                          <select id="inputState" class="form-select ">
+                          <option value="">Ubicacion del trabajo</option>
+                          <option value="AGS">Aguascalientes</option>
+                          <option value="BC">Baja California</option>
+                          <option value="BCS">Baja California Sur</option>
+                          <option value="CAMP">Campeche</option>
+                          <option value="CHIS">Chiapas</option>
+                          <option value="CHIH">Chihuahua</option>
+                          <option value="CDMX">Ciudad de México</option>
+                          <option value="COAH">Coahuila</option>
+                          <option value="COL">Colima</option>
+                          <option value="DGO">Durango</option>
+                          <option value="EMEX">Estado de México</option>
+                          <option value="GTO">Guanajuato</option>
+                          <option value="GRO">Guerrero</option>
+                          <option value="HGO">Hidalgo</option>
+                          <option value="JAL">Jalisco</option>
+                          <option value="MICH">Michoacán</option>
+                          <option value="MOR">Morelos</option>
+                          <option value="NAY">Nayarit</option>
+                          <option value="NL">Nuevo León</option>
+                          <option value="OAX">Oaxaca</option>
+                          <option value="PUE">Puebla</option>
+                          <option value="QRO">Querétaro</option>
+                          <option value="QR">Quintana Roo</option>
+                          <option value="SLP">San Luis Potosí</option>
+                          <option value="SIN">Sinaloa</option>
+                          <option value="SON">Sonora</option>
+                          <option value="TAB">Tabasco</option>
+                          <option value="TAMP">Tamaulipas</option>
+                          <option value="TLAX">Tlaxcala</option>
+                          <option value="VER">Veracruz</option>
+                          <option value="YUC">Yucatán</option>
+                          <option value="ZAC">Zacatecas</option>
+                          </select>
+                          <div class="valid-tooltip"></div>
+                      </div>
+                      </div>
+                      <div class="row">
+                        <div class="offset-md-4 col-md-4 col-sm-6 position-relative">
+                          <label for="city">Municipio</label>
+                          <input  id="city"
+                          type="text"
+                          class="form-control formato"
+                          placeholder="Ingresa tu municipio"
+                          name="city"
+                          required
+                          >
+                          <div class="valid-tooltip">
+                              
+                          </div>
+
+                      </div>
+                      </div>  
+                      <div class="row">
+                        <div class="offset-md-4 col-md-4 col-sm-6 position-relative">
+                          <label for="calle">Calle</label>
+                          <input id= "calle" type="text"
+                          class="form-control formato"
+                          placeholder="Ingresa tu calle"
+                          name="calle"
+                          required
+                          >
+                          <div class="valid-tooltip"></div>
                         </div>
                       </div>
                       <div class="row">
-                        <div class="col-md-4 col-sm-6 position-relative">
-                          <label for="Subcategory">Subcategorias</label>
-                          <select id="Subcategory" class="form-select" multiple="multiple" size="4">
-                            <option value="">Seleccione subcategorias</option>
-
-                          </select>
-                          <div class="valid-tooltip">
-                            Campo válido.
-                          </div>
+                        <div class="offset-md-4 col-md-4 col-sm-6 position-relative">
+                          <label for="codigopostal">Código Postal</label>
+                          <input id= "codigopostal" type="text"
+                          class="form-control formato"
+                          placeholder="Ingresa tu CP"
+                          name="codigopostal"
+                          required
+                          >
+                          <div class="valid-tooltip"></div>
                         </div>
-                        
+                      </div>
+                      <div class="row">
+                        <div class="offset-md-4 col-md-4 col-sm-6 position-relative">
+                          <label for="numeroexterior">Número exterior</label>
+                          <input id= "numeroexterior" type="text"
+                          class="form-control formato"
+                          placeholder="Ingresa tu No. Ext"
+                          name="numeroexterior"
+                          required
+                          >
+                          <div class="valid-tooltip"></div>
+                        </div>
+                      </div>  
+                      <div class="row">
+                        <div class="offset-md-4 col-md-4 col-sm-6 position-relative">
+                          <label for="precio_trabajo">Precio</label>
+                          <input
+                              id="precio_trabajo"
+                              type="number"
+                              min="0"
+                              class="form-control formato"
+                              placeholder="Precio aproximado"
+                              name="name"
+                              required
+      
+                          />
+                          <div class="valid-tooltip">
+                              Campo válido.
+                          </div>
+                          
+                          
+                          </div>
                     
                     </div>
                     </div>
                 </div>
-                <div class="col-md-12 col-sm-12 position-relative" style="margin-top: 3em;">
+                <div class="offset-md-4 col-md-4 col-sm-6 position-relative" style="margin-top: 3em;">
                   <textarea
                   class="form-control formato"
                   rows="8"
@@ -216,13 +263,12 @@
               </div>
                 <div class="offset-md-4 col-md-4 offset-sm-3 col-sm-6" style="margin-bottom: 1em;">
                   <input
-                    id="send_msg"
+                    id="crear_trabajo"
                     type="submit"
                     class="form-control"
                     name="send message"
                     value="Crear Trabajo"
                   />
-                 
                 </div>
                 
               </form>
