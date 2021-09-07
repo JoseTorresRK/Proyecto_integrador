@@ -449,6 +449,9 @@ header .active {
     color: #202020;
     border-bottom: 3px solid #ff4716;
   }
+  #feature h2{
+    color: black;
+  }
 
   #feature .nav>li>a:focus, 
   #feature .nav>li>a:hover {
@@ -651,7 +654,9 @@ i{
   /*---------------------------------------
       PRICING             
   -----------------------------------------*/
-
+  #pricing h2{
+    color: black;
+  }
   #about .section-title,
   #pricing .section-title {
     text-align: center;
