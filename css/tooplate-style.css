@@ -730,7 +730,7 @@ i{
     height: 50px;
   }
 
-  #contact-form input[type='submit'] {
+  #contact-form input[type='submit'], #crear_trabajo {
     background: #0a65ff;
     border-radius: 50px;
     border: 0;
